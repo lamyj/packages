@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Codename: precise
+Date: Mon, 29 Feb 2016 13:25:33 UTC
+Architectures: i386 amd64
+Components: main
+MD5Sum:
+ d6cc4bd88744f46fae83aacb3486eb68 3583 main/binary-i386/Packages
+ cde0d4e0e82324b0e4310b76adc6d160 1179 main/binary-i386/Packages.gz
+ 5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
+ 850b3dd3dc233013ee874b39d2742223 3588 main/binary-amd64/Packages
+ 849f1b2b9c090b3689da03a1c68d8870 1180 main/binary-amd64/Packages.gz
+ 063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 92f9b0ec8b2656847b612632542f1735 37 main/source/Release
+SHA1:
+ 00cbada1757880d12d1d19b6ad9d6d0af4b97047 3583 main/binary-i386/Packages
+ fad834aa46769e3991dc280486ef9ac7ff5788bb 1179 main/binary-i386/Packages.gz
+ ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
+ 0ad3614be35e319ba21cb8d18a944e33b9612e8f 3588 main/binary-amd64/Packages
+ e2ab7ffa9bb7938acf3e65e7765ece2d173d6e47 1180 main/binary-amd64/Packages.gz
+ f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
+SHA256:
+ b8387efd52491bf83c5adb8dc17b41d848dba11554cf56de87c33c7eff1eb66e 3583 main/binary-i386/Packages
+ becbd0f4b303f2d72949326ecdcffa2ce0950b0e4e33dec32170ab0955e0a7ec 1179 main/binary-i386/Packages.gz
+ 2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
+ 8ad4bf0fa5be42823d720decd4c23e5f24c21ed8de85718bf0862e01c63691b2 3588 main/binary-amd64/Packages
+ 0ef193f6f5638f02cfea569d3dcfabe24d57916848bc5f49e2cc48109c318206 1180 main/binary-amd64/Packages.gz
+ f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 4e2108e8de58972a48b94535ab5f7e553edddf6b18462bf8ba44584b1161a0d9 37 main/source/Release
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJW1EbNAAoJEDs2Xek+vRzU61QP/jQrKlXZslHqF0xHmLl5wJyS
+B61IMbUNZF25t/erxrLTw0i0NmvwB4kybZ7snnqdIqEDFJFEZUpJo5wPx/wc0cY+
+Dw48BH60f6uZHEV5x6nwhPXSuPronz7oA1JIYrPb46FHl7dTtMAUNclL7JZdFCCt
+Z0jAGcpSBtSBfXkoKh6g+hM5FYJgle6qGdfafVxQ4egeq0vL36B/phJKyX3xu2yC
+gxMjmc2asJPC5RJh3aP7ZgYvr1jYunq0zDQcfEuf8axPYEDQlxMGk9rpHZf0mrPJ
+SqDZcxzuvcCpJwQtXlLZ2qbM0KNyp4Dp1yvu/qUjydflWsbz8LrlsZhULY9x7xex
+FhatneVNBU/a79fzmMXL+5tRcVHcAwFORdaBVAG2kfRM7uIUzQYjihRrjYcFqyK/
+72BzRSEOSazPHraomW+hIzSCz+T4yHjXlnxxbFkztcs2tkr563v7hC9LznV9BT0+
+TRnG8tALc3KgeZgOk9pyvH7HJrev7FIkd/NC+Lm7S1GuiP7Qbubud9l2GhzstU2Y
+fLxLnuc1cL3xIQLSCwamnFde5ERqLX5ysFa3fwQsWJtotbG15g+SJIV7XsMHzwpY
+P/rotAnk77qEzwGoRG2YxGTuf/y14YH8Hci/QFwvb6E8ADSa1jub7+7fKiqDxMSM
+BxQ33DzLmVjFSnHCXkMn
+=cSiS
+-----END PGP SIGNATURE-----
