@@ -1,3 +1,23 @@
+Package: dicomifier
+Version: 0.5.3-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 2846
+Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.8.9.20, zlib1g (>= 1:1.1.4)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~wheezy_amd64.deb
+Size: 875026
+SHA256: d4c076778cc3281e3b091f86ea0ba7d7f40effb79920eda8caae3c3a31904287
+SHA1: 3710c48642abfb8793026e38b3d6468cbc3edde8
+MD5sum: 70fd3b95ed5932bfad851dfca0ee38b8
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the applications.
+
 Package: libodil0
 Source: odil
 Version: 0.4.1-1~wheezy
