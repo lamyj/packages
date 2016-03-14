@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~jessie
+Version: 0.5.4-1~jessie
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2734
+Installed-Size: 2789
 Depends: libboost-date-time1.55.0, libboost-filesystem1.55.0, libboost-program-options1.55.0, libboost-regex1.55.0, libboost-system1.55.0, libc6 (>= 2.14), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.9), libv8-3.14.5, zlib1g (>= 1:1.1.4)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~jessie_amd64.deb
-Size: 538532
-SHA256: c02553c8c749591b524709e4a0bd2bd0c6abd05eebcb286e303adc11b74ff2e5
-SHA1: bfe0507ef46e248ca657dffdb88b0725e182e3cf
-MD5sum: 1f55195a4ad8d2d8975e691097e374d4
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~jessie_amd64.deb
+Size: 556060
+SHA256: 5c5d50a050d14bf731de6b02a15f7e0be612083dcce395c4dc34465027729b63
+SHA1: e262a0e13f6f9e33b0abaf14be751fecb20c3f41
+MD5sum: bff5ec807abca0ac478c35d06efda6ba
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~jessie
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~jessie_all.deb
+Size: 9794
+SHA256: cc8a53f0d0f1102deceae3996e66b2e1ade61ff4fa992fa05549f35fc85df047
+SHA1: c94f4798e3f11c56e0ba8c22a62ab8a77c1d35d2
+MD5sum: 17b8c0cdcf1bdbe034a0db3fa64ba1e8
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil

@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~jessie
+Version: 0.5.4-1~jessie
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2800
+Installed-Size: 2868
 Depends: libboost-date-time1.55.0, libboost-filesystem1.55.0, libboost-program-options1.55.0, libboost-regex1.55.0, libboost-system1.55.0, libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.9), libv8-3.14.5, zlib1g (>= 1:1.1.4)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~jessie_i386.deb
-Size: 552316
-SHA256: 626400d73f69a1c0038023b2fa6a6d92b878b6664c046d0598b1a472ce045959
-SHA1: 535e222ca42e49bd3f3e68fa6bf85a1c70fb39e1
-MD5sum: d851c49974aa36e1b399c01945f541bd
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~jessie_i386.deb
+Size: 560794
+SHA256: c08b9fb7e1ef9769cb1fed55823fb37aea3c80bb82753edff71ef3b0dd49efa9
+SHA1: 82905c5e1e698cf9f819c66bdcf3211c0a121c5f
+MD5sum: 38fa9f9ad680fe6e1ca16954ba3fc9ea
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~jessie
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~jessie_all.deb
+Size: 9794
+SHA256: cc8a53f0d0f1102deceae3996e66b2e1ade61ff4fa992fa05549f35fc85df047
+SHA1: c94f4798e3f11c56e0ba8c22a62ab8a77c1d35d2
+MD5sum: 17b8c0cdcf1bdbe034a0db3fa64ba1e8
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil

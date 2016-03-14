@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~precise
+Version: 0.5.4-1~precise
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2822
+Installed-Size: 2893
 Depends: libboost-filesystem1.46.1 (>= 1.46.1-1), libboost-program-options1.46.1 (>= 1.46.1-1), libboost-regex1.46.1 (>= 1.46.1-1), libboost-system1.46.1 (>= 1.46.1-1), libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.7.12.22
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~precise_i386.deb
-Size: 850182
-SHA256: 7ad40914e1acb2a843c90a475ffb7aca75a1c968db220d392933b21b5750b1b1
-SHA1: e96a0a2d126eaf2037102c029356d7190954a3d1
-MD5sum: 77832e3cdb4ef5419fec3c5b6ee2d616
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~precise_i386.deb
+Size: 871146
+SHA256: 97c073a224ab8a18bfea957b6f405c40823c37c537e1a4454949a028a5a2e152
+SHA1: ec48b8eedc22a6a8b3822bfeac3f18a471d07858
+MD5sum: d9cafc6a603c4ec68307d9355e10ce70
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~precise
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~precise_all.deb
+Size: 10358
+SHA256: 4869fc1197882cd050952487f80e4a9e6e024f8cf2d6151b6bd5e31a54536ac1
+SHA1: 1e6cbe31850cd38066ed087d220966ea6fa610fd
+MD5sum: a021060355e418b3130d405ab7d013cb
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil

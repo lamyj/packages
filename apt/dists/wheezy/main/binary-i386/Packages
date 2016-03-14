@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~wheezy
+Version: 0.5.4-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2994
+Installed-Size: 3062
 Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.8.9.20, zlib1g (>= 1:1.1.4)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~wheezy_i386.deb
-Size: 881126
-SHA256: 4c4217d6820c491f6a9e3120fa7f73fa80970d264980b8e78af4803bcb7ee480
-SHA1: 837ccb1a1de44048c03ae84ff08532332b24c3f9
-MD5sum: 63187ca98d4ca97b0c7d138a7d7f25a6
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~wheezy_i386.deb
+Size: 897246
+SHA256: 55e8abaffb7c4ea616f8c21250bdb0526a988e13a3922e90ac0f78d5f0c8a08f
+SHA1: 1b59ebd65c5323e7f19e940be7467a4707ef170a
+MD5sum: 1100acc2dd8fcd10aaeba61c4a7b4c89
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~wheezy
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~wheezy_all.deb
+Size: 10358
+SHA256: 6bda517cd4cc3583f658c4f4ebeb961e4d736bd98e932ec241d80ec643e4a593
+SHA1: 017290626369a847612ba694800b71aa7acf437a
+MD5sum: 9106faac5fc97e540dc5a0b2de74f1c3
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil

@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~precise
+Version: 0.5.4-1~precise
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2665
+Installed-Size: 2724
 Depends: libboost-filesystem1.46.1 (>= 1.46.1-1), libboost-program-options1.46.1 (>= 1.46.1-1), libboost-regex1.46.1 (>= 1.46.1-1), libboost-system1.46.1 (>= 1.46.1-1), libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.7.12.22
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~precise_amd64.deb
-Size: 846918
-SHA256: 08498a41835e6fecdfe7d7dbe8683a32d71a23bf855852218207e84a49a0a736
-SHA1: 8f44812acb6836d3c24257cdcb687da122e2890e
-MD5sum: f389cf77dab9aaebfb20bb5c7a26d463
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~precise_amd64.deb
+Size: 865906
+SHA256: 39e0cb1e852ee2c1ca7cb6a00aff984f7677024730293fed5b2747ba63c0a913
+SHA1: fdbf8061194dc6b27a1226be259e8638a8fabdd7
+MD5sum: 82025cca42069d01d0d94a5bd18ffc44
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~precise
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~precise_all.deb
+Size: 10358
+SHA256: 4869fc1197882cd050952487f80e4a9e6e024f8cf2d6151b6bd5e31a54536ac1
+SHA1: 1e6cbe31850cd38066ed087d220966ea6fa610fd
+MD5sum: a021060355e418b3130d405ab7d013cb
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil

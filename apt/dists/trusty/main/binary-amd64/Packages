@@ -1,22 +1,42 @@
 Package: dicomifier
-Version: 0.5.3-1~trusty
+Version: 0.5.4-1~trusty
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2612
+Installed-Size: 2668
 Depends: libboost-filesystem1.54.0, libboost-program-options1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.14.5
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.5.3-1~trusty_amd64.deb
-Size: 506098
-SHA256: c5e3d61cb725d4596abb661883f22040068d323cd27e10846c913a342205f135
-SHA1: 47cd2416bda251c23ba37f89c7d6b30d5315aabc
-MD5sum: 78268e03206a22ffd1502dce073736bf
+Filename: pool/main/d/dicomifier/dicomifier_0.5.4-1~trusty_amd64.deb
+Size: 524526
+SHA256: 5f615fa2964d1c74882c9c70137f63f21c176507cc03b64b8351533f509d77b5
+SHA1: 9414994fe221237c8ff0bf1938dcf72d73a8fc2b
+MD5sum: 1924087d96cfc8c1830821af4448477b
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
  .
  This package contains the applications.
+
+Package: dicomifier-doc
+Source: dicomifier
+Version: 0.5.4-1~trusty
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 47
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: doc
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.5.4-1~trusty_all.deb
+Size: 9736
+SHA256: d4251627e0fa5f16b78627c135052e9b0cd907114cd904ecfd6c023ec0a84161
+SHA1: 24f0f23afd80ff6a57a8e89b1552a0e48f49ec07
+MD5sum: 177cea64648515436f6201d63df0a2c8
+Description: Tools to manipulate DICOM files
+ dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
+ and DICOM Dataset to NIfTI files.
+ .
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil
