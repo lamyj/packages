@@ -1,0 +1,38 @@
+Package: dopamine
+Version: 0.4.1-1~saucy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 2007
+Depends: libboost-filesystem1.53.0, libboost-random1.53.0, libboost-regex1.53.0, libboost-system1.53.0, libboost-thread1.53.0, libc6 (>= 2.14), libcgicc5, libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libicu48 (>= 4.8-1), libldap-2.4-2 (>= 2.4.7), liblog4cpp5, libmimetic0, libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.6), adduser
+Homepage: https://github.com/lamyj/dopamine
+Priority: optional
+Section: science
+Filename: pool/main/d/dopamine/dopamine_0.4.1-1~saucy_amd64.deb
+Size: 767502
+SHA256: b59f9d4161861a1212a0790db5c43c202cbad629ef5181616eb88dae0b358f12
+SHA1: 1e7af9b94ba7a0a60c57362d0efad8957eb3c549
+MD5sum: b26e985dde1200dd006abda710f68c05
+Description: Document-oriented PACS
+ Dopamine is a document-oriented PACS, i.e. DICOM server.
+ .
+ This package contains the application.
+
+Package: dopamine-doc
+Source: dopamine
+Version: 0.4.1-1~saucy
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 46
+Homepage: https://github.com/lamyj/dopamine
+Priority: optional
+Section: science
+Filename: pool/main/d/dopamine/dopamine-doc_0.4.1-1~saucy_all.deb
+Size: 10248
+SHA256: 68d546c9cb8ce59693492a34e82f296c5bc9b7e024bc82b3ad00b3a34d92887b
+SHA1: 2d3fbeba959ad3c63088f49a4654f55f2184faa5
+MD5sum: 6893d988741f056d8bd4621e6e680560
+Description: Document-oriented PACS
+ Dopamine is a document-oriented PACS, i.e. DICOM server.
+ .
+ This package contains the documentation.
+
