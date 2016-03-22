@@ -1,0 +1,25 @@
+Codename: jessie
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
+Codename: precise
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
+Codename: saucy
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
+Codename: trusty
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
+Codename: wheezy
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
