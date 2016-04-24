@@ -1,0 +1,38 @@
+diff -u a/debian/control b/control
+--- a/debian/control	2016-04-21 19:43:08.463018000 +0200
++++ b/control	2016-04-23 15:18:28.494920968 +0200
+@@ -5,11 +5,10 @@
+ Priority: optional
+ Build-Depends: debhelper (>= 9),
+                d-shlibs,
+-               dh-python,
+                cmake,
+                pkg-config,
+                libjsoncpp-dev,
+-               libdcmtk-dev | libdcmtk2-dev,
++               libdcmtk2-dev,
+                libicu-dev (>= 4.8.1.1),
+                zlib1g-dev,
+                uuid-dev,
+diff -u a/debian/rules b/rules
+--- a/debian/rules	2016-04-22 19:28:14.275011000 +0200
++++ b/rules	2016-04-23 15:27:36.886920968 +0200
+@@ -1,7 +1,6 @@
+ #!/usr/bin/make -f
+ 
+ export DEB_CXXFLAGS_MAINT_APPEND  = -std=c++0x
+-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+ 
+ %:
+ 	dh $@ --builddirectory=build --parallel --with python2
+@@ -20,8 +19,8 @@
+ 		--commit --multiarch --exclude-a --exclude-la \
+ 		--movedev debian/tmp/usr/include/* usr/include \
+ 		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
+-		--override s/libdcm.*-dev/libdcmtk-dev/ \
+-		--override s/libof.*-dev/libdcmtk-dev/ \
++		--override s/libdcm.*-dev/libdcmtk2-dev/ \
++		--override s/libof.*-dev/libdcmtk2-dev/ \
+ 		--override s/libicuuc.*-dev/libicu-dev/ \
+                 --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
+                 --override s/libboost_regex.*-dev/libboost-regex-dev/ \

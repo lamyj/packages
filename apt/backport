@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+
+import argparse
+import glob
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import urllib.request
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Backport a source deb package")
+    parser.add_argument("dsc")
+    parser.add_argument("root_directory")
+    parser.add_argument("patchfile", nargs="?")
+    parser.add_argument("--dist", required=True)
+    parser.add_argument("--arch", required=True) 
+    parser.add_argument("--debbuildopt", action="append", default=[])
+
+    arguments = parser.parse_args()
+    
+    extract(arguments.dsc, arguments.root_directory)
+    source_directory = [
+        x for x in glob.glob(os.path.join(arguments.root_directory, "*")) 
+        if os.path.isdir(x)][0]
+
+    if arguments.patchfile is not None:
+        patch(source_directory, arguments.patchfile)
+
+    backport(source_directory, arguments.dist)
+
+    mirrors = {
+        "debian": "http://httpredir.debian.org/debian",
+        "ubuntu": "http://archive.ubuntu.com/ubuntu"
+    }
+
+    components = {
+        "debian": ["main", "contrib", "non-free"],
+        "ubuntu": ["main", "universe", "multiverse"]
+    }
+
+    if not exists(arguments.dist, arguments.arch):
+        vendor = find_vendor(arguments.dist, mirrors)
+        if vendor is None:
+            parser.error("No vendor found")
+        create(
+            arguments.dist, arguments.arch, mirrors[vendor], components[vendor])
+    update(arguments.dist, arguments.arch)
+    build(
+        source_directory, arguments.dist, arguments.arch, 
+        arguments.debbuildopt)
+    
+    shutil.rmtree(source_directory)
+
+def extract(dsc, directory):
+    subprocess.check_call(
+        ["dpkg-source", "-x", os.path.abspath(dsc)], cwd=directory)
+
+def patch(directory, patchfile):
+    subprocess.check_call(
+        ["patch", "-p", "1", "-d", directory, "-i", os.path.abspath(patchfile)])
+
+def backport(source_directory, dist):
+    version = subprocess.check_output([
+        "dpkg-parsechangelog", "-S", "Version", 
+        "-l{}".format(os.path.join(source_directory, "debian", "changelog"))])
+    version = version.decode().strip()
+
+    subprocess.check_call([
+        "dch", "-v", "{}~{}".format(version, dist),
+        "--distribution", dist,
+        "--force-bad-version", "--force-distribution",
+        "Backport to {}".format(dist)],
+        cwd=source_directory)
+
+def find_vendor(dist, mirrors):
+    vendor = None
+    for candidate, mirror in mirrors.items():
+        url = "{}/dists/{}".format(mirror, dist)
+        try: 
+            urllib.request.urlopen(url)
+        except urllib.error.HTTPError:
+            # Ignore it
+            pass
+        else:
+            vendor = candidate
+            break
+    return vendor
+
+def exists(dist, arch):
+    does_exist = None
+
+    command = ["schroot", "-c", "{}-{}-sbuild".format(dist, arch), "-i"]
+    try:
+        subprocess.check_output(command, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+        if e.output.strip().endswith(b"Chroot not found"):
+            does_exist = False
+        else:
+            raise
+    else:
+        does_exist = True
+
+    return does_exist
+
+def create(dist, arch, mirror, components):
+    directory = tempfile.mkdtemp()
+    command = [
+        "sudo", "sbuild-createchroot",
+        "--exclude=debfoster",
+        "--components={}".format(",".join(components)),
+        "--make-sbuild-tarball=/srv/chroot/{}-{}.tar.gz".format(dist, arch),
+        "--arch", arch,
+        dist, directory, mirror
+    ]
+    subprocess.check_call(command)
+
+def update(dist, arch):
+    command = ["sudo", "sbuild-update", "-udcar", "{}-{}".format(dist, arch)]
+    subprocess.check_call(command)
+
+def build(directory, dist, arch, debbuildopts):
+    command = [
+        "sbuild", "--dist={}".format(dist), "--arch={}".format(arch)
+    ]+["--debbuildopt={}".format(x) for x in debbuildopts]
+    subprocess.check_call(command, cwd=directory)
+
+if __name__ == "__main__":
+    sys.exit(main())
+
