@@ -65,7 +65,7 @@ def patch(directory, patchfile):
 
 def backport(source_directory, dist):
     version = subprocess.check_output([
-        "dpkg-parsechangelog", "-S", "Version", 
+        "dpkg-parsechangelog", "-SVersion", 
         "-l{}".format(os.path.join(source_directory, "debian", "changelog"))])
     version = version.decode().strip()
 
