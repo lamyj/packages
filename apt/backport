@@ -19,6 +19,10 @@ def main():
     parser.add_argument("--dist", required=True)
     parser.add_argument("--arch", required=True) 
     parser.add_argument("--debbuildopt", action="append", default=[])
+    parser.add_argument(
+        "--debian-mirror", default="http://httpredir.debian.org/debian")
+    parser.add_argument(
+        "--ubuntu-mirror", default="http://archive.ubuntu.com/ubuntu")
 
     arguments = parser.parse_args()
     
@@ -33,8 +37,8 @@ def main():
     backport(source_directory, arguments.dist)
 
     mirrors = {
-        "debian": "http://httpredir.debian.org/debian",
-        "ubuntu": "http://archive.ubuntu.com/ubuntu"
+        "debian": arguments.debian_mirror,
+        "ubuntu": arguments.ubuntu_mirror
     }
 
     components = {
