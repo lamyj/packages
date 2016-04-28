@@ -23,6 +23,7 @@ def main():
         "--debian-mirror", default="http://httpredir.debian.org/debian")
     parser.add_argument(
         "--ubuntu-mirror", default="http://archive.ubuntu.com/ubuntu")
+    parser.add_argument("--create-only", action="store_true")
 
     arguments = parser.parse_args()
     
@@ -52,6 +53,10 @@ def main():
             parser.error("No vendor found")
         create(
             arguments.dist, arguments.arch, mirrors[vendor], components[vendor])
+
+    if arguments.create_only:
+        return 0
+
     update(arguments.dist, arguments.arch)
     build(
         source_directory, arguments.dist, arguments.arch, 
@@ -129,7 +134,10 @@ def update(dist, arch):
 def build(directory, dist, arch, debbuildopts):
     command = [
         "sbuild", "--dist={}".format(dist), "--arch={}".format(arch)
-    ]+["--debbuildopt={}".format(x) for x in debbuildopts]
+    ]
+    command += ["--debbuildopt={}".format(x) for x in debbuildopts]
+    command += ["--extra-repository={}".format(x) for x in extra_repository]
+
     subprocess.check_call(command, cwd=directory)
 
 if __name__ == "__main__":
