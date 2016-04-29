@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.6.0-1~trusty
+Version: 0.6.1-1~trusty
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2837
+Installed-Size: 2839
 Depends: libboost-filesystem1.54.0, libboost-program-options1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.14.5
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.6.0-1~trusty_i386.deb
-Size: 516070
-SHA256: ff0a80baf96dd4dae5042c78ebd3b02c67dc708ac52708d52f3f617c2487fe71
-SHA1: c28860f51206a3eecd31a383b6e47a56aba0e8ec
-MD5sum: 68fcc7d374544275ac859955cb302fcc
+Filename: pool/main/d/dicomifier/dicomifier_0.6.1-1~trusty_i386.deb
+Size: 517274
+SHA256: e5975a536c185bb709c922f11108b36643d5d67578c1ed7a71a4e0796939fd96
+SHA1: 9002ecc611a806e6ff0a36f7c2eb706738a15438
+MD5sum: ef2290a484355f3f5f01e23d9aef3297
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
@@ -20,18 +20,18 @@ Description: Tools to manipulate DICOM files
 
 Package: dicomifier-doc
 Source: dicomifier
-Version: 0.6.0-1~trusty
+Version: 0.6.1-1~trusty
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 47
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: doc
-Filename: pool/main/d/dicomifier/dicomifier-doc_0.6.0-1~trusty_all.deb
-Size: 9754
-SHA256: fd97f571b140971b030c6df4862f27fcc58b3f24ef64990c2d914e4886234d3a
-SHA1: 1c2822feeb96acbb6736422ef2d1b19c0f32c14f
-MD5sum: 9e0d72414d81405ad053ef23e0022ee2
+Filename: pool/main/d/dicomifier/dicomifier-doc_0.6.1-1~trusty_all.deb
+Size: 9760
+SHA256: e42d93ec5aac14d8fdfdc0f34f38e6f2b4181afc3be0c68a21966a29d90f3900
+SHA1: 14f3f39d1c5ae15eb8a8b5bf977b6c93c7591c13
+MD5sum: 07a8abfc814a240f90adce15e00ab61f
 Description: Tools to manipulate DICOM files
  dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
  and DICOM Dataset to NIfTI files.
