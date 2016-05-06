@@ -78,7 +78,7 @@ Description: Document-oriented PACS
 
 Package: libodil0
 Source: odil
-Version: 0.6.0~pre1~trusty
+Version: 0.6.0~pre1-1~trusty
 Architecture: i386
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Installed-Size: 7927
@@ -89,11 +89,11 @@ Provides: libdcmtkpp0
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libs
-Filename: pool/main/o/odil/libodil0_0.6.0~pre1~trusty_i386.deb
-Size: 961618
-SHA256: 9ccf2cb25439dbb072fa284a8bad2818d6ff8cdaf2835bde87c5f11fa9aaaff9
-SHA1: 0976a3e360a4f06939cfc94a048c7185a94885e0
-MD5sum: 2040bdce7e15163e7b3990f4d779cfd6
+Filename: pool/main/o/odil/libodil0_0.6.0~pre1-1~trusty_i386.deb
+Size: 976038
+SHA256: 096893ec1a8a3df944344deca287448b002659722e7843899880b040bca27cad
+SHA1: acc2c26f3aa28749215056e6fa9669a6c0adb372
+MD5sum: 0c0ee94c5eaadac121895acc9a70c217
 Description: C++11 library for the DICOM standard
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -107,22 +107,22 @@ Description: C++11 library for the DICOM standard
 
 Package: libodil0-dev
 Source: odil
-Version: 0.6.0~pre1~trusty
+Version: 0.6.0~pre1-1~trusty
 Architecture: i386
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Installed-Size: 498
-Depends: libodil0 (= 0.6.0~pre1~trusty), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev
+Depends: libodil0 (= 0.6.0~pre1-1~trusty), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev
 Conflicts: libdcmtkpp-dev, libodil-dev
 Replaces: libdcmtkpp-dev
 Provides: libdcmtkpp-dev, libodil-dev
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libdevel
-Filename: pool/main/o/odil/libodil0-dev_0.6.0~pre1~trusty_i386.deb
-Size: 72528
-SHA256: 5cb4e3ad323050521c3851a2877636cd7e91c24739c7760d28d7d106a4f26dd0
-SHA1: 7070fbae0ca9b01ae296110415b2079963e36234
-MD5sum: 5ffbe15b9da02847e6044873956bf2e2
+Filename: pool/main/o/odil/libodil0-dev_0.6.0~pre1-1~trusty_i386.deb
+Size: 72552
+SHA256: 6e8ec3639e05e0f1584414505a1ae9053196165c4dd31b40d15ad1b7fa336434
+SHA1: f6397ac60dc95b90ce256d896c964d1ae71c782a
+MD5sum: 88bf47c4e31e1d3840341f87ecc4ff41
 Description: C++11 library for the DICOM standard (development files)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -134,7 +134,7 @@ Description: C++11 library for the DICOM standard (development files)
 
 Package: libodil0-doc
 Source: odil
-Version: 0.6.0~pre1~trusty
+Version: 0.6.0~pre1-1~trusty
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Installed-Size: 3313
@@ -145,11 +145,11 @@ Provides: libdcmtkpp0-doc
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: doc
-Filename: pool/main/o/odil/libodil0-doc_0.6.0~pre1~trusty_all.deb
+Filename: pool/main/o/odil/libodil0-doc_0.6.0~pre1-1~trusty_all.deb
 Size: 225730
-SHA256: 3fd4686bf038b44a6e55ff51254f7b1bd8cea8e8ab8b19d7ec8a68b121174602
-SHA1: 3e4a4e2b61a7fa8cfc0d47bf4c56f6308326edd3
-MD5sum: 7776750210fa5eb9c3062e130d61245e
+SHA256: 9f686ff736cc95a398f416e45ec2c664f1069d03447833d84e2f0613fcca870c
+SHA1: ee7712336c171344aa94f69b0aec4fbd35c3f438
+MD5sum: a6a930eaf625053ecc19941ecabb58b4
 Description: C++11 library for the DICOM standard (documentation)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -160,7 +160,7 @@ Description: C++11 library for the DICOM standard (documentation)
  This package contains the documentation files.
 
 Package: odil
-Version: 0.6.0~pre1~trusty
+Version: 0.6.0~pre1-1~trusty
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Installed-Size: 89
@@ -168,11 +168,11 @@ Depends: python-odil, python
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.6.0~pre1~trusty_all.deb
+Filename: pool/main/o/odil/odil_0.6.0~pre1-1~trusty_all.deb
 Size: 15590
-SHA256: 610c154c094fc6aebaaa72f6fb4d78073026cd271e272ddd9bc76286ea8472f9
-SHA1: 228328fe3ca38a0f3e45f3a043dcb8b0ab11bdac
-MD5sum: 6ea69be0cf21a3868e17d6fcbf70903c
+SHA256: a9e32849976a68f1ee44423d51242a8e1954e426944ef3133bca30f300e004b9
+SHA1: 925e4f2f03407285f7bc9154508749e9e370945a
+MD5sum: d2dff7aae1147f2cba66cd12fb21ed7c
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -184,19 +184,19 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: python-odil
 Source: odil
-Version: 0.6.0~pre1~trusty
+Version: 0.6.0~pre1-1~trusty
 Architecture: i386
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Installed-Size: 5601
-Depends: libodil0 (= 0.6.0~pre1~trusty), libboost-python1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (<< 2.8), python (>= 2.7~)
+Depends: libodil0 (= 0.6.0~pre1-1~trusty), libboost-python1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (<< 2.8), python (>= 2.7~)
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: python
-Filename: pool/main/o/odil/python-odil_0.6.0~pre1~trusty_i386.deb
-Size: 584656
-SHA256: 84126e1fe37ba6c1a38cd04aaa3034c39af79fd07c709ee10d79989e6ccdcfe1
-SHA1: fb9926c20b21d542ecf1f531a78b94410bb7943a
-MD5sum: 352341e8464caa742a1955a5f41b3c7e
+Filename: pool/main/o/odil/python-odil_0.6.0~pre1-1~trusty_i386.deb
+Size: 618222
+SHA256: b378d99d9c8db82b0ee51558eb0b709841579521cd53ca94c2014354b604b0d3
+SHA1: 1241a03d287bfcc9e08fb308f1be30b57338fa96
+MD5sum: 1c91eb5f266ba1a3d88f283aa3ec3ba7
 Description: C++11 library for the DICOM standard (Python wrappers)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
