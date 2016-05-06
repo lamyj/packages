@@ -2,6 +2,8 @@
 
 import argparse
 import glob
+import itertools
+import logging
 import os
 import re
 import shutil
@@ -13,33 +15,69 @@ import urllib.request
 def main():
     parser = argparse.ArgumentParser(
         description="Backport a source deb package")
-    parser.add_argument("dsc")
-    parser.add_argument("root_directory")
-    parser.add_argument("patchfile", nargs="?")
-    parser.add_argument("--dist", required=True)
-    parser.add_argument("--arch", required=True) 
-    parser.add_argument("--debbuildopt", action="append", default=[])
-    parser.add_argument(
+    subparsers = parser.add_subparsers(help="Sub-commands help")
+
+    create_parser = subparsers.add_parser("create", help="Create an sbuild environment")
+    create_parser.add_argument("--dist", required=True)
+    create_parser.add_argument("--arch", required=True) 
+    create_parser.add_argument(
         "--debian-mirror", default="http://httpredir.debian.org/debian")
-    parser.add_argument(
+    create_parser.add_argument(
         "--ubuntu-mirror", default="http://archive.ubuntu.com/ubuntu")
-    parser.add_argument("--create-only", action="store_true")
+    create_parser.add_argument(
+        "--verbosity", "-v", 
+        choices=["warning", "info", "debug"], default="warning")
+    create_parser.set_defaults(function=create)
 
-    arguments = parser.parse_args()
+    build_parser = subparsers.add_parser("build", help="Build a package")
+    build_parser.add_argument("dsc")
+    build_parser.add_argument("root_directory")
+    build_parser.add_argument("patchfile", nargs="?")
+    build_parser.add_argument("--dist", required=True)
+    build_parser.add_argument("--arch", required=True) 
+    build_parser.add_argument("--debbuildopt", action="append", default=[])
+    build_parser.add_argument(
+        "--verbosity", "-v", 
+        choices=["warning", "info", "debug"], default="warning")
+    build_parser.set_defaults(function=build)
     
-    extract(arguments.dsc, arguments.root_directory)
-    source_directory = [
-        x for x in glob.glob(os.path.join(arguments.root_directory, "*")) 
-        if os.path.isdir(x)][0]
+    multibuild_parser = subparsers.add_parser(
+        "multibuild", help="Build multiple packages")
+    multibuild_parser.add_argument("dsc")
+    multibuild_parser.add_argument("root_directory")
+    multibuild_parser.add_argument(
+        "--dists", type=lambda x:x.split(","), required=True)
+    multibuild_parser.add_argument(
+        "--arches", type=lambda x:x.split(","), required=True) 
+    multibuild_parser.add_argument("--debbuildopt", action="append", default=[])
+    multibuild_parser.add_argument(
+        "--verbosity", "-v", 
+        choices=["warning", "info", "debug"], default="warning")
+    multibuild_parser.set_defaults(function=multibuild)
 
-    if arguments.patchfile is not None:
-        patch(source_directory, arguments.patchfile)
+    arguments = vars(parser.parse_args())
+    if "function" not in arguments:
+        parser.error("too few arguments")
 
-    backport(source_directory, arguments.dist)
+    verbosity = arguments.pop("verbosity")
+    logging.getLogger().setLevel(verbosity.upper())
 
+    function = arguments.pop("function")
+    try:
+        return function(**arguments)
+    except Exception as e:
+        if verbosity == "debug":
+            raise
+        else:
+            parser.error(e)
+
+def create(dist, arch, debian_mirror, ubuntu_mirror):
+    if exists(dist, arch):
+        raise Exception("sbuild environment already exists")
+    
     mirrors = {
-        "debian": arguments.debian_mirror,
-        "ubuntu": arguments.ubuntu_mirror
+        "debian": debian_mirror,
+        "ubuntu": ubuntu_mirror
     }
 
     components = {
@@ -47,45 +85,6 @@ def main():
         "ubuntu": ["main", "universe", "multiverse"]
     }
 
-    if not exists(arguments.dist, arguments.arch):
-        vendor = find_vendor(arguments.dist, mirrors)
-        if vendor is None:
-            parser.error("No vendor found")
-        create(
-            arguments.dist, arguments.arch, mirrors[vendor], components[vendor])
-
-    if arguments.create_only:
-        return 0
-
-    update(arguments.dist, arguments.arch)
-    build(
-        source_directory, arguments.dist, arguments.arch, 
-        arguments.debbuildopt)
-    
-    shutil.rmtree(source_directory)
-
-def extract(dsc, directory):
-    subprocess.check_call(
-        ["dpkg-source", "-x", os.path.abspath(dsc)], cwd=directory)
-
-def patch(directory, patchfile):
-    subprocess.check_call(
-        ["patch", "-p", "1", "-d", directory, "-i", os.path.abspath(patchfile)])
-
-def backport(source_directory, dist):
-    version = subprocess.check_output([
-        "dpkg-parsechangelog", "-SVersion", 
-        "-l{}".format(os.path.join(source_directory, "debian", "changelog"))])
-    version = version.decode().strip()
-
-    subprocess.check_call([
-        "dch", "-v", "{}~{}".format(version, dist),
-        "--distribution", dist,
-        "--force-bad-version", "--force-distribution",
-        "Backport to {}".format(dist)],
-        cwd=source_directory)
-
-def find_vendor(dist, mirrors):
     vendor = None
     for candidate, mirror in mirrors.items():
         url = "{}/dists/{}".format(mirror, dist)
@@ -97,7 +96,98 @@ def find_vendor(dist, mirrors):
         else:
             vendor = candidate
             break
-    return vendor
+    if vendor is None:
+        raise Exception("No vendor found")
+    
+    directory = tempfile.mkdtemp()
+    command = [
+        "sudo", "sbuild-createchroot",
+        "--exclude=debfoster",
+        "--components={}".format(",".join(components[vendor])),
+        "--make-sbuild-tarball=/srv/chroot/{}-{}.tar.gz".format(dist, arch),
+        "--arch", arch,
+        dist, directory, mirrors[vendor]
+    ]
+    subprocess.check_call(command)
+
+def build(dsc, root_directory, dist, arch, debbuildopt, patchfile):
+    if not exists(dist, arch):
+        raise Exception("No such sbuild environment")
+    
+    # Update the chroot
+    subprocess.check_call([
+        "sudo", "sbuild-update", "-udcar", "{}-{}".format(dist, arch)])
+
+    # Extract the source package
+    subprocess.check_call(
+        ["dpkg-source", "-x", os.path.abspath(dsc)], cwd=root_directory)
+    
+    # Get source package name and version from .dsc
+    source_package = None
+    version = None
+    with open(dsc) as fd:
+        data = fd.read()
+        value = re.search(r"^Source: (.+)$", data, re.MULTILINE).group(1)
+        source_package = value
+        value = re.search(r"^Version: (.+)$", data, re.MULTILINE).group(1)
+        version = value
+    upstream_version, debian_revision = re.match(r"(.+)-([^-]+)", version).groups()
+    source_directory = os.path.join(
+        root_directory, "{}-{}".format(source_package, upstream_version))
+
+    # Apply build patch
+    if patchfile is not None:
+        subprocess.check_call([
+            "patch", "-p", "1", "-d", source_directory, 
+            "-i", os.path.abspath(patchfile)])
+
+    # Update the changelog
+    subprocess.check_call([
+        "dch", "-v", "{}~{}".format(version, dist),
+        "--distribution", dist,
+        "--force-bad-version", "--force-distribution",
+        "Backport to {}".format(dist)],
+        cwd=source_directory)
+    
+    # Build the package
+    command = [
+        "sbuild", "--dist={}".format(dist), "--arch={}".format(arch)
+    ]
+    command += ["--debbuildopt={}".format(x) for x in debbuildopt]
+
+    subprocess.check_call(command, cwd=source_directory)
+    
+    # Clean up
+    shutil.rmtree(source_directory)
+
+def multibuild(dsc, root_directory, dists, arches, debbuildopt):
+    source_package = None
+    with open(dsc) as fd:
+        name = re.search(r"^Source: (\w+)$", fd.read(), re.MULTILINE).group(1)
+        source_package = name
+    
+    status = {}
+    for dist, arch in itertools.product(dists, arches):
+        command = [__file__, "build", "--dist", dist, "--arch", arch]
+        command += ["--debbuildopt={}".format(x) for x in debbuildopt]
+        command.append(dsc)
+        command.append(root_directory)
+        
+        patch_file = os.path.join(
+            os.path.join(os.path.dirname(__file__), "patches",
+            source_package, "{}.patch".format(dist)))
+        if os.path.isfile(patch_file):
+            command.append(patch_file)
+        status[(dist, arch)] = subprocess.call(command)
+    
+    for dist, arch in itertools.product(dists, arches):
+        s = status[dist, arch]
+        if s == 0:
+            s = "success"
+        else:
+            s = "FAILURE"
+        print("{}/{}: {}".format(dist, arch, s))
+        
 
 def exists(dist, arch):
     does_exist = None
@@ -115,31 +205,5 @@ def exists(dist, arch):
 
     return does_exist
 
-def create(dist, arch, mirror, components):
-    directory = tempfile.mkdtemp()
-    command = [
-        "sudo", "sbuild-createchroot",
-        "--exclude=debfoster",
-        "--components={}".format(",".join(components)),
-        "--make-sbuild-tarball=/srv/chroot/{}-{}.tar.gz".format(dist, arch),
-        "--arch", arch,
-        dist, directory, mirror
-    ]
-    subprocess.check_call(command)
-
-def update(dist, arch):
-    command = ["sudo", "sbuild-update", "-udcar", "{}-{}".format(dist, arch)]
-    subprocess.check_call(command)
-
-def build(directory, dist, arch, debbuildopts):
-    command = [
-        "sbuild", "--dist={}".format(dist), "--arch={}".format(arch)
-    ]
-    command += ["--debbuildopt={}".format(x) for x in debbuildopts]
-    command += ["--extra-repository={}".format(x) for x in extra_repository]
-
-    subprocess.check_call(command, cwd=directory)
-
 if __name__ == "__main__":
     sys.exit(main())
-
