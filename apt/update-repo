@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import glob
+import os
+import re
+import subprocess
+import sys
+
+def main():
+    root = os.path.abspath(os.path.dirname(__file__))
+    
+    packages = {}
+    for filename in glob.glob(os.path.join(root, "incoming", "*deb")):
+        dist = re.search(r"~(\w+)_\w+.deb", filename).group(1)
+        packages.setdefault(dist, []).append(filename)
+    
+    for dist, debs in packages.items():
+        command = ["reprepro", "-b", ".", "includedeb", dist]+debs
+        subprocess.call(command)
+
+if __name__ == "__main__":
+    sys.exit(main())
