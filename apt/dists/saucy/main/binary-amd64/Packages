@@ -1,3 +1,22 @@
+Package: dicomifier
+Version: 0.7.0-1~saucy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 2013
+Depends: libboost-filesystem1.53.0, libboost-python1.53.0, libboost-regex1.53.0, libboost-system1.53.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), python (>= 2.7), python (<< 2.8), python:any (>= 2.7.5-5~)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier_0.7.0-1~saucy_amd64.deb
+Size: 610266
+SHA256: ff4d0a46bd2d9dbb813492d1098329e63d46254ac2356311843e875a0545155e
+SHA1: 708000bbe6ecf173f146bb611dc3e15868597a32
+MD5sum: c9720048d96f43a2d5ca84d1e6dbde53
+Description: Convert data to and from DICOM
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+
 Package: dopamine
 Version: 0.4.1-1~saucy
 Architecture: amd64

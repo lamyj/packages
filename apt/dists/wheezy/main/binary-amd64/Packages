@@ -1,22 +1,21 @@
 Package: dicomifier
-Version: 0.6.1-1~wheezy
+Version: 0.7.0-1~wheezy
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2888
-Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), libv8-3.8.9.20, zlib1g (>= 1:1.1.4)
+Installed-Size: 2459
+Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.6.1-1~wheezy_amd64.deb
-Size: 889028
-SHA256: 5cfee2f2a2a6c799572e654f303d5498c00eb4c12de0b23e855d0c1a4c17d481
-SHA1: d064f9afb0523f52d6ed16000355a375d3a9111b
-MD5sum: c136a43443dc00b08d1dbabe73b7bcab
-Description: Tools to manipulate DICOM files
- dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
- and DICOM Dataset to NIfTI files.
- .
- This package contains the applications.
+Filename: pool/main/d/dicomifier/dicomifier_0.7.0-1~wheezy_amd64.deb
+Size: 677490
+SHA256: 26735dcf58d42588310cf1663a70791d1e95cbf6d71d8c65dddc8e1c2eb7b90f
+SHA1: 141457bba05b99ccb700f5f15ec4ed909bc6dbf8
+MD5sum: 83d71a18067996f82cf44bf7a757caf0
+Description: Convert data to and from DICOM
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
 
 Package: dicomifier-doc
 Source: dicomifier
