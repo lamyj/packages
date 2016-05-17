@@ -17,26 +17,6 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
-Package: dicomifier-doc
-Source: dicomifier
-Version: 0.6.1-1~trusty
-Architecture: all
-Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 47
-Homepage: https://github.com/lamyj/dicomifier
-Priority: optional
-Section: doc
-Filename: pool/main/d/dicomifier/dicomifier-doc_0.6.1-1~trusty_all.deb
-Size: 9760
-SHA256: e42d93ec5aac14d8fdfdc0f34f38e6f2b4181afc3be0c68a21966a29d90f3900
-SHA1: 14f3f39d1c5ae15eb8a8b5bf977b6c93c7591c13
-MD5sum: 07a8abfc814a240f90adce15e00ab61f
-Description: Tools to manipulate DICOM files
- dicomifier is a set of tools to convert Bruker Dataset into DICOM Dataset
- and DICOM Dataset to NIfTI files.
- .
- This package contains the documentation files.
-
 Package: dopamine
 Version: 0.4.1-1~trusty
 Architecture: amd64
