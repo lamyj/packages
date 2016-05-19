@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.7.0-1~wheezy
+Version: 0.7.0-2~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 2463
-Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
+Depends: python-nifti, python-numpy, python-dateutil, python-odil (>= 0.6.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.7.0-1~wheezy_i386.deb
-Size: 693060
-SHA256: 8fdae56d654f20f495a341e058ea42a48809fc9d66900ab55fbcf3fa54fb3b31
-SHA1: 6f9fc6e435d9bf00b6c5dd096b21931819876dd2
-MD5sum: 776f6f0d1b3ab0a01727cae88675d3ff
+Filename: pool/main/d/dicomifier/dicomifier_0.7.0-2~wheezy_i386.deb
+Size: 693114
+SHA256: 0e1cb4fd0c7567ece0e16a5d158893e9c172502438db42598105c1cfc0c81c5b
+SHA1: ffc841ba26e07d44b16200c2945540351690830c
+MD5sum: e84e3eaefc082e1a8faff8493a58ab6b
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
