@@ -1,5 +1,5 @@
 Package: dicomifier
-Version: 0.8.0~pre1-1~saucy
+Version: 0.8.0~pre2-1~saucy
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 2025
@@ -7,11 +7,11 @@ Depends: python-nifti, python-numpy, python-dateutil, python-odil (>= 0.6.0), li
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.8.0~pre1-1~saucy_amd64.deb
-Size: 612260
-SHA256: 46b05a2bb617da69ae56a0e48fe905f02acfad225d07a723e7ccea6e9c67fb02
-SHA1: 19cab8ac79484cca794128874e7d5b68c1c0ca78
-MD5sum: c758082f611ac2115c112bcaefd72507
+Filename: pool/main/d/dicomifier/dicomifier_0.8.0~pre2-1~saucy_amd64.deb
+Size: 612338
+SHA256: 682b70da596352cd8c4f6364df4bed4bb882a33fdd89595f95ecab5e7f877ab4
+SHA1: c04e0c99dd7e69f10004873fab65f7069c7badba
+MD5sum: 2f1af45f87840a3c1ac4fb623699bb4e
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
