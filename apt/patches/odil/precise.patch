@@ -15,6 +15,14 @@ diff -u a/debian/control b/control
                 libicu-dev (>= 4.8.1.1),
                 zlib1g-dev,
                 uuid-dev,
+@@ -33,6 +33,7 @@ Architecture: any
+ Section: libs
+ Depends: ${shlibs:Depends},
+          ${misc:Depends}
++Pre-Depends: multiarch-support
+ Provides: libdcmtkpp0
+ Conflicts: libdcmtkpp0
+ Replaces: libdcmtkpp0
 diff -u a/debian/rules b/rules
 --- a/debian/rules	2016-04-22 19:28:14.275011000 +0200
 +++ b/rules	2016-04-23 15:27:36.886920968 +0200
