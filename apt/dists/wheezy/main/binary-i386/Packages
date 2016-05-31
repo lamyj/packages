@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.8.0~pre2-1~wheezy
+Version: 0.8.0-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2476
-Depends: python-nifti, python-numpy, python-dateutil, python-odil (>= 0.6.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
+Installed-Size: 2491
+Depends: libnifti2, python-numpy, python-dateutil, python-odil (>= 0.6.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.8.0~pre2-1~wheezy_i386.deb
-Size: 695036
-SHA256: 8c93d44f1669d1a3f4b4645dee3e7d3076c39385555b49e4488a5cc3bd6fcca6
-SHA1: 70cb6a6b4697a2f23242afa4be83a55f124df300
-MD5sum: 664de7cf0c235491a0d1501428d6e525
+Filename: pool/main/d/dicomifier/dicomifier_0.8.0-1~wheezy_i386.deb
+Size: 699198
+SHA256: 33af462d48a459c27fbea7bdeb608dad68d6a8c44baae1162fcf09266cc9e534
+SHA1: 545f103312fa5574986f118cac0a6e126f91cf82
+MD5sum: 2ade63db23cf2eedd6e17611cc988849
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
