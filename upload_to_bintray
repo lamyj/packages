@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+import argparse
+import logging
+import os
+import sys
+
+import requests
+ 
+def main():
+    parser = argparse.ArgumentParser("Upload the repository to bintray")
+    arguments = parser.parse_args()
+    
+    if "BINTRAY_API_KEY" not in os.environ:
+        parser.error("No such environment variable: BINTRAY_API_KEY")
+    api_key = os.environ["BINTRAY_API_KEY"]
+    
+    user = "lamyj"
+    type_ = "generic"
+    package = "packages"
+    version = "latest"
+
+    file_root = os.path.abspath(os.path.dirname(__file__))
+    url_root = "https://api.bintray.com/content/{}/{}".format(user, type_)
+    
+    path = "apt/dists/jessie/Release"
+    
+    directories = ["apt/dists", "apt/pool"]
+    for directory in directories:
+        for dirpath, dirnames, filenames in os.walk(directory):
+            for filename in filenames:
+                file_path = os.path.join(file_root, dirpath, filename)
+                url = os.path.join(url_root, dirpath, filename)
+                upload(file_path, url, user, api_key, package, version)
+
+def upload(source, destination, user, api_key, package, version):
+    headers = {
+        "X-Bintray-Package": package,
+        "X-Bintray-Version": version,
+        "X-Bintray-Publish": 1,
+        "X-Bintray-Override": 1,
+    }
+    
+    with open(source, "rb") as fd:
+        response = requests.put(
+            destination, auth=(user, api_key), headers=headers, data=fd)
+        if response.status_code != 201:
+            raise Exception(
+                "Failed to upload {}: {}, {}".format(
+                    source, response.status_code, response.text))
+
+if __name__ == "__main__":
+    sys.exit(main())
