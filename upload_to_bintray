@@ -3,6 +3,7 @@
 from __future__ import print_function
 
 import argparse
+import hashlib
 import logging
 import os
 import sys
@@ -21,26 +22,42 @@ def main():
     api_key = os.environ["BINTRAY_API_KEY"]
     
     user = "lamyj"
-    type_ = "generic"
+    repo = "generic"
     package = "packages"
     version = "latest"
 
     file_root = os.path.abspath(os.path.dirname(__file__))
-    url_root = "https://api.bintray.com/content/{}/{}".format(user, type_)
+    url_root = "https://api.bintray.com/content/{}/{}".format(user, repo)
     
     path = "apt/dists/jessie/Release"
     
     session = create_session(user, api_key, package, version)
     
-    directories = ["apt/dists", "apt/pool"]
-    for directory in directories:
-        for dirpath, dirnames, filenames in os.walk(directory):
-            for filename in filenames:
-                logging.info(
-                    "Uploading {}".format(os.path.join(dirpath, filename)))
-                file_path = os.path.join(file_root, dirpath, filename)
-                url = os.path.join(url_root, dirpath, filename)
-                upload(file_path, url, session)
+    logging.info("Getting remote files")
+    remote_files = get_remote_files(user, repo, package, session)
+    logging.info(
+        "{} remote file{}".format(
+            len(remote_files), "s" if len(remote_files)>1 else ""))
+    
+    logging.info("Getting local files")
+    local_files = get_local_files(["gpg.key", "apt/dists", "apt/pool"])
+    logging.info(
+        "{} local file{}".format(
+            len(local_files), "s" if len(local_files)>1 else ""))
+    
+    synchronize(local_files, remote_files, file_root, url_root, session)
+    
+    # directories = ["apt/dists", "apt/pool"]
+    # for directory in directories:
+    #     for dirpath, dirnames, filenames in os.walk(directory):
+    #         for filename in filenames:
+    #             logging.info(
+    #                 "Uploading {}".format(os.path.join(dirpath, filename)))
+    #             file_path = os.path.join(file_root, dirpath, filename)
+    #             url = os.path.join(url_root, dirpath, filename)
+    #             upload(file_path, url, session)
+    
+    # remove_old(file_root, url_root, session)
 
 def create_session(user, api_key, package, version):
     """Create an HTTP session."""
@@ -55,6 +72,58 @@ def create_session(user, api_key, package, version):
     })
     
     return session
+
+def get_remote_files(user, repo, package, session):
+    """Return a dictionary (path -> sha256) of all files on the remote side."""
+    
+    response = session.get(
+        "https://api.bintray.com/packages/{}/{}/{}/files".format(
+            user, repo, package))
+    if response.status_code != 200:
+        raise Exception(
+            "Failed to get remote files: {}, {}".format(
+                response.status_code, response.text))
+    files = response.json()
+    return {x["path"]: x for x in files}
+
+def get_local_files(sources):
+    """Return a dictionary (path -> sha256) of all file on the local side."""
+    
+    files = []
+    for source in sources:
+        if os.path.isfile(source):
+            files.append(source)
+        elif os.path.isdir(source):
+            for dirpath, dirnames, filenames in os.walk(source):
+                for filename in filenames:
+                    path = os.path.join(dirpath, filename)
+                    files.append(path)
+    
+    files = {
+        x: {"sha256": hashlib.sha256(open(x, "rb").read()).hexdigest() }
+        for x in files
+    }
+    
+    return files
+
+def synchronize(local_files, remote_files, file_root, url_root, session):
+    """Synchronize the remote side based on the local side."""
+    
+    # Upload new and modified files
+    for path, local_file in local_files.items():
+        remote_file = remote_files.get(path)
+        if remote_file is None or local_file["sha256"] != remote_file["sha256"]:
+            logging.info("Uploading {}".format(path))
+            upload(
+                os.path.join(file_root, path), os.path.join(url_root, path), 
+                session)
+    
+    # Delete remote files which do not exist locally
+    for path, file_ in remote_files.items():
+        if path not in local_files:
+            # FIXME: it seems that bintray does not allow file deletion, only version
+            # logging.info("Remote-deleting {}".format(path))
+            pass
 
 def upload(source, destination, session):
     """Upload a file."""
