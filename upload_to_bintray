@@ -11,7 +11,10 @@ import requests
  
 def main():
     parser = argparse.ArgumentParser("Upload the repository to bintray")
+    parser.add_argument("--verbosity", "-v", default="warning")
     arguments = parser.parse_args()
+    
+    logging.getLogger().setLevel(arguments.verbosity.upper())
     
     if "BINTRAY_API_KEY" not in os.environ:
         parser.error("No such environment variable: BINTRAY_API_KEY")
@@ -27,25 +30,37 @@ def main():
     
     path = "apt/dists/jessie/Release"
     
+    session = create_session(user, api_key, package, version)
+    
     directories = ["apt/dists", "apt/pool"]
     for directory in directories:
         for dirpath, dirnames, filenames in os.walk(directory):
             for filename in filenames:
+                logging.info(
+                    "Uploading {}".format(os.path.join(dirpath, filename)))
                 file_path = os.path.join(file_root, dirpath, filename)
                 url = os.path.join(url_root, dirpath, filename)
-                upload(file_path, url, user, api_key, package, version)
+                upload(file_path, url, session)
 
-def upload(source, destination, user, api_key, package, version):
-    headers = {
+def create_session(user, api_key, package, version):
+    """Create an HTTP session."""
+    
+    session = requests.Session()
+    session.auth = (user, api_key)
+    session.headers.update({
         "X-Bintray-Package": package,
         "X-Bintray-Version": version,
         "X-Bintray-Publish": 1,
         "X-Bintray-Override": 1,
-    }
+    })
+    
+    return session
+
+def upload(source, destination, session):
+    """Upload a file."""
     
     with open(source, "rb") as fd:
-        response = requests.put(
-            destination, auth=(user, api_key), headers=headers, data=fd)
+        response = session.put(destination, data=fd)
         if response.status_code != 201:
             raise Exception(
                 "Failed to upload {}: {}, {}".format(
