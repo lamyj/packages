@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.9.0-1~wheezy
+Version: 0.10.0-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2496
-Depends: libnifti2, python-numpy, python-dateutil, python-odil (>= 0.7.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
+Installed-Size: 2488
+Depends: libnifti2, python-dateutil, python-numpy, python-odil (>= 0.7.1), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.9.0-1~wheezy_i386.deb
-Size: 699142
-SHA256: 0e1fae2d1d4ccaf8ff5e68d431b5da1ce1be3ea2e9ae54724f5b01357bf1de4e
-SHA1: 859de4abbe6a917a967ae63af20034f5d850504a
-MD5sum: befeab2a92d509f43708446ba3ed0c65
+Filename: pool/main/d/dicomifier/dicomifier_0.10.0-1~wheezy_i386.deb
+Size: 691620
+SHA256: 367b89b73dad36c7f372b01d0745c59db2fae387049ea5bd4856737c8568206c
+SHA1: 2549b7c9e162dd4764c00a180cff4e96fe1966ff
+MD5sum: 041a727d742152126d7130f073b91e4a
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
