@@ -1,0 +1,11 @@
+diff --git a/debian/rules b/debian/rules
+index 8fe44b8..0773fa8 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,7 +1,5 @@
+ #!/usr/bin/make -f
+ 
+-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+-
+ %:
+	dh $@ --builddirectory=build --parallel --with python2
