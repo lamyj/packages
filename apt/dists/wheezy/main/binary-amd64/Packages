@@ -17,6 +17,23 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
+Package: dopamine
+Version: 0.5.0-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 3493
+Depends: libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libboost-thread1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0, libldap-2.4-2 (>= 2.4.7), liblog4cpp5, libodil0, libsasl2-2 (>= 2.1.24), libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.6), adduser
+Homepage: https://github.com/lamyj/dopamine
+Priority: optional
+Section: science
+Filename: pool/main/d/dopamine/dopamine_0.5.0-1~wheezy_amd64.deb
+Size: 1258708
+SHA256: 16f7e0d61eb25058a804ad35fe9da2bb0ecaa5addcfab734d102997ace9df631
+SHA1: 2ee7f2c7984069071cfca1773f2bde584ec30664
+MD5sum: e6d30aeba1ab0decc393741df848120b
+Description: PACS (DICOM server)
+ Dopamine is a PACS (DICOM server) backed by MongoDB.
+
 Package: libodil0
 Source: odil
 Version: 0.7.2-1~wheezy

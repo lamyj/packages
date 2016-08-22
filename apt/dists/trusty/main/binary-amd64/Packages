@@ -18,42 +18,21 @@ Description: Convert data to and from DICOM
  conversion.
 
 Package: dopamine
-Version: 0.4.1-1~trusty
+Version: 0.5.0-1~trusty
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2023
-Depends: libboost-filesystem1.54.0, libboost-random1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libboost-thread1.54.0, libc6 (>= 2.14), libcgicc5, libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libicu52 (>= 52~m1-1~), libldap-2.4-2 (>= 2.4.7), liblog4cpp5, libmimetic0, libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.6), adduser
+Installed-Size: 3356
+Depends: libboost-filesystem1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libboost-thread1.54.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libldap-2.4-2 (>= 2.4.7), liblog4cpp5, libodil0, libsasl2-2 (>= 2.1.24), libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.8), adduser
 Homepage: https://github.com/lamyj/dopamine
 Priority: optional
 Section: science
-Filename: pool/main/d/dopamine/dopamine_0.4.1-1~trusty_amd64.deb
-Size: 592804
-SHA256: 219ae9e074f153b4680dcbf5d5c6076e2b43dd43ef84e497cbcdf8706e598069
-SHA1: 14db8fc248018a1516b4f74ea41b3f34f46b6716
-MD5sum: 38f672195ba05d5b71fc5a663d837176
-Description: Document-oriented PACS
- Dopamine is a document-oriented PACS, i.e. DICOM server.
- .
- This package contains the application.
-
-Package: dopamine-doc
-Source: dopamine
-Version: 0.4.1-1~trusty
-Architecture: all
-Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 46
-Homepage: https://github.com/lamyj/dopamine
-Priority: optional
-Section: science
-Filename: pool/main/d/dopamine/dopamine-doc_0.4.1-1~trusty_all.deb
-Size: 9636
-SHA256: a668b62717c94a3e4851d10afb94dde32a52a885ed7bc394725b7795ba28d025
-SHA1: eeabde861bf244a47f111f55f38ba10a8b2f3008
-MD5sum: 4490cf3e7eb18c1d7c5854a5633e3d05
-Description: Document-oriented PACS
- Dopamine is a document-oriented PACS, i.e. DICOM server.
- .
- This package contains the documentation.
+Filename: pool/main/d/dopamine/dopamine_0.5.0-1~trusty_amd64.deb
+Size: 766590
+SHA256: c152097297b93686b299c681329b856f6b7f23f15305d3a72f46d681e5125d6d
+SHA1: 704f71a3650d2f42cdf1c21d73118fb3631d967f
+MD5sum: 7cba84f6fcae17c63d187363eb2f0efb
+Description: PACS (DICOM server)
+ Dopamine is a PACS (DICOM server) backed by MongoDB.
 
 Package: libodil0
 Source: odil

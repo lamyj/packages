@@ -17,44 +17,6 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
-Package: dopamine
-Version: 0.4.1-1~jessie
-Architecture: i386
-Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2233
-Depends: libboost-filesystem1.55.0, libboost-random1.55.0, libboost-regex1.55.0, libboost-system1.55.0, libboost-thread1.55.0, libc6 (>= 2.4), libcgicc5, libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libicu52 (>= 52~m1-1~), libldap-2.4-2 (>= 2.4.7), liblog4cpp5, libmimetic0, libssl1.0.0 (>= 1.0.0), libstdc++6 (>= 4.9), libwrap0 (>= 7.6-4~), zlib1g (>= 1:1.1.4), adduser
-Homepage: https://github.com/lamyj/dopamine
-Priority: optional
-Section: science
-Filename: pool/main/d/dopamine/dopamine_0.4.1-1~jessie_i386.deb
-Size: 680580
-SHA256: 37fc31735c05620e6c18e310a82482bbb1869abc070337f97bf071e0795b6b10
-SHA1: d504f45e69af5d4e244edadd2b05f6ff57847cbe
-MD5sum: d9c68846aed2fae8f0ebd70b4219f4df
-Description: Document-oriented PACS
- Dopamine is a document-oriented PACS, i.e. DICOM server.
- .
- This package contains the application.
-
-Package: dopamine-doc
-Source: dopamine
-Version: 0.4.1-1~jessie
-Architecture: all
-Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 46
-Homepage: https://github.com/lamyj/dopamine
-Priority: optional
-Section: science
-Filename: pool/main/d/dopamine/dopamine-doc_0.4.1-1~jessie_all.deb
-Size: 9688
-SHA256: cb4a25d77b7d45bec164a03df8da4808337466317b5f1f14c0629a6a18885399
-SHA1: 95b33130375000749081d373547d658c93f30d7d
-MD5sum: f754e92e83069529e890d67093393f4d
-Description: Document-oriented PACS
- Dopamine is a document-oriented PACS, i.e. DICOM server.
- .
- This package contains the documentation.
-
 Package: libodil0
 Source: odil
 Version: 0.7.2-1~jessie
