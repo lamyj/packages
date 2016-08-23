@@ -1,5 +1,5 @@
 Package: dicomifier
-Version: 0.10.0-1~jessie
+Version: 0.10.1-1~jessie
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 2295
@@ -7,11 +7,11 @@ Depends: libnifti2, python-dateutil, python-numpy, python-odil (>= 0.7.1), libbo
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.10.0-1~jessie_i386.deb
-Size: 477740
-SHA256: c596748008a561012aff9b59325913833db0149631b2cbd3133ae72697340366
-SHA1: 7fa30f79e052adef4cc8faa6c1229dbfee96682f
-MD5sum: 81f1e95e22b09a97ac671393d1bb92aa
+Filename: pool/main/d/dicomifier/dicomifier_0.10.1-1~jessie_i386.deb
+Size: 476132
+SHA256: 349ff8ba8e5abb9ee776acf6912a601f4a357fb1524acd319694c9bf02dbb0ec
+SHA1: 59608fb9855e10827eb1884fa1485dfffe219f7a
+MD5sum: 55ddbc7c113449d2a1458882c7ec17d0
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon

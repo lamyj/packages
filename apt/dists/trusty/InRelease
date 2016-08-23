@@ -2,35 +2,35 @@
 Hash: SHA1
 
 Codename: trusty
-Date: Mon, 22 Aug 2016 15:04:07 UTC
+Date: Tue, 23 Aug 2016 10:50:20 UTC
 Architectures: i386 amd64
 Components: main
 MD5Sum:
- c033a804c149912ec78354b6abc24bff 6762 main/binary-i386/Packages
- 9d9639a36a082321477e92b997e1cf97 1878 main/binary-i386/Packages.gz
+ 36e428ca825a936c9d7543aeed9a8c15 6762 main/binary-i386/Packages
+ 9e2f16320e01805862b2eb4dc7d8b25c 1876 main/binary-i386/Packages.gz
  5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
- 1af21069e556d981e7fe8bb6eced7947 7575 main/binary-amd64/Packages
- e1a14341797a35ed4fd4884f3c00187a 2113 main/binary-amd64/Packages.gz
+ 4f66834734b7bd3b2420a9d5ef2eca2d 7575 main/binary-amd64/Packages
+ 26bc869da76f93563dcce2c9227abb55 2110 main/binary-amd64/Packages.gz
  063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  92f9b0ec8b2656847b612632542f1735 37 main/source/Release
 SHA1:
- 97665113705f2cafa9b9a8e88799b49cc64b933a 6762 main/binary-i386/Packages
- 93a1045268dcdffcf62396fdd03dd2f90eaeea0b 1878 main/binary-i386/Packages.gz
+ 0b107a4721693f935fce031f4c22cdaee4bd9602 6762 main/binary-i386/Packages
+ adda1ad42a0d442133d9e1f2994fdb42cc223f32 1876 main/binary-i386/Packages.gz
  ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
- eebfc6df5a4b40b9a2564f27a82306d088841157 7575 main/binary-amd64/Packages
- 101e30ec0293879920cf32cf608801d5c997da40 2113 main/binary-amd64/Packages.gz
+ 89fc7edefe0b221acd426e281c09c1ceeb238d2c 7575 main/binary-amd64/Packages
+ 95551470c72171ef9c0e0f1669fcd213ce58f58d 2110 main/binary-amd64/Packages.gz
  f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
 SHA256:
- f2f7f37235e494dc780f96cc847c7bcd007136b7644f74c1b9b8f7e18e7bd4ca 6762 main/binary-i386/Packages
- 2ea1b3d307102905c32ba4a3a63fd4f9ca3987521c2ad5a728d23da927731e1d 1878 main/binary-i386/Packages.gz
+ 83c20925f3341d9340933133b8510f1370031bf40e42bcb5629859047ade6510 6762 main/binary-i386/Packages
+ a3c8ccd31d51e1d20c8b60416d6f5fa7dbdffed02765614988d8a09e1fcafa6b 1876 main/binary-i386/Packages.gz
  2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
- 5925d82ae090d8679716cc5d8e0c4e739f512b94a218c4690ceec984fb7c8057 7575 main/binary-amd64/Packages
- 50e29f909dab7e17a7caf8386b4afa3099641e5fa1a0e5767dfc9198dab9e026 2113 main/binary-amd64/Packages.gz
+ a05e407510327428f427bd064c1e42ca4c3a9e8351dc181e8f3c9f8ee8dce8bd 7575 main/binary-amd64/Packages
+ ebcaeac771d9bdf9b2a25f9110932db615837a256b24e56c1d995c081bc75fc9 2110 main/binary-amd64/Packages.gz
  f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
@@ -38,17 +38,17 @@ SHA256:
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2.0.22 (GNU/Linux)
 
-iQIcBAEBAgAGBQJXuxRnAAoJEDs2Xek+vRzUIpYP/1eMrUBd5IFC5KJwI0mfmVQy
-9FW/vbZbemTinlftqNzbPFX8GLDZ2jMvxsYZJUoO2fPmlvMfkdY9KL6Gp8d3xBiz
-yQImgd1LW3pD78zK+zYuZvskVs3GFih0PzySuljKgvqkco/X84g86kNnyX8OauQL
-vbp3hB56yXkYlHoSYzWrAIaFo8Yq7v057xh6XVdnM+sTKnuweIFKWWkSDHdKKuH0
-A2lWCR/u7ngMyqQ+uvw7lkGhVtpqGfwOlRNrMT33TQdIZS4rg2qBHBj22EXUMQ4t
-M+3afC7jlzyLVgpbMvcm3pgtl0ywkBs63HWZEFyRVfQxzt0+ot84Co8CNjKekbrq
-OiH+J9qA9A7k3TyRW+aopUYctqeFccvBBPx9MHC6si3n42RvlzajoMCrMg5TMzYC
-MJEcUtqIyh4zyYgWhvI/iI91kE9dyGuZOm3xyaL/uCOCuJSOfvYPvIMavO0z80bg
-mZhhOd9lu+g/bS51SaAmq/L3xgoXfKoL3N2vuVw3kwqbo/ntotWdhCsa41bxL2s9
-qr0jIqfz2tgz4Sh2HJ1Azba6wIfWIZy3SzeD1UsxE4NN1F5eiNBIgZ+IY5D++mWh
-mh8sluDW2d1RZRNW7G5kO+Ht33nVzusUgRMah1Xy043UiG/pcuhm/vdY6Y+kFH9H
-sm9116Cx8fgmJHCaU+BI
-=s+9S
+iQIcBAEBAgAGBQJXvCptAAoJEDs2Xek+vRzUU40P/jz2jGDCj82aVJH8YnN7nJLS
+WeJk08nyBEv2f7AvghsvA/h6pmjGZWVuHLxRToXBBeNrbKeyGyaPZdH8THskqAv1
+Xxl+Jm2lei6R4DhVHd7TyQ7WvoDmpYlxTIGLU9FgmCpWfvU3wkwNE3fa39s4/OAb
+d2sCzXEoyn8V+y0qc7UPcK1AKNjF6uwXMWbJo87g+v+J/z287N7kKACsS4TBrKMQ
+OeV4uTEyqDMHLMxys11g0kOQGPqARjqTT2bjzfUETUXo7q+kl7B2p+gYCiTVmpWM
+wOm5LrgFMFrGaif+i9SHBr22560MecZ7FARj6k5QcGixxOWXqRscAh4yfCa+g/qz
+GErWAgygQgi6S4tYmQIxcEkV3lvucwRc4aY5gZ8IBYNPXzWmMbGnkpTItBOlnzF8
+uR4feoeyRXEab3oY7mf8vp83dUauOZyN48ZdyUAciRJBYdUOJ8TYBs27GzDxlue3
+80u9CWtgK9qdjS09r2loFDToJL+u3vHO4rANLnjr9AqBmPOx855KP1JEQSSYr1Cl
+Ah6Kuhl6depJnQFWR5RO6buj3FhR9iOEU1NGoZicEWJyIFS+XQmhmIUSGMaZxNAT
+8dCsr0eD8gL0jsvoNFK9r9DaWI94iNW+IBbUwWNZqat9sGDwBGMxL6e+mz+OLqQg
+e0f/XUCRqjVnim6/7r1B
+=GOuQ
 -----END PGP SIGNATURE-----
