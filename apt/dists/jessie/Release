@@ -1,33 +1,33 @@
 Codename: jessie
-Date: Tue, 23 Aug 2016 10:50:22 UTC
+Date: Thu, 25 Aug 2016 17:10:49 UTC
 Architectures: i386 amd64
 Components: main
 MD5Sum:
- 9f93bb163b3b80b965843b135c72bc21 6959 main/binary-i386/Packages
- 6eed736567376f87cdeaf133ee848d67 1917 main/binary-i386/Packages.gz
+ a6bced8fcdba2bf11646a6bfcc31e65d 6959 main/binary-i386/Packages
+ 3f3ac36978710a696ce81d4b9abb2090 1913 main/binary-i386/Packages.gz
  5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
- c038fda5b5835dee3a448242dc47256f 7772 main/binary-amd64/Packages
- e05b974f860bcc37b41b168cef61714b 2140 main/binary-amd64/Packages.gz
+ 132b87b831c1c1f08360726292d5b8f9 7772 main/binary-amd64/Packages
+ df42218c0223e94b171109ebce8bd00f 2137 main/binary-amd64/Packages.gz
  063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  92f9b0ec8b2656847b612632542f1735 37 main/source/Release
 SHA1:
- 89ce1f9ec90542a5237e2a64765e6cf76d3a0597 6959 main/binary-i386/Packages
- 50196a2fabb82c8fe36afbe90533145275315611 1917 main/binary-i386/Packages.gz
+ 6e2c5bb5fe23a5768b5c23f58115f2a06fadd75e 6959 main/binary-i386/Packages
+ f0d725ae4f5fcb0cd7005c9cc23a61b254821062 1913 main/binary-i386/Packages.gz
  ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
- 81a5b15787ba59e85bad4a3baf70deb1549e82c8 7772 main/binary-amd64/Packages
- 9995833be5b83e246f09e4e36d71564449f42bd9 2140 main/binary-amd64/Packages.gz
+ 52f6d021f7c8dce308f245210cf78cb146a1d0af 7772 main/binary-amd64/Packages
+ 1509b0385d2da0dec8d2e30547d16fd0777ef7c3 2137 main/binary-amd64/Packages.gz
  f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
 SHA256:
- a665b4e44e646451d91bb40b193257aa6ac099dc64b8b07325dcec42f7392af9 6959 main/binary-i386/Packages
- 6db8f12d2fe580c6478272349af2780f4f5f19e79547e6b719b39fa56fceab1c 1917 main/binary-i386/Packages.gz
+ c5def3dbab3f87dd0f5eab0b9d8f14fd167bfe4741366ae07df7d770eb2a2b93 6959 main/binary-i386/Packages
+ 6c38f0ac1f2de027a22015d976c8ea3ade6c1a15a9cacd1af829641fe8846fa1 1913 main/binary-i386/Packages.gz
  2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
- c88892d492691fc722b1011c49d4622cb6a2ea3dfa300b34487ad7e914996f71 7772 main/binary-amd64/Packages
- f2264c62f3f543e506b94f0fbf1e938473944c0061f74404f054cb143a2437fd 2140 main/binary-amd64/Packages.gz
+ e965e488fe2ca56aa56cf50734f7ac5e7bc8359e766852cf816931af5c8a5a01 7772 main/binary-amd64/Packages
+ 130ab4b1367ae59e6d28581c5323133beb9d4de353f99f0b599d29543d0dfd34 2137 main/binary-amd64/Packages.gz
  f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz

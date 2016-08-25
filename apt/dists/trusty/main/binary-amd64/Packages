@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.10.1-1~trusty
+Version: 0.10.2-1~trusty
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2236
-Depends: libnifti2, python-dateutil, python-numpy, python-odil (>= 0.7.1), libboost-filesystem1.54.0, libboost-python1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), python (>= 2.7~), python (<< 2.8), python:any (>= 2.7.5-5~)
+Installed-Size: 2237
+Depends: libnifti2, python-dateutil, python-numpy, python-odil (>= 0.7.1), libboost-filesystem1.54.0, libboost-python1.54.0, libboost-regex1.54.0, libboost-system1.54.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), python (<< 2.8), python:any (>= 2.7.5-5~), python (>= 2.7~)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.10.1-1~trusty_amd64.deb
-Size: 443632
-SHA256: a387adad59ab16e009e2184646077d3d924fa4c44085ce04d47fb5362db79534
-SHA1: eaa662d29ffcc7951dbf8b8379513e1cc5cd8fd5
-MD5sum: 52f74ca239af80fc9b828a355299f6cc
+Filename: pool/main/d/dicomifier/dicomifier_0.10.2-1~trusty_amd64.deb
+Size: 446818
+SHA256: bb09a99cd7039b75562dce751acd3b673c169efb58f84b30e229844b4dc4c49a
+SHA1: 6364346a8109a0e4901398eec368c9fbfc0133a6
+MD5sum: 12e343fff90eacbe53d196895d175837
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
