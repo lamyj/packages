@@ -1,17 +1,17 @@
 Package: dicomifier
-Version: 0.10.2-1~wheezy
+Version: 0.10.3-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2493
-Depends: libnifti2, python-dateutil, python-numpy, python-odil (>= 0.7.1), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python (>= 2.7), python (<< 2.8)
+Installed-Size: 2561
+Depends: python-dateutil, python-numpy (>= 1:1.6.1), python-odil (>= 0.7.3), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (>= 2.7), python (<< 2.8)
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.10.2-1~wheezy_i386.deb
-Size: 692316
-SHA256: f8421e8e7d7bcbdffec1562d167ff5b03deea8f2a530751d5c2a0870c3539545
-SHA1: 4f0e54d460d5a79269f132051fac1d91ccf15575
-MD5sum: 8a2c2f67a2c8c3957ed819bc1eda856d
+Filename: pool/main/d/dicomifier/dicomifier_0.10.3-1~wheezy_i386.deb
+Size: 718810
+SHA256: aad44d90ff7509041befd29eaa34c1904b508a6ceaeebe2182c93db68b71bec1
+SHA1: d237d48b1443dedd2c74a108b9cca64aadda71b7
+MD5sum: 10188716f7804206d7fb4acdc1e2af48
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
