@@ -1,0 +1,56 @@
+#!/bin/bash
+
+set -e 
+set -u
+
+PROJECT=${1:?Missing project name}
+export DEBEMAIL=${2:?Missing contact}
+
+APT_GET="apt-get -qq -y"
+PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
+BINTRAY=http://dl.bintray.com/lamyj/generic
+
+sudo rm -f /etc/apt/apt.conf.d/docker-clean
+sudo -E ${APT_GET} update
+sudo -E ${APT_GET} install lsb-release
+
+DISTRIB=$(lsb_release -cs)
+
+PACKAGES="devscripts dpkg-dev equivs"
+# Needed for uscan on https
+if [ "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
+  PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
+fi
+
+wget -O - ${BINTRAY}/gpg.key | sudo apt-key add -
+echo "deb ${BINTRAY}/apt ${DISTRIB} main" | sudo tee -a /etc/apt/sources.list
+sudo -E ${APT_GET} update
+sudo -E ${APT_GET} install ${PACKAGES}
+
+# Patch if needed
+patch_url=${PATCHES}/${PROJECT}/${DISTRIB}.patch
+wget ${patch_url} && patch -p1 < ${DISTRIB}.patch || true
+[ -f ${DISTRIB}.patch ] && rm ${DISTRIB}.patch
+
+# Install build dependencies
+sudo mk-build-deps --tool "apt-get -y --no-install-recommends" --install
+rm -f ${PROJECT}-build*.deb
+
+# Fetch upstream archive
+uscan --force-download
+
+# Update changelog
+version=$(dpkg-parsechangelog | awk '$1 ~ /Version:/ { print $2 }')
+dch \
+  -v ${version}~${DISTRIB} --distribution ${DISTRIB} \
+  --force-bad-version --force-distribution \
+  "Backport to ${DISTRIB}"
+
+dpkg-buildpackage -us -uc
+
+# Run lintian, but do not record failures
+sudo ${APT_GET} --no-install-recommends install lintian
+lintian -I ../*changes || true
+
+mkdir packages
+cp ../*deb packages
