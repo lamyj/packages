@@ -16,7 +16,7 @@ def main():
     
     for dist, debs in packages.items():
         command = ["reprepro", "-b", ".", "includedeb", dist]+debs
-        subprocess.call(command)
+        subprocess.call(command, cwd=root)
 
 if __name__ == "__main__":
     sys.exit(main())
