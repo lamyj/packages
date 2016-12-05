@@ -14,10 +14,9 @@ diff --git a/debian/rules b/debian/rules
 index ffa8b18..f3ab514 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -1,7 +1,6 @@
+@@ -1,6 +1,5 @@
  #!/usr/bin/make -f
  
- export DEB_CXXFLAGS_MAINT_APPEND  = -std=c++0x
 -export DEB_BUILD_MAINT_OPTIONS = hardening=+all
  
  %:
