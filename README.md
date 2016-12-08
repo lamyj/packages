@@ -2,6 +2,7 @@
 
 ## APT repository
 
+The following commands must be run by root, either directly or using `sudo`.
 * Add required packages
   * For Ubuntu 16.04 (xenial), Ubuntu 14.04 (trusty) and Debian 8 (jessie): 
   
