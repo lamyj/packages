@@ -1,33 +1,33 @@
 Codename: precise
-Date: Fri, 06 Jan 2017 16:12:52 UTC
+Date: Fri, 06 Jan 2017 16:17:27 UTC
 Architectures: i386 amd64
 Components: main
 MD5Sum:
- 1ac1b6e8ff94a47b711a3c77ae6f0fec 7018 main/binary-i386/Packages
- 7f18d5593a077564570f935dea4c36a9 1944 main/binary-i386/Packages.gz
+ c78f6d8e2f45b2c9282817ea587ddf06 7018 main/binary-i386/Packages
+ 225dd056535c919bd3f1c646bc84cbfd 1943 main/binary-i386/Packages.gz
  5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
- fb00c76721e1647028b9df25640e3a8c 7029 main/binary-amd64/Packages
- c1d5d999fb805b79df96f148bc8684ec 1938 main/binary-amd64/Packages.gz
+ 05f9b029a2eefd4c8c294df85430df5d 7029 main/binary-amd64/Packages
+ a6c0150bb48a3de03228a9e0c6e4ed50 1936 main/binary-amd64/Packages.gz
  063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  92f9b0ec8b2656847b612632542f1735 37 main/source/Release
 SHA1:
- 28399d4bf7ff4ed96b38c5fba507e31f8ea9b3c1 7018 main/binary-i386/Packages
- 726b9e35ff77440655666dff48a019e3bc4b8ca4 1944 main/binary-i386/Packages.gz
+ 07a1f2bb9c9b451c9ee863cfd09828d34fa36acf 7018 main/binary-i386/Packages
+ c3ec79cc6a9ea02eb50c6f1b5302512e0d989702 1943 main/binary-i386/Packages.gz
  ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
- f161ce857dcc79be636f54941bf7f37c58226185 7029 main/binary-amd64/Packages
- a6f83a4184ec33ec523256dca76f3b339e5a0c81 1938 main/binary-amd64/Packages.gz
+ 37abe8918654c247debb8d52d0fe789855edd2fe 7029 main/binary-amd64/Packages
+ 14c55050266843d7a6916c8400f2f1a610163faa 1936 main/binary-amd64/Packages.gz
  f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
 SHA256:
- 69c63bdde95163904817b65f6b7622f564744c095004e61d4c380e11ac8b574b 7018 main/binary-i386/Packages
- 454bb6d04ab4107dfa6f81d4aa58c6357ba16cdb738869cf72c5376fe441c7fb 1944 main/binary-i386/Packages.gz
+ 66a807e9d88cb7b5337dfe8f0a6b7e6034de7ac05d33d4018edaae56aff860ce 7018 main/binary-i386/Packages
+ 7b1e6137e34832611b7291979560b967837abecbb2fd5f33c4617ebf4e548308 1943 main/binary-i386/Packages.gz
  2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
- fac51396de05f2736a6dfb528db52f1c7d9700df20ae323f235aa934b7739d65 7029 main/binary-amd64/Packages
- dee136773a554205b6e92353cf2bc8cc6c45934d6e936c776de2f22cacb6181f 1938 main/binary-amd64/Packages.gz
+ ce5672e27ca49657a64750cd0b2c1266476f2aa22c6779217d3ea12ecb8568f0 7029 main/binary-amd64/Packages
+ 91cc26d8d83230a1cabddcca5e3d6bdc2532b3c0e662dfdb7a46bdc969b4638a 1936 main/binary-amd64/Packages.gz
  f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz

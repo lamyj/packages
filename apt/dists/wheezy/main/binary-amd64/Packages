@@ -8,10 +8,10 @@ Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
 Filename: pool/main/d/dicomifier/dicomifier_0.10.6-1~wheezy_amd64.deb
-Size: 706604
-SHA256: 9cb1e5e8c71061a8c5ede287594bbc9066142b8fb6788d96abcfed9baa0f111b
-SHA1: b51ee45da8e1bb8853b65d148e4f34cd8f48357a
-MD5sum: d8dacb3e224af09612a0482c87311a25
+Size: 707884
+SHA256: 0715a6c6301debba7757df41987c2b7b5b25d883c40d4d4877cb57ec2afb76bc
+SHA1: bc41dc4f8dd36e87a430c7ed51e1c49085eda354
+MD5sum: b27c758657a91ae8de00072cd6f5ee98
 Description: Convert data to and from DICOM
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
