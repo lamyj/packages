@@ -1,0 +1,11 @@
+diff -u a/debian/clang-X.Y.install.in b/clang-X.Y.install.in
+--- a/debian/clang-X.Y.install.in   2017-01-18 13:53:11.934221399 +0000
++++ b/debian/clang-X.Y.install.in   2017-01-18 13:53:18.446248695 +0000
+@@ -23,7 +23,7 @@
+ tools/clang/tools/scan-build-@LLVM_VERSION@      usr/share/clang/
+ tools/clang/tools/scan-view-@LLVM_VERSION@       usr/share/clang/
+ #usr/share/man/man1/clang.1     usr/share/man/man1/
+-usr/lib/llvm-@LLVM_VERSION@/share/clang/cmake/
++#usr/lib/llvm-@LLVM_VERSION@/share/clang/cmake/
+ # todo: check if it is not be moved
+ #usr/lib/llvm-@LLVM_VERSION@/lib/cmake/clang/*.cmake usr/share/llvm-@LLVM_VERSION@/cmake/
