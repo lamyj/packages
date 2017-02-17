@@ -1,0 +1,15 @@
+diff --git a/debian/rules b/debian/rules
+index 5d4ed24..3c58dcd 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -65,7 +65,9 @@ CMAKE_FLAGS = \
+         -DITK_WRAP_complex_double:BOOL=ON \
+         -DITK_WRAPPING:BOOL=ON \
+         -DITK_WRAP_PYTHON:BOOL=ON \
+-       -DPython_ADDITIONAL_VERSIONS=2.7 
++       -DPython_ADDITIONAL_VERSIONS=2.7 \
++       -DSWIG_EXECUTABLE=/usr/bin/swig3.0
++
+ 
+ 
+ pkg_lib = libinsighttoolkit$(SOVERSION)

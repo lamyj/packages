@@ -1,3 +1,52 @@
+Package: clang-3.8-doc
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 3516
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/clang-3.8-doc_3.8.1-12ubuntu1~xenial_all.deb
+Size: 575562
+SHA256: f57c953b10e95044663325cd7c0e4721403a402d0febf9313838611fa94eb571
+SHA1: df40fb0e6d2fe52a0fb87d27047b66a4cf327720
+MD5sum: 313348013a9ed4908b9141ad54e660cb
+Description: C, C++ and Objective-C compiler (LLVM based) - Documentation
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the documentation.
+
+Package: dcmtk-doc
+Source: dcmtk
+Version: 3.6.1~20160216-2~xenial
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 132706
+Suggests: dcmtk, libdcmtk-dev
+Homepage: http://dicom.offis.de/dcmtk
+Priority: optional
+Section: doc
+Filename: pool/main/d/dcmtk/dcmtk-doc_3.6.1~20160216-2~xenial_all.deb
+Size: 7691376
+SHA256: 6d004818f85a20b549d6c1238c67c61fee04baafaf94d3ebef46c7ac184c1bc3
+SHA1: 256839c52762bc8ccf5de2b1df341a3c878c919f
+MD5sum: 67f340168e1d268309f287a76d4c804e
+Description: OFFIS DICOM toolkit documentation
+ DCMTK includes a collection of libraries and applications for examining,
+ constructing and converting DICOM image files, handling offline media,
+ sending and receiving images over a network connection, as well as
+ demonstrative image storage and worklist servers.
+ .
+ This package contains the on-line documentation for the DCMTK libraries
+ and utilities in HTML format.
+
 Package: dicomifier
 Version: 0.10.6-1~xenial
 Architecture: i386
@@ -102,6 +151,85 @@ Description: C++11 library for the DICOM standard (documentation)
  and servers for the various DICOM protocols.
  .
  This package contains the documentation files.
+
+Package: lldb-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 40
+Depends: liblldb-3.8-dev
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: oldlibs
+Filename: pool/main/l/llvm-toolchain-3.8/lldb-3.8-dev_3.8.1-12ubuntu1~xenial_all.deb
+Size: 20984
+SHA256: 8bfe94f1735b77c940124b805c96c3beafdc5221a6f8e04bfa95e9d132e0c3c5
+SHA1: e73935e03464ac9f010b7932ec0454f7aec24776
+MD5sum: 5fd78759254e46a0cb64f0cfc0a3075d
+Description: transitional dummy package to liblldb-3.8-dev
+ This is a transitional dummy package. It can safely be removed.
+
+Package: llvm-3.8-doc
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 10290
+Depends: libjs-jquery, libjs-underscore
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-doc_3.8.1-12ubuntu1~xenial_all.deb
+Size: 1496034
+SHA256: 1578aaed1afeb08b74cd393dcaa829f0a990a65481629120d9d59a0cca814ec7
+SHA1: 3147660b58ebfbd4f2f82d79b841e17c8e5ac7c4
+MD5sum: d43a25ccf197bfb395fdd0fd7e19973d
+Description: Modular compiler and toolchain technologies, documentation
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package contains all documentation (extensive).
+
+Package: llvm-3.8-examples
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 460
+Depends: llvm-3.8-dev (>= 1:3.8.1-12ubuntu1~xenial), llvm-3.8-dev (<< 1:3.8.1-12ubuntu1~xenial+c~)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-examples_3.8.1-12ubuntu1~xenial_all.deb
+Size: 232660
+SHA256: 83623a70379b0149a7bc06674ef58619b9ce80cc8194827f4e669f365b4e9e1a
+SHA1: 2d9f9eb65431b1c03d4f99c69351c486a9e485e6
+MD5sum: 03c45626c180bac1b0312b08b9f80fb1
+Description: Modular compiler and toolchain technologies, examples
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package contains examples for using LLVM, both in developing
+ extensions to LLVM and in using it to compile code.
 
 Package: odil
 Version: 0.7.3-1~xenial

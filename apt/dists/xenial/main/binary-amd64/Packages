@@ -1,3 +1,201 @@
+Package: castxml
+Version: 0.1+git20160706-2~xenial
+Architecture: amd64
+Maintainer: Steve M. Robbins <smr@debian.org>
+Installed-Size: 52130
+Depends: libc6 (>= 2.15), libgcc1 (>= 1:3.4), libstdc++6 (>= 5.2), libtinfo5 (>= 6), zlib1g (>= 1:1.2.0)
+Homepage: https://github.com/CastXML/CastXML
+Priority: optional
+Section: devel
+Filename: pool/main/c/castxml/castxml_0.1+git20160706-2~xenial_amd64.deb
+Size: 12713146
+SHA256: 007ec152cbf2834c3736cfb0d3a8a38c0296a76cc12d24f0f0ef57967b20d1ea
+SHA1: 0977ab2bd78f2dd086e51ee36377541473ad64f3
+MD5sum: bd3aa3bf4aed3d97cc64cf736a6ee8d2
+Description: C-family abstract syntax tree XML output tool
+ Parse C-family source files and optionally write a subset of the
+ Abstract Syntax Tree (AST) to a representation in XML.
+ This is the successor to gccxml.
+
+Package: clang-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 78932
+Depends: libc6 (>= 2.14), libclang1-3.8 (= 1:3.8.1-12ubuntu1~xenial), libgcc1 (>= 1:3.4), libllvm3.8, libstdc++6 (>= 5.2), libstdc++-5-dev, libgcc-5-dev, libobjc-5-dev, libclang-common-3.8-dev (= 1:3.8.1-12ubuntu1~xenial), libc6-dev, binutils
+Recommends: llvm-3.8-dev, python
+Suggests: gnustep, gnustep-devel, clang-3.8-doc
+Breaks: clang-3.1, clang-3.2, clang-3.3, clang-3.4 (<< 1:3.4.2-7~exp1), clang-3.5 (<< 1:3.5~+rc1-3~exp1), compiler-rt
+Replaces: clang-3.1, clang-3.2, clang-3.3, clang-3.4 (<< 1:3.4.2-7~exp1), clang-3.5 (<< 1:3.5~+rc1-3~exp1), compiler-rt
+Provides: c++-compiler, c-compiler, objc-compiler
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/clang-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 22211786
+SHA256: 5a130d31a1f4b0b5c1f6b5a4c204cee27eb83ca6804c4fd4e098d04ae50ae6b1
+SHA1: ffc0bfb7e1153794f2d6253a983731a1cf91c202
+MD5sum: 5cffe3a3b1c06057d11e267da8877d32
+Description: C, C++ and Objective-C compiler (LLVM based)
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+
+Package: clang-3.8-doc
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 3516
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/clang-3.8-doc_3.8.1-12ubuntu1~xenial_all.deb
+Size: 575562
+SHA256: f57c953b10e95044663325cd7c0e4721403a402d0febf9313838611fa94eb571
+SHA1: df40fb0e6d2fe52a0fb87d27047b66a4cf327720
+MD5sum: 313348013a9ed4908b9141ad54e660cb
+Description: C, C++ and Objective-C compiler (LLVM based) - Documentation
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the documentation.
+
+Package: clang-3.8-examples
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 61
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/clang-3.8-examples_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 28344
+SHA256: a7b9a921d1c62b564e3e0007814e1814dc140cf917fc6596dc99792347f0a894
+SHA1: a955c31fe9594c92367ebb95006ab018142596c3
+MD5sum: 280ab7f89b2ed136f35e38594b17406f
+Description: Clang examples
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the clang examples.
+
+Package: clang-format-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 1402
+Depends: libc6 (>= 2.14), libllvm3.8, libstdc++6 (>= 5.2), python
+Breaks: clang-format-3.3
+Replaces: clang-format-3.3
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/clang-format-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 465740
+SHA256: 6069387b9fdb83b7ca643503e210e868cae24028c1f613bd06de8b226229bd40
+SHA1: 09d749b9fbf126d57a764d91e27b89418e28e1d0
+MD5sum: 93e6ff51eafb310263ec1b54257c6cee
+Description: Tool to format C/C++/Obj-C code
+ Clang-format is both a library and a stand-alone tool with the goal of
+ automatically reformatting C++ sources files according to configurable
+ style guides. To do so, clang-format uses Clang's Lexer to transform an
+ input file into a token stream and then changes all the whitespace around
+ those tokens. The goal is for clang-format to both serve both as a user
+ tool (ideally with powerful IDE integrations) and part of other
+ refactoring tools, e.g. to do a reformatting of all the lines changed
+ during a renaming.
+ .
+ This package also provides vim and emacs plugins.
+
+Package: clang-tidy-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 17873
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.4), libllvm3.8, libstdc++6 (>= 5.2), python
+Breaks: clang-3.8 (<< 1:3.8~svn250696-1)
+Replaces: clang-3.8 (<< 1:3.8~svn250696-1)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/clang-tidy-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 5097826
+SHA256: d065ddd9a277e9ff22674b505fab9de78be50012873a7f41a78e156236539222
+SHA1: 848abbe7fdbe3f78dae0adf0f01fa2d011d31bd9
+MD5sum: 03d7dc7cccf119ca0a1ab4683f87f3d2
+Description: clang-based C++ linter tool
+ Provide an extensible framework for diagnosing and fixing typical programming
+ errors, like style violations, interface misuse, or bugs that can be deduced
+ via static analysis. clang-tidy is modular and provides a convenient interface
+ for writing new checks.
+
+Package: dcmtk
+Version: 3.6.1~20160216-2~xenial
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 3324
+Depends: adduser, libc6 (>= 2.14), libdcmtk8, libgcc1 (>= 1:3.0), libstdc++6 (>= 5.2), libxml2 (>= 2.7.4), zlib1g (>= 1:1.1.4)
+Homepage: http://dicom.offis.de/dcmtk
+Priority: optional
+Section: science
+Filename: pool/main/d/dcmtk/dcmtk_3.6.1~20160216-2~xenial_amd64.deb
+Size: 897666
+SHA256: 1cc914693a072d108ff341c7616a89808e0cf9656bd24a43adf382528411d251
+SHA1: 9815a49a7cf6291eaee89e910255cb6bc0de8a65
+MD5sum: 5a4ff1f546926d64c76ea4d2a808a5cd
+Description: OFFIS DICOM toolkit command line utilities
+ DCMTK includes a collection of libraries and applications for examining,
+ constructing and converting DICOM image files, handling offline media,
+ sending and receiving images over a network connection, as well as
+ demonstrative image storage and worklist servers.
+ .
+ This package contains the DCMTK utility applications.
+ .
+ Note: This version was compiled with libssl support.
+
+Package: dcmtk-doc
+Source: dcmtk
+Version: 3.6.1~20160216-2~xenial
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 132706
+Suggests: dcmtk, libdcmtk-dev
+Homepage: http://dicom.offis.de/dcmtk
+Priority: optional
+Section: doc
+Filename: pool/main/d/dcmtk/dcmtk-doc_3.6.1~20160216-2~xenial_all.deb
+Size: 7691376
+SHA256: 6d004818f85a20b549d6c1238c67c61fee04baafaf94d3ebef46c7ac184c1bc3
+SHA1: 256839c52762bc8ccf5de2b1df341a3c878c919f
+MD5sum: 67f340168e1d268309f287a76d4c804e
+Description: OFFIS DICOM toolkit documentation
+ DCMTK includes a collection of libraries and applications for examining,
+ constructing and converting DICOM image files, handling offline media,
+ sending and receiving images over a network connection, as well as
+ demonstrative image storage and worklist servers.
+ .
+ This package contains the on-line documentation for the DCMTK libraries
+ and utilities in HTML format.
+
 Package: dicomifier
 Version: 0.10.6-1~xenial
 Architecture: amd64
@@ -33,6 +231,362 @@ SHA1: d3fadbb0488554d42923aa7424d621944637a980
 MD5sum: f5941c86cf211697ff3eff936da12140
 Description: PACS (DICOM server)
  Dopamine is a PACS (DICOM server) backed by MongoDB.
+
+Package: libclang-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 161578
+Depends: libstdc++-5-dev, libgcc-5-dev, libobjc-5-dev, libclang1-3.8 (= 1:3.8.1-12ubuntu1~xenial), libclang-common-3.8-dev (= 1:3.8.1-12ubuntu1~xenial)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/llvm-toolchain-3.8/libclang-3.8-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 13245634
+SHA256: 00a5642a7ff550fc62829eace1f7a4dca09716795642dabb10ff33d48bde2767
+SHA1: b64cb9afa366f3fec83b07dc3285c92bb6734083
+MD5sum: 939cc4f3081f9a4476525ef25e129113
+Description: clang library - Development package
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the clang headers to develop extensions over
+ libclang1-3.8.
+
+Package: libclang-common-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 18922
+Depends: libc6 (>= 2.15), libgcc1 (>= 1:3.4), libstdc++6 (>= 5.2), libtinfo5 (>= 6), libllvm3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/llvm-toolchain-3.8/libclang-common-3.8-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 1503418
+SHA256: 53eebc9f154f7b366369fb344613f0869eae2e94c7c2a48f6d4a48f891cd33d3
+SHA1: 5b69aa4c596fb23bb2035d007796416530a88dde
+MD5sum: 48821b9d31a620945430512092e53abb
+Description: clang library - Common development package
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the clang generic headers and some libraries
+ (profiling, etc).
+
+Package: libclang1-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 14404
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.4), libllvm3.8, libstdc++6 (>= 5.2), libstdc++-5-dev, libgcc-5-dev, libobjc-5-dev
+Multi-Arch: same
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/libclang1-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 4168800
+SHA256: d68100b0b30a6bc34d535bb9dc975b42b00e74cd504d5cc10a99f2d722727ef5
+SHA1: f991e8239a5863e9c4748accd2110f3605beff21
+MD5sum: f2b9ab8590b25b30c83e9dcdfd1e751f
+Description: C interface to the clang library
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the clang library.
+ .
+ The C Interface to Clang provides a relatively small API that exposes
+ facilities for parsing source code into an abstract syntax tree (AST),
+ loading already-parsed ASTs, traversing the AST, associating physical source
+ locations with elements within the AST, and other facilities that support
+ Clang-based development tools.
+
+Package: libclang1-3.8-dbg
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 28284
+Depends: libstdc++-5-dev, libgcc-5-dev, libobjc-5-dev, libclang1-3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Multi-Arch: same
+Homepage: http://www.llvm.org/
+Priority: extra
+Section: debug
+Filename: pool/main/l/llvm-toolchain-3.8/libclang1-3.8-dbg_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 26074246
+SHA256: cf35911d826665200aa5bc854bb1dea40383f4876ec9256066bbde7722bb47ae
+SHA1: 1c2e7996fbbd28e05625d9b718088784154dfc1b
+MD5sum: 2871e3689e3e91028bf4c2f8842440de
+Description: clang library
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This package contains the debugging symbols.
+Build-Ids: 3cc792de736c1b1a2c6ef530cb9f613cd34e93de
+
+Package: libdcmtk-dev
+Source: dcmtk
+Version: 3.6.1~20160216-2~xenial
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 12183
+Depends: libxml2-dev, libssl-dev, libpng-dev, libwrap0-dev, libcharls-dev, libtiff-dev, libdcmtk8 (= 3.6.1~20160216-2~xenial)
+Suggests: dcmtk-doc
+Conflicts: libdcmtk2-dev, libdcmtk4-dev
+Breaks: libinsighttoolkit4-dev (<< 4.9.0)
+Replaces: libdcmtk2-dev, libdcmtk4-dev
+Provides: libdcmtk2-dev
+Homepage: http://dicom.offis.de/dcmtk
+Priority: optional
+Section: libdevel
+Filename: pool/main/d/dcmtk/libdcmtk-dev_3.6.1~20160216-2~xenial_amd64.deb
+Size: 851338
+SHA256: f5d62fc1a3eabc3d5e881d879c32db49137d3043fb0ef0a14ed5f2b572742c5d
+SHA1: 515535dc4e741d9867daa6fd85e727845a07ed1b
+MD5sum: e432542da554ee00d6c1fdcbf2c363f6
+Description: OFFIS DICOM toolkit development libraries and headers
+ DCMTK includes a collection of libraries and applications for examining,
+ constructing and converting DICOM image files, handling offline media,
+ sending and receiving images over a network connection, as well as
+ demonstrative image storage and worklist servers.
+ .
+ This package contains development libraries and headers for DCMTK. You
+ only need to install this if you are developing programs that use the
+ DCMTK libraries.
+ .
+ Note: This version was compiled with libssl support.
+
+Package: libdcmtk8
+Source: dcmtk
+Version: 3.6.1~20160216-2~xenial
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 19959
+Depends: libc6 (>= 2.15), libcharls1 (>= 1.0), libgcc1 (>= 1:3.0), libpng12-0 (>= 1.2.13-4), libssl1.0.0 (>= 1.0.2~beta3), libstdc++6 (>= 5.2), libtiff5 (>= 4.0.3), libwrap0 (>= 7.6-4~), libxml2 (>= 2.7.4), zlib1g (>= 1:1.1.4)
+Conflicts: libdcmtk3, libdcmtk4
+Replaces: libdcmtk3, libdcmtk4
+Homepage: http://dicom.offis.de/dcmtk
+Priority: optional
+Section: libs
+Filename: pool/main/d/dcmtk/libdcmtk8_3.6.1~20160216-2~xenial_amd64.deb
+Size: 4334476
+SHA256: 971bbb5155535eb8db78f0316fa307cd2bde88df9826bb9e16b9263bede5bd58
+SHA1: b43ae13858bdf4cf970610dd30680c05d37acf2c
+MD5sum: c5b2f70d8d0de2878ba31946d3c217dc
+Description: OFFIS DICOM toolkit runtime libraries
+ DCMTK includes a collection of libraries and applications for examining,
+ constructing and converting DICOM image files, handling offline media,
+ sending and receiving images over a network connection, as well as
+ demonstrative image storage and worklist servers.
+ .
+ This package contains the runtime libraries for the DCMTK utility
+ applications.
+ .
+ Note: This version was compiled with libssl support.
+
+Package: libfuzzer-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 302
+Depends: clang-3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/llvm-toolchain-3.8/libfuzzer-3.8-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 73214
+SHA256: 680a7a936d2e1eea652f1f17ff9455aadd03d19bf78ac6e3928e2669273ca893
+SHA1: 238048f3c19c2a40505aabad650edf68c0f92495
+MD5sum: cf2084fe0bba39ecded783f14437d61e
+Description: Library for coverage-guided fuzz testing
+ LibFuzzer is a library for in-process, coverage-guided, evolutionary fuzzing
+ of other libraries.
+ .
+ LibFuzzer is similar in concept to American Fuzzy Lop (AFL), but it performs
+ all of its fuzzing inside a single process. This in-process fuzzing can be
+ more restrictive and fragile, but is potentially much faster as there is no
+ overhead for process start-up.
+ .
+ The fuzzer is linked with the library under test, and feeds fuzzed inputs to
+ the library via a specific fuzzing entrypoint (aka 'target function'); the
+ fuzzer then tracks which areas of the code are reached, and generates mutations
+ on the corpus of input data in order to maximize the code coverage. The code
+ coverage information for libFuzzer is provided by LLVM's SanitizerCoverage
+ instrumentation.
+
+Package: liblldb-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 59380
+Depends: libc6 (>= 2.15), libedit2 (>= 2.11-20080614), libgcc1 (>= 1:3.4), libncurses5 (>= 6), libpython2.7 (>= 2.7), libstdc++6 (>= 5.2), libtinfo5 (>= 6), zlib1g (>= 1:1.2.0), libllvm3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Breaks: lldb-3.8 (<< 1:3.8~svn215195-2)
+Replaces: lldb-3.8 (<= 1:3.8~svn215195-2)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libs
+Filename: pool/main/l/llvm-toolchain-3.8/liblldb-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 15492210
+SHA256: 47f3af7f28388faa70977cf2f1f3b81623f86074d0e10020688ad500c73850a3
+SHA1: dc16c204dbe99b4d480218a886d6af0ea34fbcef
+MD5sum: 5ac7385808bf680926c1198753135f90
+Description: Next generation, high-performance debugger, library
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This package contains the LLDB runtime library.
+
+Package: liblldb-3.8-dbg
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 81862
+Depends: liblldb-3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Homepage: http://www.llvm.org/
+Priority: extra
+Section: debug
+Filename: pool/main/l/llvm-toolchain-3.8/liblldb-3.8-dbg_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 73698428
+SHA256: 8dab16023caeec3adaf0633ac4011308713897e097694caba7bc9f6712c4dcec
+SHA1: d0e8b6d6770709a4dfed78c96a0e7859f1ffa5ad
+MD5sum: 21a5766967d29380a08fb39e734cffc0
+Description: Next generation, high-performance debugger, debugging libraries
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This package contains the LLDB runtime library debug symbols.
+Build-Ids: 6e21ee188d4d55e569e954ca27fd830ce8ec2229 88581f7147fa42e7025c31a0efce2389d57b0591
+
+Package: liblldb-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 37405
+Depends: lldb-3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Breaks: lldb-3.8-dev (<< 1:3.8~svn215195-2)
+Replaces: lldb-3.8-dev (<= 1:3.8~svn215195-2)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/llvm-toolchain-3.8/liblldb-3.8-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 4385678
+SHA256: 90cda22ae5ee0b92dc41dd3ccdf1c9e0c125c4505908d0721692eeef617edd4f
+SHA1: 21e41944f19f62bc3afc35ca1b171fa163c9f49d
+MD5sum: 2cbf5b61b78ee7f2e9841064e3535810
+Description: Next generation, high-performance debugger - Header files
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This package provides the header files to build extension over lldb.
+
+Package: libllvm-3.8-ocaml-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 52
+Depends: llvm-3.8-dev (= 1:3.8.1-12ubuntu1~xenial)
+Suggests: llvm-3.8-doc
+Provides: libllvm-3.8-ocaml-dev-c8y98
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: ocaml
+Filename: pool/main/l/llvm-toolchain-3.8/libllvm-3.8-ocaml-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 21786
+SHA256: 2e257c4d58d81ba0e70ce8a4462ee79c32f6938e909bababf6cbcde9c14579a5
+SHA1: 42b78b39134083ac8a7964a419dcf0809279bc25
+MD5sum: 8eba95d88e863b84e2d934cc5e77db2a
+Description: Modular compiler and toolchain technologies, OCaml bindings
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package provides the OCaml bindings to develop applications using llvm.
+
+Package: libllvm3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 40737
+Depends: libc6 (>= 2.15), libedit2 (>= 2.11-20080614), libffi6 (>= 3.0.4), libgcc1 (>= 1:3.4), libstdc++6 (>= 5.2), libtinfo5 (>= 6), zlib1g (>= 1:1.2.0)
+Multi-Arch: same
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: libs
+Filename: pool/main/l/llvm-toolchain-3.8/libllvm3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 10331808
+SHA256: d8683fb23dad5f4cc09b4d5ceb869a927ff0cbe7a1dc2813af1cec2015e7b321
+SHA1: 41a41232c3fd57876b87241e46cb21febdc0e8b4
+MD5sum: ae3e8aaf93b7e3517951a7d0fec73edf
+Description: Modular compiler and toolchain technologies, runtime library
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ This package contains the LLVM runtime library.
+
+Package: libllvm3.8-dbg
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 51533
+Depends: libllvm3.8 (= 1:3.8.1-12ubuntu1~xenial)
+Multi-Arch: same
+Homepage: http://www.llvm.org/
+Priority: extra
+Section: debug
+Filename: pool/main/l/llvm-toolchain-3.8/libllvm3.8-dbg_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 47121236
+SHA256: 9774df15251a07f63925f7be71e6ab2427f7ef65a6fc55ae6e84a9cecbe591bc
+SHA1: 21fc9f77c48ec46027011e9154cfeedfae5cc49e
+MD5sum: 0f7add1d3a1791ba8c81aaf8ad8c1ab4
+Description: Modular compiler and toolchain technologies, debugging libraries
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ This package contains the LLVM runtime library debug symbols.
+Build-Ids: b2e84dff8c64bff7365477d5b68a3c238ea65ccb
 
 Package: libodil0
 Source: odil
@@ -120,6 +674,242 @@ Description: C++11 library for the DICOM standard (documentation)
  .
  This package contains the documentation files.
 
+Package: lldb-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 25486
+Depends: libc6 (>= 2.15), libedit2 (>= 2.11-20080614), libgcc1 (>= 1:3.4), liblldb-3.8, libncurses5 (>= 6), libstdc++6 (>= 5.2), libtinfo5 (>= 6), zlib1g (>= 1:1.2.0), libllvm3.8 (= 1:3.8.1-12ubuntu1~xenial), llvm-3.8-dev
+Suggests: python-lldb-3.8
+Conflicts: lldb-3.4, lldb-3.5
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/lldb-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 7880708
+SHA256: 4330c9ae47a512190f7fd656a76af3e3a84f3e9948d3727e2c85059543a94bb5
+SHA1: 117545db90359e107f0a5bd2e066b48294eb83ee
+MD5sum: f42be912ab058d29303e0a69af385160
+Description: Next generation, high-performance debugger
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+
+Package: lldb-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 40
+Depends: liblldb-3.8-dev
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: oldlibs
+Filename: pool/main/l/llvm-toolchain-3.8/lldb-3.8-dev_3.8.1-12ubuntu1~xenial_all.deb
+Size: 20984
+SHA256: 8bfe94f1735b77c940124b805c96c3beafdc5221a6f8e04bfa95e9d132e0c3c5
+SHA1: e73935e03464ac9f010b7932ec0454f7aec24776
+MD5sum: 5fd78759254e46a0cb64f0cfc0a3075d
+Description: transitional dummy package to liblldb-3.8-dev
+ This is a transitional dummy package. It can safely be removed.
+
+Package: llvm-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 5134
+Depends: llvm-3.8-runtime (= 1:3.8.1-12ubuntu1~xenial), libc6 (>= 2.15), libgcc1 (>= 1:3.4), libllvm3.8, libstdc++6 (>= 5.2), libtinfo5 (>= 6)
+Recommends: llvm-3.8-dev
+Suggests: llvm-3.8-doc
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 1533364
+SHA256: 00a2c8ef732d25015b689098850a9972da2196dc2c30505904729ccb19db877b
+SHA1: 8df8051a16c86b63e431a6dc0535aed361858c2e
+MD5sum: 658524ba14793788086273f2327585a7
+Description: Modular compiler and toolchain technologies
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ The strengths of the LLVM infrastructure are its extremely
+ simple design (which makes it easy to understand and use),
+ source-language independence, powerful mid-level optimizer, automated
+ compiler debugging support, extensibility, and its stability and
+ reliability. LLVM is currently being used to host a wide variety of
+ academic research projects and commercial projects. LLVM includes C
+ and C++ front-ends, a front-end for a Forth-like language (Stacker),
+ a young scheme front-end, and Java support is in development. LLVM can
+ generate code for X86, SparcV9, PowerPC or many other architectures.
+
+Package: llvm-3.8-dev
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 115266
+Depends: libc6 (>= 2.14), libjsoncpp1, libllvm3.8 (= 1:3.8.1-12ubuntu1~xenial), libstdc++6 (>= 5.2), libffi-dev (>= 3.0.9), llvm-3.8 (= 1:3.8.1-12ubuntu1~xenial), libtinfo-dev
+Replaces: llvm (<< 2.2-3)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-dev_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 16457398
+SHA256: 52821f1625e83dd6f5b9db192d231badd9706468153201385d8d6ab6e7527e7e
+SHA1: eb0fcd40154446f5d4976074ecc42c31c1341135
+MD5sum: f320b037ee6583542a2c9e36d95329e8
+Description: Modular compiler and toolchain technologies, libraries and headers
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package provides the libraries and headers to develop applications
+ using llvm.
+
+Package: llvm-3.8-doc
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 10290
+Depends: libjs-jquery, libjs-underscore
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-doc_3.8.1-12ubuntu1~xenial_all.deb
+Size: 1496034
+SHA256: 1578aaed1afeb08b74cd393dcaa829f0a990a65481629120d9d59a0cca814ec7
+SHA1: 3147660b58ebfbd4f2f82d79b841e17c8e5ac7c4
+MD5sum: d43a25ccf197bfb395fdd0fd7e19973d
+Description: Modular compiler and toolchain technologies, documentation
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package contains all documentation (extensive).
+
+Package: llvm-3.8-examples
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: all
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 460
+Depends: llvm-3.8-dev (>= 1:3.8.1-12ubuntu1~xenial), llvm-3.8-dev (<< 1:3.8.1-12ubuntu1~xenial+c~)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: doc
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-examples_3.8.1-12ubuntu1~xenial_all.deb
+Size: 232660
+SHA256: 83623a70379b0149a7bc06674ef58619b9ce80cc8194827f4e669f365b4e9e1a
+SHA1: 2d9f9eb65431b1c03d4f99c69351c486a9e485e6
+MD5sum: 03c45626c180bac1b0312b08b9f80fb1
+Description: Modular compiler and toolchain technologies, examples
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package contains examples for using LLVM, both in developing
+ extensions to LLVM and in using it to compile code.
+
+Package: llvm-3.8-runtime
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 278
+Depends: binfmt-support, libc6 (>= 2.14), libllvm3.8, libstdc++6 (>= 5.2)
+Conflicts: llvm (<< 2.7-1)
+Replaces: llvm (<< 2.7-1)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-runtime_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 88186
+SHA256: 343130993d5b6779b6896edd1959482d6c6dcabf80cfc2f36660ee415ec80780
+SHA1: 8c30126b17adbf1965fa053f0d5ea45be73a923a
+MD5sum: 7f67b93bed873d6b04d2a7da154f018c
+Description: Modular compiler and toolchain technologies, IR interpreter
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package provides the minimal required to execute programs in LLVM
+ format.
+
+Package: llvm-3.8-tools
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 628
+Depends: libc6 (>= 2.15), libgcc1 (>= 1:3.4), libstdc++6 (>= 5.2), libtinfo5 (>= 6), python, llvm-3.8-dev (= 1:3.8.1-12ubuntu1~xenial)
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-tools_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 176700
+SHA256: 99b43b4a8a581a5878f992c89adab8b71335965d0b8924426c6c4c05ee6f10ed
+SHA1: 99a7dad47d7c589b88c912e1ede89633dff46eab
+MD5sum: 6835b3d460b5a512f7be4ee3dbbbf24c
+Description: Modular compiler and toolchain technologies, tools
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ LLVM uses a single, language-independent virtual instruction set both
+ as an offline code representation (to communicate code between
+ compiler phases and to run-time systems) and as the compiler internal
+ representation (to analyze and transform programs). This persistent
+ code representation allows a common set of sophisticated compiler
+ techniques to be applied at compile-time, link-time, install-time,
+ run-time, or "idle-time" (between program runs).
+ .
+ This package provides tools for testing.
+
 Package: odil
 Version: 0.7.3-1~xenial
 Architecture: all
@@ -142,6 +932,57 @@ Description: C++11 library for the DICOM standard (application)
  and servers for the various DICOM protocols.
  .
  This package contains the command-line application.
+
+Package: python-clang-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 154
+Depends: python
+Breaks: python-clang-3.3, python-clang-3.4, python-clang-3.5, python-clang-3.6, python-clang-3.7
+Replaces: python-clang-3.3, python-clang-3.4, python-clang-3.5, python-clang-3.6, python-clang-3.7
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: python
+Filename: pool/main/l/llvm-toolchain-3.8/python-clang-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 43618
+SHA256: 477cdf4f4609e9c8e0ee0b2a7acc33153f7e8cac8fc7f122e961e9bb9c64f566
+SHA1: 17caabf41304d34c4e3a970cedf0e31d9d57efc2
+MD5sum: d2db40979fe51db04d33935c112bf05a
+Description: Clang Python Bindings
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang fully implements all published ISO C++ standards including C++11, as
+ well as the upcoming C++14 standard, and some parts of the fledgling C++1z
+ standard, and is considered a production-quality C++ compiler.
+ .
+ This binding package provides access to the Clang compiler and libraries.
+
+Package: python-lldb-3.8
+Source: llvm-toolchain-3.8
+Version: 1:3.8.1-12ubuntu1~xenial
+Architecture: amd64
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Installed-Size: 719
+Depends: liblldb-3.8-dev, python, python-six
+Conflicts: python-lldb-3.4, python-lldb-3.5, python-lldb-3.6, python-lldb-3.7
+Homepage: http://www.llvm.org/
+Priority: optional
+Section: python
+Filename: pool/main/l/llvm-toolchain-3.8/python-lldb-3.8_3.8.1-12ubuntu1~xenial_amd64.deb
+Size: 107198
+SHA256: 51f9d6c7c7d588fecee9c8fbadadae6472597819f8b572706e8924526686f987
+SHA1: 18b9f77c88e8f819e11740fc5b4d27a5a1dbe28d
+MD5sum: b4d5bc831166a43843b3295e013fbeb4
+Description: Next generation, high-performance debugger, python lib
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This binding package provides access to lldb.
 
 Package: python-odil
 Source: odil

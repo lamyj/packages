@@ -232,6 +232,66 @@ MD5sum: 7cba84f6fcae17c63d187363eb2f0efb
 Description: PACS (DICOM server)
  Dopamine is a PACS (DICOM server) backed by MongoDB.
 
+Package: insighttoolkit4-examples
+Source: insighttoolkit4
+Version: 4.10.1-dfsg1-1.1~trusty
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 2918
+Suggests: libinsighttoolkit4-dev
+Conflicts: insighttoolkit-examples
+Replaces: insighttoolkit-examples
+Homepage: http://www.itk.org/
+Priority: optional
+Section: devel
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~trusty_all.deb
+Size: 2577272
+SHA256: 6e18000fe08ef011723aff8c78a4ddd32207659ccd7c7a076cdf77250c06c518
+SHA1: 644902d14b7541245f6cb2eb85239a64731a8a0a
+MD5sum: 92823ace6132a12365c77fd8c60a109a
+Description: Image processing toolkit for registration and segmentation - examples
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the source for example programs.
+
+Package: insighttoolkit4-python
+Source: insighttoolkit4
+Version: 4.10.1-dfsg1-1.1~trusty
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 1034613
+Depends: libc6 (>= 2.14), libfftw3-double3, libfftw3-single3, libgcc1 (>= 1:4.1.1), libgdcm2.2, libinsighttoolkit4.10, libstdc++6 (>= 4.6)
+Conflicts: insighttoolkit-python
+Replaces: insighttoolkit-python
+Homepage: http://www.itk.org/
+Priority: optional
+Section: python
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-python_4.10.1-dfsg1-1.1~trusty_amd64.deb
+Size: 78910248
+SHA256: 07549f26ad4310b588c69b9e16c83c79a7b73b499f9c410110ebebfda7105b89
+SHA1: cb069f1e82df285760b06bffb0fb26ef2e330e1d
+MD5sum: dbc9fca9056704b2220f270d9ec066cd
+Description: Image processing toolkit for registration and segmentation - Python bindings
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the Python bindings.
+
 Package: libclang-3.8-dev
 Source: llvm-toolchain-3.8
 Version: 1:3.8.1-12ubuntu1~trusty
@@ -437,6 +497,67 @@ Description: Library for coverage-guided fuzz testing
  on the corpus of input data in order to maximize the code coverage. The code
  coverage information for libFuzzer is provided by LLVM's SanitizerCoverage
  instrumentation.
+
+Package: libinsighttoolkit4-dev
+Source: insighttoolkit4
+Version: 4.10.1-dfsg1-1.1~trusty
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 24903
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libinsighttoolkit4.10 (= 4.10.1-dfsg1-1.1~trusty), libstdc++6 (>= 4.6), libgdcm2-dev, libdcmtk-dev, libhdf5-dev, libdouble-conversion-dev, libexpat-dev, libnifti-dev
+Recommends: libfftw3-dev, uuid-dev
+Suggests: insighttoolkit4-examples
+Conflicts: libinsighttoolkit-dev, libinsighttoolkit3-dev
+Replaces: libinsighttoolkit-dev
+Homepage: http://www.itk.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4-dev_4.10.1-dfsg1-1.1~trusty_amd64.deb
+Size: 2980378
+SHA256: 3d670ff7d70f926ee760c57d8e469a2bd3e6b60718e11cff95ec748a85e0ca37
+SHA1: 928eb2ce3a7b8e770169a3fe01fd2e3c5be853fe
+MD5sum: 1e99e24499ff4547153ded22b23b420d
+Description: Image processing toolkit for registration and segmentation - development
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the development files needed to build your own
+ ITK applications.
+
+Package: libinsighttoolkit4.10
+Source: insighttoolkit4
+Version: 4.10.1-dfsg1-1.1~trusty
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 22750
+Depends: libc6 (>= 2.15), libdouble-conversion1, libexpat1 (>= 2.0.1), libfftw3-double3, libfftw3-single3, libgcc1 (>= 1:4.1.1), libgdcm2.2, libhdf5-7 (>= 1.8.9), libjpeg8 (>= 8c), libnifti2, libpng12-0 (>= 1.2.13-4), libstdc++6 (>= 4.6), libtiff5 (>= 4.0.3), zlib1g (>= 1:1.2.3.4)
+Homepage: http://www.itk.org/
+Priority: optional
+Section: libs
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4.10_4.10.1-dfsg1-1.1~trusty_amd64.deb
+Size: 4499836
+SHA256: 1f32baf8745e64f67a28ddbde9ff16d7f5f20e2f210fa7b5f758b8a800a82831
+SHA1: e729d6a93d203459b1bd162db1eb62ba80379b6f
+MD5sum: 7e0e9f7146f949802544e4b3e9a35029
+Description: Image processing toolkit for registration and segmentation - runtime
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the libraries needed to run ITK applications.
 
 Package: liblldb-3.8
 Source: llvm-toolchain-3.8

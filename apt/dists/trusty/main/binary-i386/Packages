@@ -66,6 +66,36 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
+Package: insighttoolkit4-examples
+Source: insighttoolkit4
+Version: 4.10.1-dfsg1-1.1~trusty
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 2918
+Suggests: libinsighttoolkit4-dev
+Conflicts: insighttoolkit-examples
+Replaces: insighttoolkit-examples
+Homepage: http://www.itk.org/
+Priority: optional
+Section: devel
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~trusty_all.deb
+Size: 2577272
+SHA256: 6e18000fe08ef011723aff8c78a4ddd32207659ccd7c7a076cdf77250c06c518
+SHA1: 644902d14b7541245f6cb2eb85239a64731a8a0a
+MD5sum: 92823ace6132a12365c77fd8c60a109a
+Description: Image processing toolkit for registration and segmentation - examples
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the source for example programs.
+
 Package: libodil0
 Source: odil
 Version: 0.7.3-1~trusty
