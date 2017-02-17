@@ -79,10 +79,10 @@ Homepage: http://www.itk.org/
 Priority: optional
 Section: devel
 Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~trusty_all.deb
-Size: 2577272
-SHA256: 6e18000fe08ef011723aff8c78a4ddd32207659ccd7c7a076cdf77250c06c518
-SHA1: 644902d14b7541245f6cb2eb85239a64731a8a0a
-MD5sum: 92823ace6132a12365c77fd8c60a109a
+Size: 2577410
+SHA256: 8187de38389fc95ab1aed289cff9650433a02c62c8dd216dcb1378fc54c25a91
+SHA1: 5fe3624c223681a34de70801c5706d499860a143
+MD5sum: 53919cba376081d52bacfe410200ef34
 Description: Image processing toolkit for registration and segmentation - examples
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
