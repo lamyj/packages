@@ -34,10 +34,10 @@ Homepage: http://dicom.offis.de/dcmtk
 Priority: optional
 Section: doc
 Filename: pool/main/d/dcmtk/dcmtk-doc_3.6.1~20160216-4~jessie_all.deb
-Size: 7867446
-SHA256: b10c0c32de29f3e816e16fe02983666abc2dc88423cda109f0d900f781d3698b
-SHA1: d30a103dd9e6fe15f759204775da660b69d05beb
-MD5sum: 501f74d657b474cd22397d29485c3573
+Size: 7866808
+SHA256: cbd7561dd430d85b337baba7e32637e5c251beaab7d72b20d6a7497116abb8ea
+SHA1: 13e373ef1132743b2885ba51389855243800cfdb
+MD5sum: cdd53d21012c30216a5c563172c7e563
 Description: OFFIS DICOM toolkit documentation
  DCMTK includes a collection of libraries and applications for examining,
  constructing and converting DICOM image files, handling offline media,
