@@ -1,10 +1,31 @@
 #!/bin/bash
 
-set -e 
+set -e
 set -u
 
-PROJECT=${1:?Missing project name}
-export DEBEMAIL=${2:?Missing contact}
+CONTACT=""
+JOBS=1
+PROJECT=""
+
+while getopts "c:j:p:" OPT; do
+  case ${OPT} in
+    c) CONTACT=${OPTARG} ;;
+    j) JOBS=${OPTARG} ;;
+    p) PROJECT=${OPTARG} ;;
+  esac
+done
+
+if test -z "${PROJECT}"; then
+  echo "Missing project name"
+  exit 1
+fi
+
+if test -z "${CONTACT}"; then
+  echo "Missing contact"
+  exit 1
+fi
+
+export DEBEMAIL="${CONTACT}"
 
 APT_GET="apt-get -qq -y"
 PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
@@ -12,7 +33,7 @@ BINTRAY=http://dl.bintray.com/lamyj/generic
 
 sudo rm -f /etc/apt/apt.conf.d/docker-clean
 sudo -E ${APT_GET} update
-sudo -E ${APT_GET} install lsb-release
+sudo -E ${APT_GET} install gnupg wget lsb-release
 
 DISTRIB=$(lsb_release -cs)
 
@@ -40,13 +61,17 @@ rm -f ${PROJECT}-build*.deb
 uscan --force-download
 
 # Update changelog
+changelog_orig=$(mktemp)
+
+cp debian/changelog ${changelog_orig}
+
 version=$(dpkg-parsechangelog | awk '$1 ~ /Version:/ { print $2 }')
 dch \
   -v ${version}~${DISTRIB} --distribution ${DISTRIB} \
   --force-bad-version --force-distribution \
   "Backport to ${DISTRIB}"
 
-dpkg-buildpackage -us -uc
+dpkg-buildpackage -us -uc -j${JOBS}
 
 # Run lintian, but do not record failures
 sudo ${APT_GET} --no-install-recommends install lintian
@@ -54,3 +79,7 @@ lintian -I ../*changes || true
 
 mkdir packages
 cp ../*deb packages
+
+./debian/rules clean
+mv ${changelog_orig} debian/changelog
+
