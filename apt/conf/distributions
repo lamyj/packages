@@ -8,6 +8,11 @@ Components: main
 Architectures: i386 amd64 source
 SignWith: 3EBD1CD4
 
+Codename: stretch
+Components: main
+Architectures: i386 amd64 source
+SignWith: 3EBD1CD4
+
 Codename: precise
 Components: main
 Architectures: i386 amd64 source
