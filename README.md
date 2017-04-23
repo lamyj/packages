@@ -28,20 +28,10 @@ The following commands must be run by root, either directly or using `sudo`.
 
 The following steps must be run by root, either directly or using `sudo`.
 
-Add a new repository by storing the following in `/etc/yum/repos.d/lamyj.repo`:
+* Add the repository:
 
-```
-[lamyj]
-name=Packages by lamyj
-baseurl=http://dl.bintray.com/lamyj/generic/rpm/centos/7/
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=http://dl.bintray.com/lamyj/generic/gpg.key
-```
+      yum-config-manager --add-repo http://dl.bintray.com/lamyj/generic/rpm/centos/7/lamyj.repo
 
-Some of the packages require [EPEL](https://fedoraproject.org/wiki/EPEL):
+* Add the [EPEL](https://fedoraproject.org/wiki/EPEL) repository:
 
-```bash
-yum install epel-release
-```
+      yum install epel-release
