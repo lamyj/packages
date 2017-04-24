@@ -30,36 +30,51 @@ diff a/debian/python3-odil.install b/debian/python3-odil.install
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.2/wrappers/odil.so usr/lib/python3.2/dist-packages/
 diff -u a/debian/rules b/rules
---- a/debian/rules	2016-04-22 19:28:14.275011000 +0200
-+++ b/rules	2016-04-23 15:27:36.886920968 +0200
-@@ -1,7 +1,6 @@
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,11 +1,10 @@
  #!/usr/bin/make -f
  
  export DEB_CXXFLAGS_MAINT_APPEND  = -std=c++0x
 -export DEB_BUILD_MAINT_OPTIONS = hardening=+all
  
- %:
- 	dh $@ --builddirectory=build --parallel --with python2
-@@ -16,17 +15,19 @@
- override_dh_install-arch:
- 	dh_install
- 	chrpath -d debian/python-odil/usr/lib/python*/dist-packages/odil.so
-+	touch debian/tmp/usr/lib/libodil.a
- 	d-shlibmove \
--		--commit --multiarch --exclude-a --exclude-la \
-+		--commit --multiarch --exclude-la \
- 		--movedev debian/tmp/usr/include/* usr/include \
- 		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
--		--override s/libdcm.*-dev/libdcmtk-dev/ \
--		--override s/libof.*-dev/libdcmtk-dev/ \
-+		--override s/libdcm.*-dev/libdcmtk2-dev/ \
-+		--override s/libof.*-dev/libdcmtk2-dev/ \
- 		--override s/libicuuc.*-dev/libicu-dev/ \
+ # Find all Python versions
+ PYTHON2=$(shell pyversions -vr)
+-PYTHON3=$(shell py3versions -vr)
++PYTHON3=$(shell py3versions -vi)
+ ALLPY=$(PYTHON2) $(PYTHON3)
+ 
+ # Required to get the full path to the boost.python library
+@@ -28,8 +27,8 @@ override_dh_auto_build-py%: override_dh_auto_build-nopy
+        dh_auto_configure -- \
+          -DBUILD_WRAPPERS=ON -DPython_ADDITIONAL_VERSIONS=$* \
+          -DPYTHON_EXECUTABLE=/usr/bin/python$* \
+-         -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so \
+-         -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so
++         -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/libboost_python-py$(subst .,,$*).so \
++         -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/libboost_python-py$(subst .,,$*).so
+        dh_auto_build
+        mv build build-py$*
+ 
+@@ -46,6 +45,7 @@ override_dh_auto_test-arch-nopy:
+ 
+ # Run Python tests only on python build
+ override_dh_auto_test-arch-py%:
++       dpkg --compare-versions $* ge 3 && 2to3 -w tests/wrappers/test_vr.py || true
+        ln -s build-py$* build
+        cd build && \
+          ../tests/run --no-network \
+@@ -69,10 +69,10 @@ override_dh_install-arch:
+                --commit --multiarch --exclude-a --exclude-la \
+                --movedev debian/tmp/usr/include/* usr/include \
+                --override s/libjsoncpp.-dev/libjsoncpp-dev/ \
+-               --override s/libdcm.*-dev/libdcmtk-dev/ \
+-               --override s/libof.*-dev/libdcmtk-dev/ \
++               --override s/libdcm.*-dev/libdcmtk2-dev/ \
++               --override s/libof.*-dev/libdcmtk2-dev/ \
+                --override s/libicuuc.*-dev/libicu-dev/ \
+-               --override s/libboost_datetime.*-dev/libboost-datetime-dev/ \
++               --override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
                  --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
                  --override s/libboost_regex.*-dev/libboost-regex-dev/ \
                  --override s/libboost_system.*-dev/libboost-system-dev/ \
- 		debian/tmp/usr/lib/*.so
-+	find debian -name libodil.a -delete
- 
- # These steps are not needed for arch-independent packages
- override_dh_auto_configure-indep:
