@@ -4,3 +4,16 @@ diff a/debian/python3-odil.install b/debian/python3-odil.install
 @@ -1 +1 @@
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.4/wrappers/odil.so usr/lib/python3.4/dist-packages/
+diff --git a/debian/rules b/debian/rules
+index 5937b49..1b31a96 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -72,7 +72,7 @@ override_dh_install-arch:
+                --override s/libdcm.*-dev/libdcmtk-dev/ \
+                --override s/libof.*-dev/libdcmtk-dev/ \
+                --override s/libicuuc.*-dev/libicu-dev/ \
+-               --override s/libboost_datetime.*-dev/libboost-datetime-dev/ \
++               --override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
+                 --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
+                 --override s/libboost_regex.*-dev/libboost-regex-dev/ \
+                 --override s/libboost_system.*-dev/libboost-system-dev/ \
