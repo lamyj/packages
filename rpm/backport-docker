@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -e
+set -u
+
+SPEC=""
+
+while getopts "s:" OPT; do
+  case ${OPT} in
+    s) SPEC=${OPTARG} ;;
+  esac
+done
+
+if test -z "${SPEC}"; then
+  echo "Missing .spec file"
+  exit 1
+fi
+
+sudo yum -q -y install centos-packager epel-release
+rpmdev-setuptree
+
+spectool -g -R ${SPEC}
+cp *patch ~/rpmbuild/SOURCES
+sudo yum-builddep -q -y ${SPEC}
+
+rpmbuild -ba ${SPEC}
+
+rpmlint ~/rpmbuild/RPMS/*/*
+
+mkdir packages
+cp -r ~/rpmbuild/RPMS ~/rpmbuild/SRPMS ./packages

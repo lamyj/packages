@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import argparse
+import os
+import subprocess
+import sys
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--docker", help="Run in docker")
+    arguments = parser.parse_args()
+
+    local_root = os.path.abspath(os.path.dirname(__file__))
+
+    if arguments.docker:
+        run_in_docker(local_root, arguments.docker)
+    else:
+        run(local_root)
+
+def run(local_root):
+    distributions = ["centos"]
+    for distribution in distributions:
+        for release in os.listdir(os.path.join(local_root, distribution)):
+            repository = os.path.join(local_root, distribution, release)
+
+            subprocess.check_call(["createrepo", repository])
+            subprocess.check_call([
+                "gpg", "--detach-sign", "--armor", "--yes",
+                "--default-key", "3EBD1CD4",
+                os.path.join(repository, "repodata", "repomd.xml")])
+
+def run_in_docker(local_root, docker_image):
+    docker_root = "/root/rpm"
+    subprocess.check_call([
+        "docker", "run", "-t", "-i", "--rm",
+        "-v", "{}:{}".format(local_root, docker_root),
+        "-v", "{}:{}".format(
+            os.path.expanduser("~/.gnupg/pubring.gpg"),
+            "/root/.gnupg/pubring.gpg"),
+        "-v", "{}:{}".format(
+            os.path.expanduser("~/.gnupg/secring.gpg"),
+            "/root/.gnupg/secring.gpg"),
+        "-w", docker_root,
+        docker_image,
+        "/bin/sh", "-c", "; ".join([
+            "yum -y install createrepo gnupg2",
+            os.path.join(docker_root, os.path.basename(__file__))])
+    ])
+
+if __name__ == "__main__":
+    sys.exit(main())
