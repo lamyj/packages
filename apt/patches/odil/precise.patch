@@ -23,6 +23,12 @@ diff -u a/debian/control b/control
  Provides: libdcmtkpp0
  Conflicts: libdcmtkpp0
  Replaces: libdcmtkpp0
+diff a/debian/python3-odil.install b/debian/python3-odil.install
+--- a/debian/python3-odil.install
++++ b/debian/python3-odil.install
+@@ -1 +1 @@
+-build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
++build-py3.2/wrappers/odil.so usr/lib/python3.2/dist-packages/
 diff -u a/debian/rules b/rules
 --- a/debian/rules	2016-04-22 19:28:14.275011000 +0200
 +++ b/rules	2016-04-23 15:27:36.886920968 +0200
