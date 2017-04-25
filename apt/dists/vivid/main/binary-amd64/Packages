@@ -17,12 +17,68 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
-Package: libodil0
+Package: libodil-dev
 Source: odil
-Version: 0.7.3-1~vivid
+Version: 0.8.0-1~vivid
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 7102
+Installed-Size: 543
+Depends: libodil0 (= 0.8.0-1~vivid), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev, liblog4cpp5-dev
+Conflicts: libdcmtkpp-dev, libodil0-dev
+Replaces: libdcmtkpp-dev, libodil0-dev
+Provides: libdcmtkpp-dev, libodil0-dev
+Multi-Arch: same
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: libdevel
+Filename: pool/main/o/odil/libodil-dev_0.8.0-1~vivid_amd64.deb
+Size: 77938
+SHA256: 059296bd0a0aec0ddc102526e8d7b983db9492903ca2752a723eee48f8d47221
+SHA1: 6559087421cf25b8d8824fd6b39cb50f5d7e9f75
+MD5sum: f7f2c2d0d32dfd5b2662d12ad6dc84f9
+Description: C++11 library for the DICOM standard (development files)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the development files.
+
+Package: libodil-doc
+Source: odil
+Version: 0.8.0-1~vivid
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 3427
+Depends: libjs-jquery
+Conflicts: libdcmtkpp0-doc, libodil0-doc
+Replaces: libdcmtkpp0-doc, libodil0-doc
+Provides: libdcmtkpp0-doc, libodil0-doc
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: doc
+Filename: pool/main/o/odil/libodil-doc_0.8.0-1~vivid_all.deb
+Size: 246808
+SHA256: c32854688986486c4543553bcd399012001bf6b995f53c82cd5a82801d3963e2
+SHA1: 2531eb1ee339a903eb93106427f52c8d9c6fc43e
+MD5sum: 3ffd7a45c8c511d27527f7fab6dee1d6
+Description: C++11 library for the DICOM standard (documentation)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the documentation files.
+
+Package: libodil0
+Source: odil
+Version: 0.8.0-1~vivid
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 7950
 Depends: libboost-filesystem1.55.0, libboost-system1.55.0, libc6 (>= 2.14), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libicu52 (>= 52~m1-1~), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libstdc++6 (>= 4.9)
 Conflicts: libdcmtkpp0
 Replaces: libdcmtkpp0
@@ -31,11 +87,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libs
-Filename: pool/main/o/odil/libodil0_0.7.3-1~vivid_amd64.deb
-Size: 1157734
-SHA256: 4c3e238fc8a0a56efbc9b0ebf42048fc668e69dafe752bdfaa35d1b50581f816
-SHA1: a421dc85c0c583a8b9da90de1e007c054cf44952
-MD5sum: 1f567de70540cdcfde2346a12a9ee5f4
+Filename: pool/main/o/odil/libodil0_0.8.0-1~vivid_amd64.deb
+Size: 1248366
+SHA256: 88e50f6aa8ac0f46e9ddc281122313304de7a66aaa7b6dc1665b1d97960c2b54
+SHA1: 15a33d8199fe8da80951ceabd2359c1756e3dc75
+MD5sum: b66fbe039a2fb3c3cfab0a716ab0d10f
 Description: C++11 library for the DICOM standard
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -47,76 +103,20 @@ Description: C++11 library for the DICOM standard
  .
  This package contains the shared library.
 
-Package: libodil0-dev
-Source: odil
-Version: 0.7.3-1~vivid
-Architecture: amd64
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 520
-Depends: libodil0 (= 0.7.3-1~vivid), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev, liblog4cpp5-dev
-Conflicts: libdcmtkpp-dev, libodil-dev
-Replaces: libdcmtkpp-dev
-Provides: libdcmtkpp-dev, libodil-dev
-Multi-Arch: same
-Homepage: https://github.com/lamyj/odil
-Priority: optional
-Section: libdevel
-Filename: pool/main/o/odil/libodil0-dev_0.7.3-1~vivid_amd64.deb
-Size: 75848
-SHA256: 209390424c5fa95401c72d5d86699f75e448434bab5dd6f2b04753c633d49e9a
-SHA1: 37a111c17d5df866731228378094fbfc426f9387
-MD5sum: bfd62add8669b22e41e694c1320f1ed8
-Description: C++11 library for the DICOM standard (development files)
- Odil leverages C++ constructs to provide a user-friendly API of the
- different parts of the DICOM standard. Included in Odil are exception-based
- error handling, generic access to datasets elements, standard JSON and XML
- representation of datasets, and generic implementation of messages, clients
- and servers for the various DICOM protocols.
- .
- This package contains the development files.
-
-Package: libodil0-doc
-Source: odil
-Version: 0.7.3-1~vivid
-Architecture: all
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 3322
-Depends: libjs-jquery
-Conflicts: libdcmtkpp0-doc
-Replaces: libdcmtkpp0-doc
-Provides: libdcmtkpp0-doc
-Multi-Arch: foreign
-Homepage: https://github.com/lamyj/odil
-Priority: optional
-Section: doc
-Filename: pool/main/o/odil/libodil0-doc_0.7.3-1~vivid_all.deb
-Size: 243444
-SHA256: d4323067d63398e248ac52cbcd67561e409b8b3296a06912cc1c55c14dbf12bb
-SHA1: ea3ca1356cb1d8d133b8523c39aead050afcd9ef
-MD5sum: 869df8782be05a92f749741d438fc9c8
-Description: C++11 library for the DICOM standard (documentation)
- Odil leverages C++ constructs to provide a user-friendly API of the
- different parts of the DICOM standard. Included in Odil are exception-based
- error handling, generic access to datasets elements, standard JSON and XML
- representation of datasets, and generic implementation of messages, clients
- and servers for the various DICOM protocols.
- .
- This package contains the documentation files.
-
 Package: odil
-Version: 0.7.3-1~vivid
+Version: 0.8.0-1~vivid
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 95
+Installed-Size: 106
 Depends: python-odil, python
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.7.3-1~vivid_all.deb
-Size: 16682
-SHA256: da3e66a0b045606febb0f9ef487b02a203fb33d81129c1e9e67c402ceb0985c8
-SHA1: ada8cc5ac35002eb19505be04b7a49065104279a
-MD5sum: 3f04bbd59429473ccf0e8ef25db70b2d
+Filename: pool/main/o/odil/odil_0.8.0-1~vivid_all.deb
+Size: 17526
+SHA256: bc147d04502b8cff282aa56a401bd7d3b862644e4cc17b501a8282e5332de60c
+SHA1: 6c519eacf2f848217a79d1d3700ae077b85e0759
+MD5sum: 5962f4cb877799a6835627d86963c869
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -128,20 +128,20 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: python-odil
 Source: odil
-Version: 0.7.3-1~vivid
+Version: 0.8.0-1~vivid
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 5068
-Depends: libodil0 (= 0.7.3-1~vivid), libboost-python1.55.0, libboost-system1.55.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (<< 2.8), python (>= 2.7~)
+Installed-Size: 6212
+Depends: libodil0 (= 0.8.0-1~vivid), libboost-python1.55.0, libboost-system1.55.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (<< 2.8), python (>= 2.7~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: python
-Filename: pool/main/o/odil/python-odil_0.7.3-1~vivid_amd64.deb
-Size: 668756
-SHA256: 3da7ae84c4d8c7266f8ef7b8ad457fb8981f8d694017f00884bbfefff891dd4b
-SHA1: 9165c076b51997854d20e92dd8574780521757b3
-MD5sum: bb24bb984607fb5e415d496db81a3dad
+Filename: pool/main/o/odil/python-odil_0.8.0-1~vivid_amd64.deb
+Size: 812490
+SHA256: 57b0a9542243b3a6486b43925811fc7f0e9d835ed1672de9fa7846cd5521d174
+SHA1: 48823c3b986c8124155603ba31227146415004a7
+MD5sum: 73057ef1dbdff92d927028d99176c83c
 Description: C++11 library for the DICOM standard (Python wrappers)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -150,4 +150,29 @@ Description: C++11 library for the DICOM standard (Python wrappers)
  and servers for the various DICOM protocols.
  .
  This package contains the Python wrappers.
+
+Package: python3-odil
+Source: odil
+Version: 0.8.0-1~vivid
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 6212
+Depends: libodil0 (= 0.8.0-1~vivid), libboost-python1.55.0, libboost-system1.55.0, libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython3.4 (>= 3.4.2), libstdc++6 (>= 4.2.1), python3 (<< 3.5), python3 (>= 3.4~)
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: python
+Filename: pool/main/o/odil/python3-odil_0.8.0-1~vivid_amd64.deb
+Size: 813566
+SHA256: a6425a12def1c7d107fa25fb1576a8c44fc258e7b1c1f9dc22e805d22013270e
+SHA1: b60ad805f319a307555c2a880001eac61e127f4b
+MD5sum: fe46dbc18df7a21ea5eed681ad44bf54
+Description: C++11 library for the DICOM standard (Python 3 wrappers)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the Python 3 wrappers.
 

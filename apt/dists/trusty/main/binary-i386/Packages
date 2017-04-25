@@ -1,52 +1,3 @@
-Package: clang-3.8-doc
-Source: llvm-toolchain-3.8
-Version: 1:3.8.1-12ubuntu1~trusty
-Architecture: all
-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
-Installed-Size: 3419
-Homepage: http://www.llvm.org/
-Priority: optional
-Section: doc
-Filename: pool/main/l/llvm-toolchain-3.8/clang-3.8-doc_3.8.1-12ubuntu1~trusty_all.deb
-Size: 577966
-SHA256: 16b8c0b04fdf9576d7153419baadbe1e61933fdb4a4272e091538c74a60e0436
-SHA1: 3343cc80bb648277e77c9eeb6bcba8b10ea9f765
-MD5sum: 9e1c7aa95833f5ec2d588e2ed61a8ad4
-Description: C, C++ and Objective-C compiler (LLVM based) - Documentation
- Clang project is a C, C++, Objective C and Objective C++ front-end
- for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
- Collection (GCC).
- .
- Clang fully implements all published ISO C++ standards including C++11, as
- well as the upcoming C++14 standard, and some parts of the fledgling C++1z
- standard, and is considered a production-quality C++ compiler.
- .
- This package contains the documentation.
-
-Package: dcmtk-doc
-Source: dcmtk
-Version: 3.6.1~20160216-2~trusty
-Architecture: all
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 137324
-Suggests: dcmtk, libdcmtk-dev
-Homepage: http://dicom.offis.de/dcmtk
-Priority: optional
-Section: doc
-Filename: pool/main/d/dcmtk/dcmtk-doc_3.6.1~20160216-2~trusty_all.deb
-Size: 7871870
-SHA256: 0d5ae9048140e10a3e2a23ca6e3fd407351be6c10ae20c796c9a1b80b1fe659b
-SHA1: 60ae75d27e05808be429ea31efa57ec501fb14e5
-MD5sum: 2084d5076a5f6ee44fb22a728b4b738e
-Description: OFFIS DICOM toolkit documentation
- DCMTK includes a collection of libraries and applications for examining,
- constructing and converting DICOM image files, handling offline media,
- sending and receiving images over a network connection, as well as
- demonstrative image storage and worklist servers.
- .
- This package contains the on-line documentation for the DCMTK libraries
- and utilities in HTML format.
-
 Package: dicomifier
 Version: 0.10.6-1~trusty
 Architecture: i386
@@ -66,42 +17,68 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
-Package: insighttoolkit4-examples
-Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~trusty
+Package: libodil-dev
+Source: odil
+Version: 0.8.0-1~trusty
+Architecture: i386
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 543
+Depends: libodil0 (= 0.8.0-1~trusty), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev, liblog4cpp5-dev
+Conflicts: libdcmtkpp-dev, libodil0-dev
+Replaces: libdcmtkpp-dev, libodil0-dev
+Provides: libdcmtkpp-dev, libodil0-dev
+Multi-Arch: same
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: libdevel
+Filename: pool/main/o/odil/libodil-dev_0.8.0-1~trusty_i386.deb
+Size: 77762
+SHA256: 84ca76a6e14cfa4721a869fa6e7996e97cf19c37bfaeccc499603a9da676dcc4
+SHA1: 1b3a00e7bd5770821eee5c177b1abfb7d906cac4
+MD5sum: 98ac88f577e4574764e56ef867649a53
+Description: C++11 library for the DICOM standard (development files)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the development files.
+
+Package: libodil-doc
+Source: odil
+Version: 0.8.0-1~trusty
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 2918
-Suggests: libinsighttoolkit4-dev
-Conflicts: insighttoolkit-examples
-Replaces: insighttoolkit-examples
-Homepage: http://www.itk.org/
+Installed-Size: 3574
+Depends: libjs-jquery
+Conflicts: libdcmtkpp0-doc, libodil0-doc
+Replaces: libdcmtkpp0-doc, libodil0-doc
+Provides: libdcmtkpp0-doc, libodil0-doc
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/odil
 Priority: optional
-Section: devel
-Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~trusty_all.deb
-Size: 2577410
-SHA256: 8187de38389fc95ab1aed289cff9650433a02c62c8dd216dcb1378fc54c25a91
-SHA1: 5fe3624c223681a34de70801c5706d499860a143
-MD5sum: 53919cba376081d52bacfe410200ef34
-Description: Image processing toolkit for registration and segmentation - examples
- ITK is an open-source software toolkit for performing registration and
- segmentation. Segmentation is the process of identifying and
- classifying data found in a digitally sampled
- representation. Typically the sampled representation is an image
- acquired from such medical instrumentation as CT or MRI
- scanners. Registration is the task of aligning or developing
- correspondences between data. For example, in the medical
- environment, a CT scan may be aligned with a MRI scan in order to
- combine the information contained in both.
+Section: doc
+Filename: pool/main/o/odil/libodil-doc_0.8.0-1~trusty_all.deb
+Size: 236022
+SHA256: d13c80042a093f3c6fd2514d9b21518e4bbaa67090761818972f80ee59f324c6
+SHA1: bcfb5ff608f6c9466008b8be29677330f702beb0
+MD5sum: c003b0961591a2cf058181056eec1ebf
+Description: C++11 library for the DICOM standard (documentation)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
  .
- This package contains the source for example programs.
+ This package contains the documentation files.
 
 Package: libodil0
 Source: odil
-Version: 0.7.3-1~trusty
+Version: 0.8.0-1~trusty
 Architecture: i386
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 8295
+Installed-Size: 9379
 Depends: libboost-filesystem1.54.0, libboost-system1.54.0, libc6 (>= 2.9), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libicu52 (>= 52~m1-1~), libjsoncpp0 (>= 0.6.0~rc2), liblog4cpp5, libstdc++6 (>= 4.8)
 Conflicts: libdcmtkpp0
 Replaces: libdcmtkpp0
@@ -110,11 +87,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libs
-Filename: pool/main/o/odil/libodil0_0.7.3-1~trusty_i386.deb
-Size: 994172
-SHA256: 3d5cd50376fd1a845e3841e9993dac350bdb8ecc12145e22ce441618cc1176fb
-SHA1: 3c9b3dd62b6d8223bf5eea96628d9bac3c2028fa
-MD5sum: 61f023f97e06731e81f1287e49b77583
+Filename: pool/main/o/odil/libodil0_0.8.0-1~trusty_i386.deb
+Size: 1043012
+SHA256: ff53bd5d6025872124eee8f348e1185291223a7b0344424da72029fe4b265031
+SHA1: c04422908756fb181b7dc06ee0910cc6ec20140b
+MD5sum: 7ea2e4499954f2632ea37dbad2b87eb4
 Description: C++11 library for the DICOM standard
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -126,155 +103,20 @@ Description: C++11 library for the DICOM standard
  .
  This package contains the shared library.
 
-Package: libodil0-dev
-Source: odil
-Version: 0.7.3-1~trusty
-Architecture: i386
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 520
-Depends: libodil0 (= 0.7.3-1~trusty), libboost-filesystem-dev, libboost-system-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev, liblog4cpp5-dev
-Conflicts: libdcmtkpp-dev, libodil-dev
-Replaces: libdcmtkpp-dev
-Provides: libdcmtkpp-dev, libodil-dev
-Multi-Arch: same
-Homepage: https://github.com/lamyj/odil
-Priority: optional
-Section: libdevel
-Filename: pool/main/o/odil/libodil0-dev_0.7.3-1~trusty_i386.deb
-Size: 75706
-SHA256: 6658ed58f231c198f6cf1030c0d4129a5f3e42ab42dcdae1448a88a942e10759
-SHA1: cdd97e7b0c93fe370c6fbacd75a3b6bd9bf6df7b
-MD5sum: ad1a36fd3acb90daac3375449b8063a8
-Description: C++11 library for the DICOM standard (development files)
- Odil leverages C++ constructs to provide a user-friendly API of the
- different parts of the DICOM standard. Included in Odil are exception-based
- error handling, generic access to datasets elements, standard JSON and XML
- representation of datasets, and generic implementation of messages, clients
- and servers for the various DICOM protocols.
- .
- This package contains the development files.
-
-Package: libodil0-doc
-Source: odil
-Version: 0.7.3-1~trusty
-Architecture: all
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 3451
-Depends: libjs-jquery
-Conflicts: libdcmtkpp0-doc
-Replaces: libdcmtkpp0-doc
-Provides: libdcmtkpp0-doc
-Multi-Arch: foreign
-Homepage: https://github.com/lamyj/odil
-Priority: optional
-Section: doc
-Filename: pool/main/o/odil/libodil0-doc_0.7.3-1~trusty_all.deb
-Size: 232620
-SHA256: 7a9c59958936657fbe06e6bfc917a5407a689dc8b2b38f284336cee3d182ff78
-SHA1: af2b85c7bdc8e7703e1bcaeafbe4f89eb788951d
-MD5sum: 2af364b0e03c5b11863ab9fde55155f5
-Description: C++11 library for the DICOM standard (documentation)
- Odil leverages C++ constructs to provide a user-friendly API of the
- different parts of the DICOM standard. Included in Odil are exception-based
- error handling, generic access to datasets elements, standard JSON and XML
- representation of datasets, and generic implementation of messages, clients
- and servers for the various DICOM protocols.
- .
- This package contains the documentation files.
-
-Package: lldb-3.8-dev
-Source: llvm-toolchain-3.8
-Version: 1:3.8.1-12ubuntu1~trusty
-Architecture: all
-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
-Installed-Size: 57
-Depends: liblldb-3.8-dev
-Homepage: http://www.llvm.org/
-Priority: optional
-Section: oldlibs
-Filename: pool/main/l/llvm-toolchain-3.8/lldb-3.8-dev_3.8.1-12ubuntu1~trusty_all.deb
-Size: 20972
-SHA256: 9f70fa44ed4d39bc951fc5b05b5d904ccf26706693b32a64c620fb445742ec93
-SHA1: 399d89c59150ed10a798ce87b546aed025aa0977
-MD5sum: 14363be7594a35604875cf800504c367
-Description: transitional dummy package to liblldb-3.8-dev
- This is a transitional dummy package. It can safely be removed.
-
-Package: llvm-3.8-doc
-Source: llvm-toolchain-3.8
-Version: 1:3.8.1-12ubuntu1~trusty
-Architecture: all
-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
-Installed-Size: 10096
-Depends: libjs-jquery, libjs-underscore
-Homepage: http://www.llvm.org/
-Priority: optional
-Section: doc
-Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-doc_3.8.1-12ubuntu1~trusty_all.deb
-Size: 1504122
-SHA256: 281cdb10b1ade80dca9765023a0c279ed17cf63495714d7e46c21001bef937ae
-SHA1: 0131f8d6add85b0bc01fac3953b6589b9b7ddcaf
-MD5sum: c124aea65b715c12812f3e54603acecf
-Description: Modular compiler and toolchain technologies, documentation
- LLVM is a collection of libraries and tools that make it easy to build
- compilers, optimizers, just-in-time code generators, and many other
- compiler-related programs.
- .
- LLVM uses a single, language-independent virtual instruction set both
- as an offline code representation (to communicate code between
- compiler phases and to run-time systems) and as the compiler internal
- representation (to analyze and transform programs). This persistent
- code representation allows a common set of sophisticated compiler
- techniques to be applied at compile-time, link-time, install-time,
- run-time, or "idle-time" (between program runs).
- .
- This package contains all documentation (extensive).
-
-Package: llvm-3.8-examples
-Source: llvm-toolchain-3.8
-Version: 1:3.8.1-12ubuntu1~trusty
-Architecture: all
-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
-Installed-Size: 494
-Depends: llvm-3.8-dev (>= 1:3.8.1-12ubuntu1~trusty), llvm-3.8-dev (<< 1:3.8.1-12ubuntu1~trusty+c~)
-Homepage: http://www.llvm.org/
-Priority: optional
-Section: doc
-Filename: pool/main/l/llvm-toolchain-3.8/llvm-3.8-examples_3.8.1-12ubuntu1~trusty_all.deb
-Size: 232460
-SHA256: b555fe715e4a671f0c3c1c1712b8d994d772126377fa03cd6e5d76165dd33201
-SHA1: 7a8e300bd6ea19b14ab41bd256687709bc94d698
-MD5sum: 1dd63d7c8a4537f9833d7e0bb3e85332
-Description: Modular compiler and toolchain technologies, examples
- LLVM is a collection of libraries and tools that make it easy to build
- compilers, optimizers, just-in-time code generators, and many other
- compiler-related programs.
- .
- LLVM uses a single, language-independent virtual instruction set both
- as an offline code representation (to communicate code between
- compiler phases and to run-time systems) and as the compiler internal
- representation (to analyze and transform programs). This persistent
- code representation allows a common set of sophisticated compiler
- techniques to be applied at compile-time, link-time, install-time,
- run-time, or "idle-time" (between program runs).
- .
- This package contains examples for using LLVM, both in developing
- extensions to LLVM and in using it to compile code.
-
 Package: odil
-Version: 0.7.3-1~trusty
+Version: 0.8.0-1~trusty
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 95
+Installed-Size: 106
 Depends: python-odil, python
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.7.3-1~trusty_all.deb
-Size: 16546
-SHA256: d0de5db16404f4509681fb1d6731331b3cf032afbf7306a038531bfb7605497e
-SHA1: 84cf92323c102bf4ec8c90fa35ff62fac5135b03
-MD5sum: be4e947ca42fa9c39c0eb2e01be48ab9
+Filename: pool/main/o/odil/odil_0.8.0-1~trusty_all.deb
+Size: 17432
+SHA256: ee83594de91872ba91e91cfa65c78fc937c0cf90e1240abd88367d9b04afc287
+SHA1: 8389d0810c6fb6434eddf920845ccb3dfcfda992
+MD5sum: 671a2d438d93a8f5c2df7e8b8443b292
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -286,20 +128,20 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: python-odil
 Source: odil
-Version: 0.7.3-1~trusty
+Version: 0.8.0-1~trusty
 Architecture: i386
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 5734
-Depends: libodil0 (= 0.7.3-1~trusty), libboost-python1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (>= 2.7~), python (<< 2.8)
+Installed-Size: 7148
+Depends: libodil0 (= 0.8.0-1~trusty), libboost-python1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), python (<< 2.8), python (>= 2.7~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: python
-Filename: pool/main/o/odil/python-odil_0.7.3-1~trusty_i386.deb
-Size: 644464
-SHA256: f474bc578d8137dd1292ec035a186a91fc000b5bbc96cf69360ae9638aca9400
-SHA1: de9bfc29fccb9718fbe0cd76d8d00be72c15b160
-MD5sum: a9ec4e1c049a7a67367499f4a5ffcd30
+Filename: pool/main/o/odil/python-odil_0.8.0-1~trusty_i386.deb
+Size: 769238
+SHA256: 3d0dd242bae62488db2a68f1db8d26c630e064d77f789b80243e02e3c539d35f
+SHA1: 64b4f8b04e882a322aa72587852b6c615f58d092
+MD5sum: bea1cbd5276209f1bd1023d9377133ad
 Description: C++11 library for the DICOM standard (Python wrappers)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -308,4 +150,29 @@ Description: C++11 library for the DICOM standard (Python wrappers)
  and servers for the various DICOM protocols.
  .
  This package contains the Python wrappers.
+
+Package: python3-odil
+Source: odil
+Version: 0.8.0-1~trusty
+Architecture: i386
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 7148
+Depends: libodil0 (= 0.8.0-1~trusty), libboost-python1.54.0, libboost-system1.54.0, libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjsoncpp0 (>= 0.6.0~rc2), libpython3.4 (>= 3.4.2), libstdc++6 (>= 4.2.1), python3 (>= 3.4~), python3 (<< 3.5)
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: python
+Filename: pool/main/o/odil/python3-odil_0.8.0-1~trusty_i386.deb
+Size: 732074
+SHA256: 071f7ceac758e2f27f89ae7e4ef3a258c85d3aef6df2e9a6007ccc42d08db811
+SHA1: a547566975ed787096c4b3a50e5e6593188f1664
+MD5sum: 814e03a5ac47fb1e7d01c5be34c91d16
+Description: C++11 library for the DICOM standard (Python 3 wrappers)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the Python 3 wrappers.
 
