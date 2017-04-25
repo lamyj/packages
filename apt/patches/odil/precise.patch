@@ -1,5 +1,5 @@
 diff --git a/debian/control b/debian/control
-index 9094ba6..683a331 100644
+index 9094ba6..f194cdd 100644
 --- a/debian/control
 +++ b/debian/control
 @@ -5,11 +5,11 @@ Section: science
@@ -16,7 +16,7 @@ index 9094ba6..683a331 100644
                 libicu-dev (>= 4.8.1.1),
                 zlib1g-dev,
                 uuid-dev,
-@@ -38,14 +38,15 @@ Architecture: any
+@@ -38,6 +38,7 @@ Architecture: any
  Section: libs
  Depends: ${shlibs:Depends},
           ${misc:Depends}
@@ -24,76 +24,6 @@ index 9094ba6..683a331 100644
  Provides: libdcmtkpp0
  Conflicts: libdcmtkpp0
  Replaces: libdcmtkpp0
- Multi-Arch: same
- Description: C++11 library for the DICOM standard
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
-@@ -64,9 +65,9 @@ Conflicts: libodil0-dev, libdcmtkpp-dev
- Replaces: libodil0-dev, libdcmtkpp-dev
- Multi-Arch: same
- Description: C++11 library for the DICOM standard (development files)
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
-@@ -82,9 +83,9 @@ Conflicts: libodil0-doc, libdcmtkpp0-doc
- Replaces: libodil0-doc, libdcmtkpp0-doc
- Multi-Arch: foreign
- Description: C++11 library for the DICOM standard (documentation)
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
-@@ -99,9 +100,9 @@ Depends: libodil0 (= ${binary:Version}),
-          ${misc:Depends}
- Multi-Arch: foreign
- Description: C++11 library for the DICOM standard (Python wrappers)
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
-@@ -116,9 +117,9 @@ Depends: libodil0 (= ${binary:Version}),
-          ${misc:Depends}
- Multi-Arch: foreign
- Description: C++11 library for the DICOM standard (Python 3 wrappers)
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
-@@ -128,9 +129,9 @@ Package: odil
- Architecture: all
- Depends: python-odil, python, ${misc:Depends}
- Description: C++11 library for the DICOM standard (application)
-- Odil leverages C++ constructs to provide a user-friendly API of the 
-+ Odil leverages C++ constructs to provide a user-friendly API of the
-  different parts of the DICOM standard. Included in Odil are exception-based
-- error handling, generic access to datasets elements, standard JSON and XML 
-+ error handling, generic access to datasets elements, standard JSON and XML
-  representation of datasets, and generic implementation of messages, clients
-  and servers for the various DICOM protocols.
-  .
 diff --git a/debian/python3-odil.install b/debian/python3-odil.install
 index 3d870b1..6392259 100644
 --- a/debian/python3-odil.install
@@ -102,7 +32,7 @@ index 3d870b1..6392259 100644
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.2/wrappers/odil.so usr/lib/python3.2/dist-packages/
 diff --git a/debian/rules b/debian/rules
-index 5937b49..784708c 100755
+index 5937b49..1636f83 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -1,11 +1,10 @@
@@ -137,8 +67,15 @@ index 5937b49..784708c 100755
  	ln -s build-py$* build
  	cd build && \
  	  ../tests/run --no-network \
-@@ -69,10 +69,10 @@ override_dh_install-arch:
- 		--commit --multiarch --exclude-a --exclude-la \
+@@ -64,19 +64,21 @@ override_dh_auto_install-arch:
+ override_dh_install-arch:
+ 	dh_install
+ 	chrpath -d debian/python*-odil/usr/lib/python*/dist-packages/odil*.so
++	touch debian/tmp/usr/lib/libodil.a
+ 	d-shlibmove \
+ 		--devunversioned \
+-		--commit --multiarch --exclude-a --exclude-la \
++		--commit --multiarch --exclude-la \
  		--movedev debian/tmp/usr/include/* usr/include \
  		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
 -		--override s/libdcm.*-dev/libdcmtk-dev/ \
@@ -151,3 +88,8 @@ index 5937b49..784708c 100755
                  --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
                  --override s/libboost_regex.*-dev/libboost-regex-dev/ \
                  --override s/libboost_system.*-dev/libboost-system-dev/ \
+ 		debian/tmp/usr/lib/*.so
++	find debian -name libodil.a -delete
+ 
+ override_dh_fixperms:
+ 	dh_fixperms
