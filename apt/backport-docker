@@ -50,8 +50,13 @@ sudo -E ${APT_GET} install ${PACKAGES}
 
 # Patch if needed
 patch_url=${PATCHES}/${PROJECT}/${DISTRIB}.patch
-wget ${patch_url} && patch -p1 < ${DISTRIB}.patch || true
-[ -f ${DISTRIB}.patch ] && rm ${DISTRIB}.patch
+wget ${patch_url} && has_patch="yes" || has_patch=""
+if test "${has_patch}"; then
+  patch --batch --strip=1 --input=${DISTRIB}.patch
+  rm ${DISTRIB}.patch
+else
+  echo "No patch for ${PROJECT} on ${DISTRIB}"
+fi
 
 # Install build dependencies
 sudo mk-build-deps --tool "apt-get -y --no-install-recommends" --install
@@ -82,4 +87,3 @@ cp ../*deb packages
 
 ./debian/rules clean
 mv ${changelog_orig} debian/changelog
-
