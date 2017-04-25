@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+import urllib
+import sys
+
+import requests
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Fetch artifacts from the lastest stable build of a Jenkins job")
+    parser.add_argument("url", help="Root URL of the Jenkins job")
+    parser.add_argument("destination", help="Destination directory")
+    parser.add_argument(
+        "--force-https", "-s", action="store_true", help="Force HTTPS requests")
+    arguments = parser.parse_args()
+
+    job = call_json_api(arguments.url, arguments.force_https)
+    build_number = job["lastStableBuild"]["number"]
+    build_url = [
+        x["url"] for x in job["builds"]
+        if x["number"] == build_number][0]
+    build = call_json_api(build_url, arguments.force_https)
+    runs = [
+        x["url"] for x in build["runs"]
+        if x["number"] == build_number
+    ]
+    for run_url in runs:
+        run = call_json_api(run_url, arguments.force_https)
+        for artifact in run["artifacts"]:
+            fetch_file(
+                run_url, artifact, arguments.destination, arguments.force_https)
+
+def call_json_api(url, force_https):
+    api_suffix = ["api", "json"]
+    response = requests.get(os.path.join(
+        url if not force_https else url.replace("http://", "https://"),
+        *api_suffix))
+    return response.json()
+
+def fetch_file(run_url, artifact, destination, force_https):
+    url = os.path.join(run_url, "artifact", artifact["relativePath"])
+    response = requests.get(
+        url if not force_https else url.replace("http://", "https://"))
+    with open(os.path.join(destination, artifact["fileName"]), "wb") as fd:
+        fd.write(response.content)
+
+if __name__ == "__main__":
+    sys.exit(main())
