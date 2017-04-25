@@ -1,7 +1,8 @@
-diff -u a/debian/control b/control
---- a/debian/control	2016-04-21 19:43:08.463018000 +0200
-+++ b/control	2016-04-23 15:18:28.494920968 +0200
-@@ -5,11 +5,10 @@
+diff --git a/debian/control b/debian/control
+index 9094ba6..167074a 100644
+--- a/debian/control
++++ b/debian/control
+@@ -5,11 +5,10 @@ Section: science
  Priority: optional
  Build-Depends: debhelper (>= 9),
                 d-shlibs,
@@ -14,7 +15,7 @@ diff -u a/debian/control b/control
                 libicu-dev (>= 4.8.1.1),
                 zlib1g-dev,
                 uuid-dev,
-@@ -33,6 +33,7 @@ Architecture: any
+@@ -38,6 +37,7 @@ Architecture: any
  Section: libs
  Depends: ${shlibs:Depends},
           ${misc:Depends}
@@ -22,13 +23,15 @@ diff -u a/debian/control b/control
  Provides: libdcmtkpp0
  Conflicts: libdcmtkpp0
  Replaces: libdcmtkpp0
-diff a/debian/python3-odil.install b/debian/python3-odil.install
+diff --git a/debian/python3-odil.install b/debian/python3-odil.install
+index 3d870b1..6392259 100644
 --- a/debian/python3-odil.install
 +++ b/debian/python3-odil.install
 @@ -1 +1 @@
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.2/wrappers/odil.so usr/lib/python3.2/dist-packages/
-diff -u a/debian/rules b/rules
+diff --git a/debian/rules b/debian/rules
+index 5937b49..784708c 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -1,11 +1,10 @@
@@ -45,35 +48,35 @@ diff -u a/debian/rules b/rules
  
  # Required to get the full path to the boost.python library
 @@ -28,8 +27,8 @@ override_dh_auto_build-py%: override_dh_auto_build-nopy
-        dh_auto_configure -- \
-          -DBUILD_WRAPPERS=ON -DPython_ADDITIONAL_VERSIONS=$* \
-          -DPYTHON_EXECUTABLE=/usr/bin/python$* \
--         -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so \
--         -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so
-+         -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/libboost_python-py$(subst .,,$*).so \
-+         -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/libboost_python-py$(subst .,,$*).so
-        dh_auto_build
-        mv build build-py$*
+ 	dh_auto_configure -- \
+ 	  -DBUILD_WRAPPERS=ON -DPython_ADDITIONAL_VERSIONS=$* \
+ 	  -DPYTHON_EXECUTABLE=/usr/bin/python$* \
+-	  -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so \
+-	  -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/$(TRIPLET)/libboost_python-py$(subst .,,$*).so
++	  -DBoost_PYTHON_LIBRARY_DEBUG=/usr/lib/libboost_python-py$(subst .,,$*).so \
++	  -DBoost_PYTHON_LIBRARY_RELEASE=/usr/lib/libboost_python-py$(subst .,,$*).so
+ 	dh_auto_build
+ 	mv build build-py$*
  
 @@ -46,6 +45,7 @@ override_dh_auto_test-arch-nopy:
  
  # Run Python tests only on python build
  override_dh_auto_test-arch-py%:
-+       dpkg --compare-versions $* ge 3 && 2to3 -w tests/wrappers/test_vr.py || true
-        ln -s build-py$* build
-        cd build && \
-          ../tests/run --no-network \
++	dpkg --compare-versions $* ge 3 && 2to3 -w tests/wrappers/test_vr.py || true
+ 	ln -s build-py$* build
+ 	cd build && \
+ 	  ../tests/run --no-network \
 @@ -69,10 +69,10 @@ override_dh_install-arch:
-                --commit --multiarch --exclude-a --exclude-la \
-                --movedev debian/tmp/usr/include/* usr/include \
-                --override s/libjsoncpp.-dev/libjsoncpp-dev/ \
--               --override s/libdcm.*-dev/libdcmtk-dev/ \
--               --override s/libof.*-dev/libdcmtk-dev/ \
-+               --override s/libdcm.*-dev/libdcmtk2-dev/ \
-+               --override s/libof.*-dev/libdcmtk2-dev/ \
-                --override s/libicuuc.*-dev/libicu-dev/ \
--               --override s/libboost_datetime.*-dev/libboost-datetime-dev/ \
-+               --override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
+ 		--commit --multiarch --exclude-a --exclude-la \
+ 		--movedev debian/tmp/usr/include/* usr/include \
+ 		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
+-		--override s/libdcm.*-dev/libdcmtk-dev/ \
+-		--override s/libof.*-dev/libdcmtk-dev/ \
++		--override s/libdcm.*-dev/libdcmtk2-dev/ \
++		--override s/libof.*-dev/libdcmtk2-dev/ \
+ 		--override s/libicuuc.*-dev/libicu-dev/ \
+-		--override s/libboost_datetime.*-dev/libboost-datetime-dev/ \
++		--override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
                  --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
                  --override s/libboost_regex.*-dev/libboost-regex-dev/ \
                  --override s/libboost_system.*-dev/libboost-system-dev/ \

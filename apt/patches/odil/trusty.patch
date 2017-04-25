@@ -1,4 +1,5 @@
-diff a/debian/python3-odil.install b/debian/python3-odil.install
+diff --git a/debian/python3-odil.install b/debian/python3-odil.install
+index 3d870b1..0a7fc69 100644
 --- a/debian/python3-odil.install
 +++ b/debian/python3-odil.install
 @@ -1 +1 @@
