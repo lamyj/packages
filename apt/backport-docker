@@ -27,7 +27,7 @@ fi
 
 export DEBEMAIL="${CONTACT}"
 
-APT_GET="apt-get -qq -y"
+APT_GET="apt-get -qq -y --no-install-recommends"
 PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
 BINTRAY=http://dl.bintray.com/lamyj/generic
 
@@ -37,7 +37,7 @@ sudo -E ${APT_GET} install gnupg wget lsb-release
 
 DISTRIB=$(lsb_release -cs)
 
-PACKAGES="devscripts dpkg-dev equivs"
+PACKAGES="devscripts dpkg-dev equivs libwww-perl"
 # Needed for uscan on https
 if [ "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
   PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
