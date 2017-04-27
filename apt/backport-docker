@@ -5,13 +5,15 @@ set -u
 
 CONTACT=""
 JOBS=1
+UNOFFICIAL_REPO=""
 PROJECT=""
 
-while getopts "c:j:p:" OPT; do
+while getopts "c:j:p:u" OPT; do
   case ${OPT} in
     c) CONTACT=${OPTARG} ;;
     j) JOBS=${OPTARG} ;;
     p) PROJECT=${OPTARG} ;;
+    u) UNOFFICIAL_REPO="yes" ;;
   esac
 done
 
@@ -43,9 +45,11 @@ if [ "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
   PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
 fi
 
-wget -O - ${BINTRAY}/gpg.key | sudo apt-key add -
-echo "deb ${BINTRAY}/apt ${DISTRIB} main" | sudo tee -a /etc/apt/sources.list
-sudo -E ${APT_GET} update
+if test "${UNOFFICIAL_REPO}"; then
+  wget -O - ${BINTRAY}/gpg.key | sudo apt-key add -
+  echo "deb ${BINTRAY}/apt ${DISTRIB} main" | sudo tee -a /etc/apt/sources.list
+  sudo -E ${APT_GET} update
+fi
 sudo -E ${APT_GET} install ${PACKAGES}
 
 # Patch if needed
