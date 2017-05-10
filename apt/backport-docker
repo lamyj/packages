@@ -80,7 +80,11 @@ dch \
   --force-bad-version --force-distribution \
   "Backport to ${DISTRIB}"
 
-dpkg-buildpackage -us -uc -j${JOBS}
+# Build all three independently to make sure "dh clean" is called each time
+DPKG_BUILDPACKAGE_OPTIONS="-j${JOBS} -us -uc"
+dpkg-buildpackage -S ${DPKG_BUILDPACKAGE_OPTIONS}
+dpkg-buildpackage -A ${DPKG_BUILDPACKAGE_OPTIONS}
+dpkg-buildpackage -B ${DPKG_BUILDPACKAGE_OPTIONS}
 
 # Run lintian, but do not record failures
 sudo ${APT_GET} --no-install-recommends install lintian
@@ -89,5 +93,5 @@ lintian -I ../*changes || true
 mkdir packages
 cp ../*deb packages
 
-./debian/rules clean
+dh clean
 mv ${changelog_orig} debian/changelog
