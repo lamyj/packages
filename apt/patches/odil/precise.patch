@@ -1,12 +1,14 @@
 diff --git a/debian/control b/debian/control
-index 9094ba6..f194cdd 100644
+index 5d65fbd..f194cdd 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -5,11 +5,11 @@ Section: science
+@@ -4,12 +4,12 @@ Uploaders: Julien Lamy <lamy@unistra.fr>
+ Section: science
  Priority: optional
  Build-Depends: debhelper (>= 9),
-                d-shlibs,
+-               d-shlibs (>= 0.79),
 -               dh-python,
++               d-shlibs,
                 cmake,
                 pkg-config,
                 libjsoncpp-dev,
@@ -32,7 +34,7 @@ index 3d870b1..6392259 100644
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.2/wrappers/odil.so usr/lib/python3.2/dist-packages/
 diff --git a/debian/rules b/debian/rules
-index 5937b49..1636f83 100755
+index 3531df7..eeeccfd 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -1,11 +1,10 @@
@@ -67,7 +69,7 @@ index 5937b49..1636f83 100755
  	ln -s build-py$* build
  	cd build && \
  	  ../tests/run --no-network \
-@@ -64,19 +64,21 @@ override_dh_auto_install-arch:
+@@ -64,15 +64,21 @@ override_dh_auto_install-arch:
  override_dh_install-arch:
  	dh_install
  	chrpath -d debian/python*-odil/usr/lib/python*/dist-packages/odil*.so
@@ -83,13 +85,12 @@ index 5937b49..1636f83 100755
 +		--override s/libdcm.*-dev/libdcmtk2-dev/ \
 +		--override s/libof.*-dev/libdcmtk2-dev/ \
  		--override s/libicuuc.*-dev/libicu-dev/ \
--		--override s/libboost_datetime.*-dev/libboost-datetime-dev/ \
 +		--override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
-                 --override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
-                 --override s/libboost_regex.*-dev/libboost-regex-dev/ \
-                 --override s/libboost_system.*-dev/libboost-system-dev/ \
++		--override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
++		--override s/libboost_regex.*-dev/libboost-regex-dev/ \
++		--override s/libboost_system.*-dev/libboost-system-dev/ \
  		debian/tmp/usr/lib/*.so
 +	find debian -name libodil.a -delete
  
- override_dh_fixperms:
+ override_dh_fixperms-indep:
  	dh_fixperms

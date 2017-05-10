@@ -11,13 +11,6 @@ index 5d65fbd..9094ba6 100644
                 dh-python,
                 cmake,
                 pkg-config,
-diff --git a/debian/python3-odil.install b/debian/python3-odil.install
-index 3d870b1..0a7fc69 100644
---- a/debian/python3-odil.install
-+++ b/debian/python3-odil.install
-@@ -1 +1 @@
--build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
-+build-py3.4/wrappers/odil.so usr/lib/python3.4/dist-packages/
 diff --git a/debian/rules b/debian/rules
 index 3531df7..0da75ea 100755
 --- a/debian/rules

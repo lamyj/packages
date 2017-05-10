@@ -1,3 +1,16 @@
+diff --git a/debian/control b/debian/control
+index 5d65fbd..9094ba6 100644
+--- a/debian/control
++++ b/debian/control
+@@ -4,7 +4,7 @@ Uploaders: Julien Lamy <lamy@unistra.fr>
+ Section: science
+ Priority: optional
+ Build-Depends: debhelper (>= 9),
+-               d-shlibs (>= 0.79),
++               d-shlibs,
+                dh-python,
+                cmake,
+                pkg-config,
 diff --git a/debian/python3-odil.install b/debian/python3-odil.install
 index 3d870b1..0a7fc69 100644
 --- a/debian/python3-odil.install
@@ -5,3 +18,18 @@ index 3d870b1..0a7fc69 100644
 @@ -1 +1 @@
 -build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
 +build-py3.4/wrappers/odil.so usr/lib/python3.4/dist-packages/
+diff --git a/debian/rules b/debian/rules
+index 3531df7..0da75ea 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -72,6 +72,10 @@ override_dh_install-arch:
+ 		--override s/libdcm.*-dev/libdcmtk-dev/ \
+ 		--override s/libof.*-dev/libdcmtk-dev/ \
+ 		--override s/libicuuc.*-dev/libicu-dev/ \
++		--override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
++		--override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
++		--override s/libboost_regex.*-dev/libboost-regex-dev/ \
++		--override s/libboost_system.*-dev/libboost-system-dev/ \
+ 		debian/tmp/usr/lib/*.so
+ 
+ override_dh_fixperms-indep:
