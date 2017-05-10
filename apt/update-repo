@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import glob
 import os
 import re
@@ -7,16 +8,53 @@ import subprocess
 import sys
 
 def main():
-    root = os.path.abspath(os.path.dirname(__file__))
-    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("key", help="GPG key id")
+    arguments = parser.parse_args()
+
+    local_root = os.path.abspath(os.path.dirname(__file__))
+
+    run(local_root, arguments.key)
+
+def run(local_root, key):
+    unsigned_packages = []
+    for filename in glob.glob(os.path.join(local_root, "incoming", "*deb")):
+        if not is_signed(filename):
+            unsigned_packages.append(filename)
+    if unsigned_packages:
+        subprocess.check_call(
+            [
+                "dpkg-sig", "--sign", "builder", "--cache-passphrase",
+                "-k", key
+            ]
+            +unsigned_packages)
+
     packages = {}
-    for filename in glob.glob(os.path.join(root, "incoming", "*deb")):
+    for filename in glob.glob(os.path.join(local_root, "incoming", "*deb")):
         dist = re.search(r"~(\w+)_\w+.deb", filename).group(1)
         packages.setdefault(dist, []).append(filename)
-    
+
     for dist, debs in packages.items():
         command = ["reprepro", "-b", ".", "includedeb", dist]+debs
-        subprocess.call(command, cwd=root)
+        subprocess.call(command, cwd=local_root)
+
+def is_signed(filename):
+    result = None
+
+    output = [
+        x.decode()
+        for x in subprocess.check_output(["dpkg-sig", "-c", filename]).splitlines()]
+    if len(output) == 1:
+        result = False
+    elif len(output) == 2:
+        if not output[1].startswith("GOODSIG"):
+            raise Exception("Unknown signature status: {}".format(output[1]))
+        else:
+            result = True
+    else:
+        raise Exception("Unknown output: \n{}".format("\n".join(output)))
+
+    return result
 
 if __name__ == "__main__":
     sys.exit(main())
