@@ -11,7 +11,7 @@ index 5e99eb5..00cdcf7 100644
                 pkg-config,
                 libboost-date-time-dev, 
 diff --git a/debian/rules b/debian/rules
-index eece0fb..938f710 100755
+index eece0fb..05af2cb 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -1,6 +1,5 @@
@@ -21,3 +21,14 @@ index eece0fb..938f710 100755
  
  %:
  	dh $@ --builddirectory=build --parallel --with python2
+@@ -29,8 +28,8 @@ override_dh_install-arch:
+ 		--override s/libboost_regex.*-dev/libboost-regex-dev/ \
+ 		--override s/libboost_system.*-dev/libboost-system-dev/ \
+ 		--movedev debian/tmp/usr/include/* usr/include \
+-		--override s/libdcm.*-dev/libdcmtk-dev/ \
+-		--override s/libof.*-dev/libdcmtk-dev/ \
++		--override s/libdcm.*-dev/libdcmtk2-dev/ \
++		--override s/libof.*-dev/libdcmtk2-dev/ \
+ 		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
+ 		debian/tmp/usr/lib/*.so
+ 
