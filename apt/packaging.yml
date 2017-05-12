@@ -1,0 +1,33 @@
+version: '3'
+services:
+  backport:
+    image: ${IMAGE}
+    volumes:
+      - ${SOURCE}:/home/somebody/build
+      - ./backport-docker:/backport-docker
+      - ./entry.sh:/entry.sh
+    entrypoint:
+      - /entry.sh
+      - /backport-docker
+    working_dir: /home/somebody/build
+  update-repo:
+    image: debian:jessie
+    volumes:
+      - ./entry.sh:/entry.sh
+      - ./:/home/somebody/apt
+      #- ~/.gnupg/pubring.gpg:/home/somebody/.gnupg/pubring.gpg
+      #- ~/.gnupg/secring.gpg:/home/somebody/.gnupg/secring.gpg
+    entrypoint:
+      - /entry.sh
+      - /bin/sh
+      - -c
+      - >
+        sudo apt-get update --quiet=2; 
+        sudo apt-get install --quiet=2 --no-install-recommends dpkg-sig gnupg2 gnupg-agent libterm-readkey-perl pinentry-curses python3-minimal reprepro; 
+        eval $$(gpg-agent --daemon); 
+        echo "${KEY}" | gpg -v --import; 
+        bash
+      #   /home/somebody/apt/update-repo ${KEY}
+    working_dir: /home/somebody/apt
+# e.g. IMAGE=debian:stretch SOURCE=~/src/odil/debian docker-compose -f ~/src/packages/apt/packaging.yml run --rm backport -p odil -c "Julien Lamy <lamy@unistra.fr>" -j6
+# e.g. KEY=lamy@unistra.fr docker-compose -f ~/src/packages/apt/packaging.yml run --rm update-repo
