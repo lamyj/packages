@@ -1,21 +1,49 @@
-Package: dicomifier
-Version: 0.10.6-1~wheezy
-Architecture: amd64
+Package: dicomifier-cli
+Source: dicomifier
+Version: 1.0.0-1~wheezy
+Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 2576
-Depends: python-dateutil, python-numpy (>= 1:1.6.1), python-odil (>= 0.7.3), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (>= 2.7), python (<< 2.8)
+Installed-Size: 77
+Depends: python, python-dicomifier, python-numpy
+Conflicts: dicomifier
+Replaces: dicomifier
+Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier_0.10.6-1~wheezy_amd64.deb
-Size: 707884
-SHA256: 0715a6c6301debba7757df41987c2b7b5b25d883c40d4d4877cb57ec2afb76bc
-SHA1: bc41dc4f8dd36e87a430c7ed51e1c49085eda354
-MD5sum: b27c758657a91ae8de00072cd6f5ee98
-Description: Convert data to and from DICOM
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.0.0-1~wheezy_all.deb
+Size: 16606
+SHA256: c267c9696ab6cba8c3409320f9b521d17261767a3dc5230b64e96d39ce018e88
+SHA1: 14033b68ab7d6e8fa930ddb8a4fc4e92b0040c4e
+MD5sum: 7bea8650308acdc0dcd9c3f37c1bcff3
+Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
+ .
+ This package contains the command-line tools.
+
+Package: dicomifier-gui
+Source: dicomifier
+Version: 1.0.0-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 874
+Depends: python-dicomifier, libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-program-options1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libdicomifier1, libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.2.1), zlib1g (>= 1:1.1.4)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier-gui_1.0.0-1~wheezy_amd64.deb
+Size: 302200
+SHA256: 4367dedbee95cbfab1bb54d4f5f634b55fbb4e7158013753f7e20b458d18811f
+SHA1: f9c08c69363375e2ee95dbf730ea1a80a686218a
+MD5sum: 49c29781a826404a6e93528914cd624e
+Description: Convert data to and from DICOM (GUI tools)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the GUI tools.
 
 Package: dopamine
 Version: 0.5.0-1~wheezy
@@ -33,6 +61,53 @@ SHA1: 2ee7f2c7984069071cfca1773f2bde584ec30664
 MD5sum: e6d30aeba1ab0decc393741df848120b
 Description: PACS (DICOM server)
  Dopamine is a PACS (DICOM server) backed by MongoDB.
+
+Package: libdicomifier-dev
+Source: dicomifier
+Version: 1.0.0-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 82
+Depends: libdicomifier1 (= 1.0.0-1~wheezy), libboost-date-time-dev, libboost-filesystem-dev, libboost-regex-dev, libboost-system-dev, libdcmtk2-dev, libjsoncpp-dev, liblog4cpp5-dev, zlib1g-dev
+Multi-Arch: same
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: libdevel
+Filename: pool/main/d/dicomifier/libdicomifier-dev_1.0.0-1~wheezy_amd64.deb
+Size: 16034
+SHA256: 6cac3d55079c5971750eeec3d0731b5dd3d5409cc758b963115b5e06ba6c6515
+SHA1: 8d43f65928b2e5855661f5fa73499bbb4bc337d8
+MD5sum: 6028e55a5ac98c7706e9852317956cf0
+Description: Convert data to and from DICOM (development files)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the development files.
+
+Package: libdicomifier1
+Source: dicomifier
+Version: 1.0.0-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 953
+Pre-Depends: multiarch-support
+Depends: libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libstdc++6 (>= 4.6), zlib1g (>= 1:1.1.4)
+Multi-Arch: same
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: libs
+Filename: pool/main/d/dicomifier/libdicomifier1_1.0.0-1~wheezy_amd64.deb
+Size: 248664
+SHA256: 439ea78cf18a14d29145abd443ff404b596cf9c721fd9c8539f288cea934709c
+SHA1: 971c1ae0b3b45bc2bbcd39bc80ced2f8faed7e67
+MD5sum: 0b51344d4e279c3c350221f1946745ab
+Description: Convert data to and from DICOM (shared libraries)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the shared libraries.
 
 Package: libodil-dev
 Source: odil
@@ -143,6 +218,29 @@ Description: C++11 library for the DICOM standard (application)
  and servers for the various DICOM protocols.
  .
  This package contains the command-line application.
+
+Package: python-dicomifier
+Source: dicomifier
+Version: 1.0.0-1~wheezy
+Architecture: amd64
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 871
+Depends: libdicomifier1 (= 1.0.0-1~wheezy), python-dateutil, python-numpy (>= 1:1.6.1), python-odil (>= 0.8.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (>= 2.7), python (<< 2.8)
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: python
+Filename: pool/main/d/dicomifier/python-dicomifier_1.0.0-1~wheezy_amd64.deb
+Size: 180814
+SHA256: be96b1b95ccd4a997aadf82d927ae9a52efc1c5a43e96ceb2b2a20a81bb49e46
+SHA1: 7385517c398a86625c04693f1356faba3777dacb
+MD5sum: 4c291f7c73d7ea8b5e351bfe65a33d54
+Description: Convert data to and from DICOM (Python modules)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the Python modules.
 
 Package: python-odil
 Source: odil
