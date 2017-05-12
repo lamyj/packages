@@ -1,17 +1,17 @@
 diff --git a/debian/control b/debian/control
-index 569cc45..df585a2 100644
+index 5e99eb5..00cdcf7 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -3,7 +3,6 @@ Maintainer: Julien Lamy <lamy@unistra.fr>
- Section: science
+@@ -4,7 +4,6 @@ Section: science
  Priority: optional
  Build-Depends: debhelper (>= 9), 
+                d-shlibs,
 -               dh-python,
                 cmake,
                 pkg-config,
-                libqt4-dev,
+                libboost-date-time-dev, 
 diff --git a/debian/rules b/debian/rules
-index ffa8b18..f3ab514 100755
+index eece0fb..938f710 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -1,6 +1,5 @@
@@ -20,4 +20,4 @@ index ffa8b18..f3ab514 100755
 -export DEB_BUILD_MAINT_OPTIONS = hardening=+all
  
  %:
-    dh $@ --builddirectory=build --parallel --with python2
+ 	dh $@ --builddirectory=build --parallel --with python2
