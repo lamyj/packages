@@ -17,6 +17,155 @@ Description: Convert data to and from DICOM
  set of mapping rules is provided, allowing the conservation of meta-data upon
  conversion.
 
+Package: gridengine-common
+Source: gridengine
+Version: 8.1.9+dfsg-2~precise
+Architecture: all
+Maintainer: Debian Grid Engine Maintainers <pkg-gridengine-devel@lists.alioth.debian.org>
+Installed-Size: 1476
+Depends: debconf (>= 0.5) | debconf-2.0, adduser, bsd-mailx | mailx, ucf, tcsh | c-shell
+Suggests: python, tclsh
+Breaks: gridengine-drmaa-dev (<< 6.2u5-8), libdrmaa-dev
+Replaces: gridengine-client (<< 6.2u5-2), gridengine-drmaa-dev (<< 6.2u5-8), libdrmaa-dev
+Homepage: https://arc.liv.ac.uk/trac/SGE/
+Priority: optional
+Section: utils
+Filename: pool/main/g/gridengine/gridengine-common_8.1.9+dfsg-2~precise_all.deb
+Size: 513472
+SHA256: f07ef2d36542b88167f31e303fa316aeb948050c58ffc635d585f9ba38beb647
+SHA1: 6776707db85c120c10b2ff74fad076712cb4bab8
+MD5sum: 12155b44ea28c586825e6ef89a6b20b7
+Description: Distributed resource management - common files
+ Grid Engine is software that facilitates "distributed resource
+ management" (DRM).  Far more than just simple load-balancing tools or
+ batch scheduling mechanisms, DRM software typically provides the
+ following key features across large sets of distributed resources:
+ .
+   * Policy based allocation of distributed resources (CPU time,
+     software licenses, etc.)
+   * Batch queuing & scheduling
+   * Support diverse server hardware, OS and architectures
+   * Load balancing & remote job execution
+   * Detailed job accounting statistics
+   * Fine-grained user specifiable resources
+   * Suspend/resume/migrate jobs
+   * Tools for reporting Job/Host/Cluster status
+   * Job Arrays
+   * Integration & control of parallel jobs
+ .
+ This package contains required shared files and the basic configuration.
+
+Package: gridengine-dev
+Source: gridengine
+Version: 8.1.9+dfsg-2~precise
+Architecture: all
+Maintainer: Debian Grid Engine Maintainers <pkg-gridengine-devel@lists.alioth.debian.org>
+Installed-Size: 20384
+Depends: gridengine-client, gridengine-common
+Suggests: gridengine-drmaa-dev
+Breaks: gridengine-common (<= 8.1.8+dfsg-6)
+Replaces: gridengine-common (<= 8.1.8+dfsg-6)
+Homepage: https://arc.liv.ac.uk/trac/SGE/
+Priority: optional
+Section: libdevel
+Filename: pool/main/g/gridengine/gridengine-dev_8.1.9+dfsg-2~precise_all.deb
+Size: 1163064
+SHA256: ceda7db88d1634a6ce03596313919bf3f327bdcb4ddf36b9429386642574ec40
+SHA1: fe8fc1f8e27e8a656e8607c0741ac3d6e506192b
+MD5sum: 25174d35ad114e5213a9081fc9d56de6
+Description: Distributed resource management - development files
+ Grid Engine is software that facilitates "distributed resource
+ management" (DRM).  Far more than just simple load-balancing tools or
+ batch scheduling mechanisms, DRM software typically provides the
+ following key features across large sets of distributed resources:
+ .
+   * Policy based allocation of distributed resources (CPU time,
+     software licenses, etc.)
+   * Batch queuing & scheduling
+   * Support diverse server hardware, OS and architectures
+   * Load balancing & remote job execution
+   * Detailed job accounting statistics
+   * Fine-grained user specifiable resources
+   * Suspend/resume/migrate jobs
+   * Tools for reporting Job/Host/Cluster status
+   * Job Arrays
+   * Integration & control of parallel jobs
+ .
+ This package contains development files for interacting with
+ the Grid Engine database and job submission verifier.
+
+Package: libdrmaa1.0-java
+Source: gridengine
+Version: 8.1.9+dfsg-2~precise
+Architecture: all
+Maintainer: Debian Grid Engine Maintainers <pkg-gridengine-devel@lists.alioth.debian.org>
+Installed-Size: 114
+Depends: gridengine-drmaa1.0 (>= 8.1.9+dfsg-2~precise)
+Suggests: libdrmaa1.0-java-doc
+Replaces: libdrmaa-java (<< 8.1.3)
+Homepage: https://arc.liv.ac.uk/trac/SGE/
+Priority: optional
+Section: java
+Filename: pool/main/g/gridengine/libdrmaa1.0-java_8.1.9+dfsg-2~precise_all.deb
+Size: 80844
+SHA256: 526ceb5dd5980edcf358fda09d92dff6556c7365fc90606164c7f1c1751a7b5b
+SHA1: 9d59d0f4fea2ec49cd01b6f857afaf60470c9584
+MD5sum: c3b6ec428ee5a12dbf4ffaa26e650713
+Description: Distributed resource management Application API library - Java bindings
+ DRMAA (Distributed Resource Management Application API) is a specification
+ developed by a working group in the Global Grid Forum (GGF).  The intention
+ is to provide an API specification for the submission and control of jobs
+ to one or more Distributed Resource Management (DRM) systems.
+ .
+ This package contains the Java bindings for the Grid Engine implementation of
+ the DRMAA specification.
+
+Package: libdrmaa1.0-java-doc
+Source: gridengine
+Version: 8.1.9+dfsg-2~precise
+Architecture: all
+Maintainer: Debian Grid Engine Maintainers <pkg-gridengine-devel@lists.alioth.debian.org>
+Installed-Size: 1156
+Homepage: https://arc.liv.ac.uk/trac/SGE/
+Priority: optional
+Section: doc
+Filename: pool/main/g/gridengine/libdrmaa1.0-java-doc_8.1.9+dfsg-2~precise_all.deb
+Size: 134772
+SHA256: fcd1e0000345fbbd9ad5a53ddcc714759dbbbad5bd4536451ce395fe6ddcc1a3
+SHA1: fa11961e7bb64bb0793f60b8fef2d5aff1ebb18c
+MD5sum: 6b8916422cd0abc5a174da2f7aa771d6
+Description: Distributed resource management Application API library - Java bindings docs
+ DRMAA (Distributed Resource Management Application API) is a specification
+ developed by a working group in the Global Grid Forum (GGF).  The intention
+ is to provide an API specification for the submission and control of jobs
+ to one or more Distributed Resource Management (DRM) systems.
+ .
+ This package contains Javadocs for the Grid Engine Java binding.
+
+Package: libdrmaa1.0-ruby
+Source: gridengine
+Version: 8.1.9+dfsg-2~precise
+Architecture: all
+Maintainer: Debian Grid Engine Maintainers <pkg-gridengine-devel@lists.alioth.debian.org>
+Installed-Size: 119
+Depends: gridengine-drmaa1.0 (>= 8.1.9+dfsg-2~precise), ruby | ruby-interpreter
+Homepage: https://arc.liv.ac.uk/trac/SGE/
+Priority: optional
+Section: ruby
+Filename: pool/main/g/gridengine/libdrmaa1.0-ruby_8.1.9+dfsg-2~precise_all.deb
+Size: 54612
+SHA256: 46374689061676ddfa864c68191436d54f3ffb902e19fdd62a390d9524ed9485
+SHA1: 8157adeadac78d9a7295ed7374ac0a6a54bfb2a4
+MD5sum: c480526d5875ce062493e74513b0696b
+Description: Distributed resource management Application API library - Ruby bindings
+ DRMAA (Distributed Resource Management Application API) is a specification
+ developed by a working group in the Global Grid Forum (GGF).  The intention
+ is to provide an API specification for the submission and control of jobs
+ to one or more Distributed Resource Management (DRM) systems.
+ .
+ This package contains the Ruby bindings for the Grid Engine implementation of
+ the DRMAA specification.
+
 Package: libodil-dev
 Source: odil
 Version: 0.8.0-2~precise
