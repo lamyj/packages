@@ -22,7 +22,7 @@ def main():
     user = "lamyj"
     repo = "generic"
     package = "packages"
-    version = "latest"
+    version = "2017-07-06"
 
     file_root = os.path.abspath(os.path.dirname(__file__))
     url_root = "https://api.bintray.com/content/{}/{}".format(user, repo)
@@ -120,9 +120,13 @@ def synchronize(local_files, remote_files, file_root, url_root, session):
     # Delete remote files which do not exist locally
     for path, file_ in remote_files.items():
         if path not in local_files:
-            # FIXME: it seems that bintray does not allow file deletion, only version
-            # logging.info("Remote-deleting {}".format(path))
-            pass
+            logging.info("Remote-deleting {}".format(path))
+            destination = os.path.join(url_root, path)
+            response = session.delete(destination)
+            if response.status_code != 200:
+                raise Exception(
+                    "Failed to delete {}: {}, {}".format(
+                        path, response.status_code, response.text))
 
 def upload(source, destination, session):
     """Upload a file."""
