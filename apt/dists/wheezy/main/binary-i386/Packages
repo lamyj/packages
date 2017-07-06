@@ -1,6 +1,6 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.0.0-1~wheezy
+Version: 1.0.1-1~wheezy
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 77
@@ -11,11 +11,11 @@ Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.0.0-1~wheezy_all.deb
-Size: 16606
-SHA256: c267c9696ab6cba8c3409320f9b521d17261767a3dc5230b64e96d39ce018e88
-SHA1: 14033b68ab7d6e8fa930ddb8a4fc4e92b0040c4e
-MD5sum: 7bea8650308acdc0dcd9c3f37c1bcff3
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.0.1-1~wheezy_all.deb
+Size: 16620
+SHA256: 3acf1b225ac456797456258e62159f63d2126bf86884d846be70db9a61e239e7
+SHA1: a4de21ddb24fd88a10376f2ddd90bb5d3df4550f
+MD5sum: aadce5a9cffe7061e4c3374d9e41be6b
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -25,7 +25,7 @@ Description: Convert data to and from DICOM (command line tools)
 
 Package: dicomifier-gui
 Source: dicomifier
-Version: 1.0.0-1~wheezy
+Version: 1.0.1-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 931
@@ -33,11 +33,11 @@ Depends: python-dicomifier, libboost-date-time1.49.0 (>= 1.49.0-1), libboost-fil
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-gui_1.0.0-1~wheezy_i386.deb
-Size: 306738
-SHA256: 7f752958781cd6d6a06a978ca2bf65f2d692b53e233fc6f097b0b090f32fd7bf
-SHA1: bd979088584a651addc8814a2c82639d27e3325d
-MD5sum: 79b06c4bed505d04e6d4b3bf9dc2c251
+Filename: pool/main/d/dicomifier/dicomifier-gui_1.0.1-1~wheezy_i386.deb
+Size: 306750
+SHA256: a6fab43ee60080989e61e5205c381d8590c387d2fc2f1e6ec23374ecbcb9eaf8
+SHA1: a88838929adf7e1e07f1c793f622fa67b187c6f5
+MD5sum: e96f39a3d74226a53405bd180a20332d
 Description: Convert data to and from DICOM (GUI tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -47,20 +47,20 @@ Description: Convert data to and from DICOM (GUI tools)
 
 Package: libdicomifier-dev
 Source: dicomifier
-Version: 1.0.0-1~wheezy
+Version: 1.0.1-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 82
-Depends: libdicomifier1 (= 1.0.0-1~wheezy), libboost-date-time-dev, libboost-filesystem-dev, libboost-regex-dev, libboost-system-dev, libdcmtk2-dev, libjsoncpp-dev, liblog4cpp5-dev, zlib1g-dev
+Depends: libdicomifier1 (= 1.0.1-1~wheezy), libboost-date-time-dev, libboost-filesystem-dev, libboost-regex-dev, libboost-system-dev, libdcmtk2-dev, libjsoncpp-dev, liblog4cpp5-dev, zlib1g-dev
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libdevel
-Filename: pool/main/d/dicomifier/libdicomifier-dev_1.0.0-1~wheezy_i386.deb
-Size: 16034
-SHA256: eb66a77ac814d2a87406f44997938a14079c1269c0e3863d53f21dee7ee8488a
-SHA1: 584248986ee827fbb6b48b7e74757df9d79fcb45
-MD5sum: f299444fc6c7de1929567494b4c43dd5
+Filename: pool/main/d/dicomifier/libdicomifier-dev_1.0.1-1~wheezy_i386.deb
+Size: 16042
+SHA256: 7486f1bcb4ba1e2e23a0a78352e9c10d95ebc526979295e701016d088121e391
+SHA1: 5855ceae86bfed7d5b203f6318571b3de4e5e3fc
+MD5sum: 9385313bfe2fb43e2f6df622351efa37
 Description: Convert data to and from DICOM (development files)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -70,7 +70,7 @@ Description: Convert data to and from DICOM (development files)
 
 Package: libdicomifier1
 Source: dicomifier
-Version: 1.0.0-1~wheezy
+Version: 1.0.1-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 925
@@ -80,11 +80,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libs
-Filename: pool/main/d/dicomifier/libdicomifier1_1.0.0-1~wheezy_i386.deb
-Size: 257514
-SHA256: 4836a7f6711e34790794777fa6a8ac205202cf9bc26b39315487c0748245414a
-SHA1: b305a01ba31f71b6f157b9407c5a3240df517983
-MD5sum: e36d4ed1083c34ad060b1670447dbaaa
+Filename: pool/main/d/dicomifier/libdicomifier1_1.0.1-1~wheezy_i386.deb
+Size: 257518
+SHA256: f5ab78bdd597ebafe4161223b8d4e2edabb0aab0b5c2d1101d99abd5e3f45b42
+SHA1: d004336f8e57c52ddebd742c2b5a61dac3961b33
+MD5sum: 713969277b79027b6d31cd9e3e777463
 Description: Convert data to and from DICOM (shared libraries)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -204,20 +204,20 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: python-dicomifier
 Source: dicomifier
-Version: 1.0.0-1~wheezy
+Version: 1.0.1-1~wheezy
 Architecture: i386
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 841
-Depends: libdicomifier1 (= 1.0.0-1~wheezy), python-dateutil, python-numpy (>= 1:1.6.1), python-odil (>= 0.8.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (>= 2.7), python (<< 2.8)
+Depends: libdicomifier1 (= 1.0.1-1~wheezy), python-dateutil, python-numpy (>= 1:1.6.1), python-odil (>= 0.8.0), libboost-date-time1.49.0 (>= 1.49.0-1), libboost-filesystem1.49.0 (>= 1.49.0-1), libboost-python1.49.0 (>= 1.49.0-1), libboost-regex1.49.0 (>= 1.49.0-1), libboost-system1.49.0 (>= 1.49.0-1), libc6 (>= 2.4), libdcmtk2 (>= 3.6.0), libgcc1 (>= 1:4.1.1), libjsoncpp0, liblog4cpp5, libnifti2, libpython2.7 (>= 2.7), libstdc++6 (>= 4.2.1), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (>= 2.7), python (<< 2.8)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: python
-Filename: pool/main/d/dicomifier/python-dicomifier_1.0.0-1~wheezy_i386.deb
-Size: 182436
-SHA256: fa89e6a1225572cd882370cf4d5e90f43fa3a93bc1fa3495f411d21289d83bcd
-SHA1: 647802d49337eee0901db3fdb7c67ed97721ae43
-MD5sum: af31eb72bb19789bf89f401d4522ab53
+Filename: pool/main/d/dicomifier/python-dicomifier_1.0.1-1~wheezy_i386.deb
+Size: 182472
+SHA256: e30aae67ba7ac293675089f2687e71df900341f4107ba27be9068a74c12e75d1
+SHA1: 24c4886bf4a27c1d7b382734ad42e2f02adb11eb
+MD5sum: f0212a97c00349e3bfc8e97636906821
 Description: Convert data to and from DICOM (Python modules)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
