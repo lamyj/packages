@@ -22,7 +22,7 @@ def main():
     user = "lamyj"
     repo = "generic"
     package = "packages"
-    version = "2017-07-06"
+    version = "latest"
 
     file_root = os.path.abspath(os.path.dirname(__file__))
     url_root = "https://api.bintray.com/content/{}/{}".format(user, repo)
@@ -45,18 +45,6 @@ def main():
             len(local_files), "s" if len(local_files)>1 else ""))
 
     synchronize(local_files, remote_files, file_root, url_root, session)
-
-    # directories = ["apt/dists", "apt/pool"]
-    # for directory in directories:
-    #     for dirpath, dirnames, filenames in os.walk(directory):
-    #         for filename in filenames:
-    #             logging.info(
-    #                 "Uploading {}".format(os.path.join(dirpath, filename)))
-    #             file_path = os.path.join(file_root, dirpath, filename)
-    #             url = os.path.join(url_root, dirpath, filename)
-    #             upload(file_path, url, session)
-
-    # remove_old(file_root, url_root, session)
 
 def create_session(user, api_key, package, version):
     """Create an HTTP session."""
