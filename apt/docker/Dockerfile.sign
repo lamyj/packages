@@ -1,0 +1,11 @@
+FROM debian:stretch
+LABEL maintainer "Julien Lamy <lamy@unistra.fr>"
+RUN \
+  apt-get update && \
+  apt-get install --quiet=2 --no-install-recommends \
+    dpkg-sig gnupg2 gnupg-agent libterm-readkey-perl pinentry-curses \
+    python3-minimal reprepro && \
+  echo 'eval $(gpg-agent --daemon)' >> /root/.bashrc && \
+  mkdir /root/.gnupg && \
+  chmod 700 /root/.gnupg && \
+  echo 'digest-algo sha256' >> /root/.gnupg/gpg.conf

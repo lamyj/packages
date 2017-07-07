@@ -14,6 +14,7 @@ def main():
 
     local_root = os.path.abspath(os.path.dirname(__file__))
 
+    # WARNING: may need to have key in gpg-agent before we sign
     run(local_root, arguments.key)
 
 def run(local_root, key):
@@ -23,11 +24,7 @@ def run(local_root, key):
             unsigned_packages.append(filename)
     if unsigned_packages:
         subprocess.check_call(
-            [
-                "dpkg-sig", "--sign", "builder", "--cache-passphrase",
-                "-k", key
-            ]
-            +unsigned_packages)
+            ["dpkg-sig", "--sign", "builder", "-k", key]+unsigned_packages)
 
     packages = {}
     for filename in glob.glob(os.path.join(local_root, "incoming", "*deb")):
@@ -41,20 +38,10 @@ def run(local_root, key):
 def is_signed(filename):
     result = None
 
-    output = [
-        x.decode()
-        for x in subprocess.check_output(["dpkg-sig", "-c", filename]).splitlines()]
-    if len(output) == 1:
-        result = False
-    elif len(output) == 2:
-        if not output[1].startswith("GOODSIG"):
-            raise Exception("Unknown signature status: {}".format(output[1]))
-        else:
-            result = True
-    else:
-        raise Exception("Unknown output: \n{}".format("\n".join(output)))
-
-    return result
+    output = subprocess.run(
+        ["dpkg-sig", "--list", filename], check=True, stdout=subprocess.PIPE).stdout
+    output = [x.decode() for x in output.splitlines()]
+    return ("builder" in output)
 
 if __name__ == "__main__":
     sys.exit(main())

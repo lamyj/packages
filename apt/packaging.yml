@@ -11,23 +11,15 @@ services:
       - /backport-docker
     working_dir: /home/somebody/build
   update-repo:
-    image: debian:jessie
+    build: 
+      context: ./docker
+      dockerfile: Dockerfile.sign
     volumes:
-      - ./entry.sh:/entry.sh
-      - ./:/home/somebody/apt
-      #- ~/.gnupg/pubring.gpg:/home/somebody/.gnupg/pubring.gpg
-      #- ~/.gnupg/secring.gpg:/home/somebody/.gnupg/secring.gpg
+      - ./:/apt
     entrypoint:
-      - /entry.sh
-      - /bin/sh
-      - -c
-      - >
-        sudo apt-get update --quiet=2; 
-        sudo apt-get install --quiet=2 --no-install-recommends dpkg-sig gnupg2 gnupg-agent libterm-readkey-perl pinentry-curses python3-minimal reprepro; 
-        eval $$(gpg-agent --daemon); 
-        echo "${KEY}" | gpg -v --import; 
-        bash
-      #   /home/somebody/apt/update-repo ${KEY}
-    working_dir: /home/somebody/apt
+      - /bin/bash
+      - -i
+
 # e.g. IMAGE=debian:stretch SOURCE=~/src/odil/debian docker-compose -f ~/src/packages/apt/packaging.yml run --rm backport -p odil -c "Julien Lamy <lamy@unistra.fr>" -j6
-# e.g. KEY=lamy@unistra.fr docker-compose -f ~/src/packages/apt/packaging.yml run --rm update-repo
+# e.g. docker-compose -f ~/src/packages/apt/packaging.yml run --name apt-update-repo update-repo
+# docker start -i apt-update-repo
