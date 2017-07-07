@@ -1,3 +1,136 @@
+Package: dicomifier-cli
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 53
+Depends: python, python-dicomifier, python-numpy
+Conflicts: dicomifier
+Replaces: dicomifier
+Provides: dicomifier
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.0.2-1~stretch_all.deb
+Size: 15610
+SHA256: 970f7d37358bdeda1a872b49622df11b2f4b3fc306fcf9c2ed1bf91e1bd60172
+SHA1: 52159a1003efba07c9b5b2254272a2f681611f0d
+MD5sum: 7a9354e673f6e03458a0ff95f0374cd4
+Description: Convert data to and from DICOM (command line tools)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the command-line tools.
+
+Package: dicomifier-gui
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 935
+Depends: python-dicomifier, libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-program-options1.62.0, libboost-python1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.4), libdcmtk8, libdicomifier1, libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libodil0, libpython2.7 (>= 2.7), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 5.2), libwrap0 (>= 7.6-4~), zlib1g (>= 1:1.1.4)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier-gui_1.0.2-1~stretch_i386.deb
+Size: 230172
+SHA256: 74426737a0957bd1b9edb7f194aed951591b856bc12eb30f1fe8ca860bbb1cc0
+SHA1: 6b34a5c234969ba72e96c999c03130375f09d837
+MD5sum: 141b86191cd3003860ccaf053ee2b3cf
+Description: Convert data to and from DICOM (GUI tools)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the GUI tools.
+
+Package: dicomifier-gui-dbgsym
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Auto-Built-Package: debug-symbols
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 5114
+Depends: dicomifier-gui (= 1.0.2-1~stretch)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: extra
+Section: debug
+Filename: pool/main/d/dicomifier/dicomifier-gui-dbgsym_1.0.2-1~stretch_i386.deb
+Size: 4783902
+SHA256: 071bbf72c65f54a122b5fde2364282ff204939488838b930de4296f184ccf909
+SHA1: e21801673a3b7ada6f9531049d924864789a04bc
+MD5sum: ce627d6046f94a304871eab7ebd88e6a
+Description: Debug symbols for dicomifier-gui
+Build-Ids: a7d0dd855f91b10b447ef31844191572e061f14b
+
+Package: libdicomifier-dev
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 59
+Depends: libdicomifier1 (= 1.0.2-1~stretch), libboost-date-time-dev, libboost-filesystem-dev, libboost-regex-dev, libboost-system-dev, libdcmtk-dev, libjsoncpp-dev, liblog4cpp5-dev, libwrap0-dev, zlib1g-dev
+Multi-Arch: same
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: libdevel
+Filename: pool/main/d/dicomifier/libdicomifier-dev_1.0.2-1~stretch_i386.deb
+Size: 14964
+SHA256: a607675a895fc4b4fb23e211c78c4a8744415894ff8798c7d4a6a9d4040ebf0d
+SHA1: c3c7d56413356fea45f3ab0b1b6a04383c2eca75
+MD5sum: 8ac90ce255c39177d95de1a261e22827
+Description: Convert data to and from DICOM (development files)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the development files.
+
+Package: libdicomifier1
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 705
+Pre-Depends: multiarch-support
+Depends: libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.4), libdcmtk8, libgcc1 (>= 1:4.2), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libstdc++6 (>= 5.2), libwrap0 (>= 7.6-4~), zlib1g (>= 1:1.1.4)
+Multi-Arch: same
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: libs
+Filename: pool/main/d/dicomifier/libdicomifier1_1.0.2-1~stretch_i386.deb
+Size: 199520
+SHA256: df52f7f2538503ea863b22e41c309811f509325a33dcb67db551251b628499ee
+SHA1: 18acac39687cd17104321f1177a477efef3291a8
+MD5sum: b85fd36940559d4c891c544186c5e4a0
+Description: Convert data to and from DICOM (shared libraries)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the shared libraries.
+
+Package: libdicomifier1-dbgsym
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Auto-Built-Package: debug-symbols
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 3027
+Depends: libdicomifier1 (= 1.0.2-1~stretch)
+Multi-Arch: same
+Homepage: https://github.com/lamyj/dicomifier
+Priority: extra
+Section: debug
+Filename: pool/main/d/dicomifier/libdicomifier1-dbgsym_1.0.2-1~stretch_i386.deb
+Size: 2837296
+SHA256: 61b42579e7599049b72c03d4d9c9b4f780e6fa021a84547d4cad7e91295167bb
+SHA1: 20254c8ea7ca22df42e320f4194494b021392403
+MD5sum: 687116d55b357619b52e6c32216119c1
+Description: Debug symbols for libdicomifier1
+Build-Ids: 1708b48a6b6c2d7aa799609be85f40f841f0e4f9
+
 Package: libodil-dev
 Source: odil
 Version: 0.8.0-2~stretch
@@ -126,6 +259,48 @@ Description: C++11 library for the DICOM standard (application)
  and servers for the various DICOM protocols.
  .
  This package contains the command-line application.
+
+Package: python-dicomifier
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 668
+Depends: libdicomifier1 (= 1.0.2-1~stretch), python-dateutil, python-numpy (>= 1:1.10.0~b1), python-odil (>= 0.8.0), libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-python1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.4), libdcmtk8, libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libnifti2, libpython2.7 (>= 2.7), libstdc++6 (>= 5.2), libwrap0 (>= 7.6-4~), zlib1g (>= 1:1.1.4), python-numpy-abi9, python (<< 2.8), python (>= 2.7~), python:any (<< 2.8), python:any (>= 2.7.5-5~)
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: python
+Filename: pool/main/d/dicomifier/python-dicomifier_1.0.2-1~stretch_i386.deb
+Size: 133108
+SHA256: 06e8ef77e44ed9bf8489afb35189d09f6a1cf89356516cfa671e312facf96994
+SHA1: a756f9ade0d391fc3e1c85e82255b8dbd8be0e88
+MD5sum: 48b28e94caea862ea075670b4f67fe68
+Description: Convert data to and from DICOM (Python modules)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the Python modules.
+
+Package: python-dicomifier-dbgsym
+Source: dicomifier
+Version: 1.0.2-1~stretch
+Auto-Built-Package: debug-symbols
+Architecture: i386
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 1674
+Depends: python-dicomifier (= 1.0.2-1~stretch)
+Homepage: https://github.com/lamyj/dicomifier
+Priority: extra
+Section: debug
+Filename: pool/main/d/dicomifier/python-dicomifier-dbgsym_1.0.2-1~stretch_i386.deb
+Size: 1467136
+SHA256: d51d079c5dc08c37dbd43e027eb17e14578df0a750c20d74532e13e54e45442c
+SHA1: bf9c275368d6ae634c562e8087d8c5f2b5e12cf2
+MD5sum: e83c0625378157cdc6c5ca15f669c8b8
+Description: Debug symbols for python-dicomifier
+Build-Ids: 448a1979bca1ac0fae075e16d55a819971fa5543 c6b6a9b3a623f1e5f8dce81530d9367215296e5d fb6cc0bcf2acd64d09a910de7284210417e3daec
 
 Package: python-odil
 Source: odil
