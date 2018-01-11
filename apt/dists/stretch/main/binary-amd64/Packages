@@ -1,3 +1,35 @@
+Package: ants
+Version: 2.2.0-1~stretch
+Architecture: amd64
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Installed-Size: 344943
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:4.0), libinsighttoolkit4.12 (>= 4.12.0-dfsg1-2~), libstdc++6 (>= 5.2)
+Recommends: environment-modules
+Suggests: fsl, gridengine-client, r-base-core
+Conflicts: gpe-conf
+Homepage: http://www.picsl.upenn.edu/ANTS/
+Priority: extra
+Section: science
+Filename: pool/main/a/ants/ants_2.2.0-1~stretch_amd64.deb
+Size: 39346912
+SHA256: a80d64e6b62c4a976c41d67ade1a14420bc62a3ecae3cb10528187a0f2440da3
+SHA1: 5b46640ae610b0b83d46bb9e508ec736cee32918
+MD5sum: 3e145829294647feec84043e188b1de8
+Description: advanced normalization tools for brain and image analysis
+ Advanced Normalization Tools (ANTS) is an ITK-based suite of
+ normalization, segmentation and template-building tools for
+ quantitative morphometric analysis. Many of the ANTS registration
+ tools are diffeomorphic, but deformation (elastic and BSpline)
+ transformations are available. Unique components of ANTS include
+ multivariate similarity metrics, landmark guidance, the ability to
+ use label images to guide the mapping and both greedy and space-time
+ optimal implementations of diffeomorphisms. The symmetric
+ normalization (SyN) strategy is a part of the ANTS toolkit as is
+ directly manipulated free form deformation (DMFFD).
+ .
+ This package provides environment-modules configuration.
+ Use 'module load ants' to make all cmdline tools available in your shell.
+
 Package: dicomifier-cli
 Source: dicomifier
 Version: 1.0.2-1~stretch
@@ -63,6 +95,66 @@ SHA1: 34abad65e5cdfc89aa6b5c70cbf7ca475363bc6d
 MD5sum: 20299f5f8b1e1fd689f102d84e771ebb
 Description: Debug symbols for dicomifier-gui
 Build-Ids: 9056f3a6175f08aa7fb784358229d88daed5a746
+
+Package: insighttoolkit4-examples
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 3082
+Suggests: libinsighttoolkit4-dev
+Conflicts: insighttoolkit-examples
+Replaces: insighttoolkit-examples
+Homepage: http://www.itk.org/
+Priority: optional
+Section: devel
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.12.2-dfsg1-1~stretch_all.deb
+Size: 2581450
+SHA256: fdcdbc3eb6d4f603fbee738586f25d18a322217326465308547d2cf034d58f72
+SHA1: 730038ed0385fdb9602aed474d08bd1cd32a04c7
+MD5sum: da9ac8425ca6f6b6978d228960870b43
+Description: Image processing toolkit for registration and segmentation - examples
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the source for example programs.
+
+Package: insighttoolkit4-python
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 1058307
+Depends: libc6 (>= 2.14), libfftw3-double3 (>= 3.3.5), libfftw3-single3 (>= 3.3.5), libgcc1 (>= 1:4.0), libgdcm2.6, libinsighttoolkit4.12 (>= 4.12.0-dfsg1-2~), libstdc++6 (>= 5.2)
+Conflicts: insighttoolkit-python
+Replaces: insighttoolkit-python
+Homepage: http://www.itk.org/
+Priority: optional
+Section: python
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-python_4.12.2-dfsg1-1~stretch_amd64.deb
+Size: 82963172
+SHA256: 53191a3e29cd56dd64550d14670294d34947986e5d8eed88506434d1376da02f
+SHA1: 86ac9fcde8d40055d4df80ebdf6923b165d59f9d
+MD5sum: 04682d68df5e17a54eef97f19a0a9469
+Description: Image processing toolkit for registration and segmentation - Python bindings
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the Python bindings.
 
 Package: libdicomifier-dev
 Source: dicomifier
@@ -130,6 +222,105 @@ SHA1: 6d31bd775ddbbed477847a7d5f62a04acc54bae0
 MD5sum: 17dab8c76c5971aac5de1b56e0071d58
 Description: Debug symbols for libdicomifier1
 Build-Ids: 4de4edea776717acf95b915e3870d136a289a0f4
+
+Package: libinsighttoolkit4-dev
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 26955
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.0), libinsighttoolkit4.12 (= 4.12.2-dfsg1-1~stretch), libstdc++6 (>= 5.2), libgdcm2-dev, libdcmtk-dev, libhdf5-dev, libdouble-conversion-dev, libexpat-dev, libnifti-dev
+Recommends: libfftw3-dev, uuid-dev
+Suggests: insighttoolkit4-examples
+Conflicts: libinsighttoolkit-dev, libinsighttoolkit3-dev
+Replaces: libinsighttoolkit-dev
+Homepage: http://www.itk.org/
+Priority: optional
+Section: libdevel
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4-dev_4.12.2-dfsg1-1~stretch_amd64.deb
+Size: 2907822
+SHA256: 9680cbfb8c6f11efea001b66d89b79cf433e5f78a0731ca0c93f2f11cd5e8ff5
+SHA1: fb161497dd34e56bf29d7a4395cc8c9f5c89fbdd
+MD5sum: 2f60b3ef21530d7cdae9d45bef52c99a
+Description: Image processing toolkit for registration and segmentation - development
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the development files needed to build your own
+ ITK applications.
+
+Package: libinsighttoolkit4-dev-dbgsym
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 1892
+Depends: libinsighttoolkit4-dev (= 4.12.2-dfsg1-1~stretch)
+Homepage: http://www.itk.org/
+Priority: extra
+Section: debug
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4-dev-dbgsym_4.12.2-dfsg1-1~stretch_amd64.deb
+Size: 1650802
+SHA256: bb9087716840b48fe9367eca3448e190b6b23e1d7356f67f1bf45a8f2228bebc
+SHA1: 00608c4494d0f4f32a37c85aa44272136164cff7
+MD5sum: ac0eb20fde115b9b3c084fbee07cbc36
+Description: Debug symbols for libinsighttoolkit4-dev
+Build-Ids: 7eac505ed41a08c5d964d4f5d554b482fbf77dfa
+
+Package: libinsighttoolkit4.12
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 22565
+Depends: libc6 (>= 2.15), libdouble-conversion1 (>= 2.0.0), libexpat1 (>= 2.0.1), libfftw3-double3 (>= 3.3.5), libfftw3-single3 (>= 3.3.5), libgcc1 (>= 1:4.0), libgdcm2.6, libhdf5-100, libhdf5-cpp-100 (>= 1.8.15-patch1), libjpeg62-turbo (>= 1.3.1), libnifti2, libpng16-16 (>= 1.6.2-1), libstdc++6 (>= 5.2), libtiff5 (>= 4.0.3), zlib1g (>= 1:1.2.3.4)
+Homepage: http://www.itk.org/
+Priority: optional
+Section: libs
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4.12_4.12.2-dfsg1-1~stretch_amd64.deb
+Size: 4492584
+SHA256: 35079431c2a6449873f88ea2c003ece1bca917fc15f12286834ee929bb9d9227
+SHA1: bce443cb6472d18e45fde885f44b41bc903a5ea6
+MD5sum: d9e45846dc5813e8feb2da9c97af2214
+Description: Image processing toolkit for registration and segmentation - runtime
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the libraries needed to run ITK applications.
+
+Package: libinsighttoolkit4.12-dbgsym
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~stretch
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 47126
+Depends: libinsighttoolkit4.12 (= 4.12.2-dfsg1-1~stretch)
+Homepage: http://www.itk.org/
+Priority: extra
+Section: debug
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4.12-dbgsym_4.12.2-dfsg1-1~stretch_amd64.deb
+Size: 42806148
+SHA256: 8e4273d56d956036b49d445afab56e695ea7cefbe9689273aa3849527fa5e158
+SHA1: 39a71eec0871166bf3adb7bc2a083a43ebc8e729
+MD5sum: 1c138c46c33ca3b4479815ee80bf9756
+Description: Debug symbols for libinsighttoolkit4.12
+Build-Ids: 027085b3ef93569f7d5b5d982cabc970fda9e392 05f0f7a9594e0309cc8d685e86dce1c01e706d3b 076e2959fc6bed9b073d0a8d23247d780597f3a3 090319d4dd54b6373d4ef9124a65ce08f41f451e 09c419014f4db538ca47f4bac471f9e6892c6d77 114177d2d691efa9f9e8b8ba4b507b442448a16a 11cd488bfafe8cd73097998567633913930a6074 1234ea0f5aad874b089e1ceed93ce68c0695c4a4 18ea2cc3accbe5d3dc1fed4023b52cfa98bc8e80 1b73dcb350aa61ae698d4c10eb17369c02d5905d 1eb12a6695aafdfd7475d5b53549666996972133 278855a738c42119774ff3b77088124fa88597dc 30e5576e3c6be2c1f4eed2e495a7a0d6123161a8 35f8b4a31827bc2f1d35bfac13aac351c299feb8 43652754052dd5fd95762f8de25d0cf622043b51 4365e5ab6c0c3b1a6d6006d5c5ab1e6ac06621f2 4b13b0624998b810b873d431c337df0a4c1592a9 4f644573e1bdc00f73dada4b5859fdee9378e2ec 5732164945380576927b307569f42ca6485d9a85 57fd12ec5a6969041f40b0b24b5c8eff059a6aea 58043f52a641c1d078f01e77d9197f9c54517d3f 5d48e52d463a6f6d4c13ea953ce0656f3759c56a 5f9b4e832bcf9eeef7f191cb644c61645e455157 60a49fc59dab67d423fb3ae822d152b4ab6a2d08 62c6308e66f8d355df9ee58b2fc9f4adbf096261 631d5e9d047f4aea6a93badde53e15561229ae3b 69a3916b3c138bc7cd9509387a3f6eeca30c2cdc 6b9ac9cec6aad736b909e12128057fe515535d07 6cd41f7da632ed4681664b8f682b2eb581cdef17 766e678deed0b19a9581c5963317a93169ffae4f 76ff9780c8fdf9e207086f6820c13fa3cfc55e3c 797c4b6e6ee2a4644a7b25959f55c5fe51e87acc 875506159c89bd9ecd0a31bc2904cf5c31b3b5d2 8a80a6d51484fdf25c876b221b5fd457ad237c27 8b849e3fabe4d1014e84791b04f11813d6d01833 93c3744948a4c383d0c6056b3b447f7b60485508 965643492dcb6895a6df898e197035d5cb5eea04 9b167661f80a962f25f399628463728c738635a3 9c3ef4f4dc9d42260449e1bd3a699947d5035b7a 9cef5bb9a9e78c0b975cc1688c6ea84ea254290e b6159a0358c0420ed11c9d36aabc3ee880a5d1a7 b6b9c4dfb14e63190ae6433700eee45ebb63a57c b77c704ce4eb27df090a077da13c758033e02b2c b83d82daa481da9b4ae37e2593060dfa780700d8 b90321a007ec403d3c8a4400c335e1a8c7fb3856 bea7510e64abadadf6594ad1539b332d0f988a52 c0aac2de057816cf094ab7ce2c5ef2004c23a459 c22ca15cc562d3cf16ed1fc4b9b1882e7c4061b8 c34edf28dd8db9711983fc06eb126c4068f4c25e c4a0303bf8e3094b31cdd724b773556e42556dbd c5305cd4e17c1d5b7e4175e14692df2f9d0f6344 c6c1e99d99a993e2bb831ba12ccf50753135baa8 cb3d35298b5800ed143d4c32d13cae3024b96bea d8f069ded0b254146d9b838167d7ce1b2b0600ed def6ada7f5bb6328c219c98a1c4ae99a58aa31cd e03d7fb3a1a869ceb4528903fc7db8a9952a0fc2 e1ff4b532bef92fde51517a678eda802084134e8 e47b9147ea8f9a991de46dc11afd2290e30baadd e618803ae79eba6019ddf312194d8ea03adf4a84 eb06a1d55caea179945475e891612a509c5153c5 f1ef20ca5f45a8ee9d7e815274bb3f2353a0eb32 f3cf35d85648d54a6086066422c064b369b7bc71 f889c9ed53502a37a6df003429694e519ba3d887 fdddf1e9145289ecd9b63ba46583c98117aeb6b1
 
 Package: libodil-dev
 Source: odil
