@@ -173,21 +173,21 @@ Description: Distributed resource management - development files
 
 Package: insighttoolkit4-examples
 Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~xenial
+Version: 4.12.2-dfsg1-1~xenial
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 3053
+Installed-Size: 3082
 Suggests: libinsighttoolkit4-dev
 Conflicts: insighttoolkit-examples
 Replaces: insighttoolkit-examples
 Homepage: http://www.itk.org/
 Priority: optional
 Section: devel
-Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~xenial_all.deb
-Size: 2577352
-SHA256: f6be8d527306139045bb5ea43b92000010255c84ec9a42fc809514d12f76d210
-SHA1: bdeb2c1ae146db6f8c12dc6b112a93365faac35d
-MD5sum: fd384fb2248b19442fa44ba5f4bb3f65
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.12.2-dfsg1-1~xenial_all.deb
+Size: 2581696
+SHA256: 295753f6b3a7c92800a0539c0f430e14845ab36e14c24ca9d4cb5dfb57293616
+SHA1: 5afaa2a7594cae1c883696d522a009fd416a16c2
+MD5sum: a9f1920dd7858aa20e1a10900a5af5b1
 Description: Image processing toolkit for registration and segmentation - examples
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
