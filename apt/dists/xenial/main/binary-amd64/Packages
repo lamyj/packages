@@ -1,3 +1,35 @@
+Package: ants
+Version: 2.2.0-1~xenial
+Architecture: amd64
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Installed-Size: 360005
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:4.0), libinsighttoolkit4.9, libstdc++6 (>= 5.2)
+Recommends: environment-modules
+Suggests: fsl, gridengine-client, r-base-core
+Conflicts: gpe-conf
+Homepage: http://www.picsl.upenn.edu/ANTS/
+Priority: extra
+Section: science
+Filename: pool/main/a/ants/ants_2.2.0-1~xenial_amd64.deb
+Size: 39786004
+SHA256: 5aa5d4607d944ad469ae07b885cfce662a2d3d56b73cd727112c8d6ce3c39b99
+SHA1: 9971e678434998e513b434ec2c50f698c2932ccf
+MD5sum: c512deb11bf56b0b9ab52f935b3653f5
+Description: advanced normalization tools for brain and image analysis
+ Advanced Normalization Tools (ANTS) is an ITK-based suite of
+ normalization, segmentation and template-building tools for
+ quantitative morphometric analysis. Many of the ANTS registration
+ tools are diffeomorphic, but deformation (elastic and BSpline)
+ transformations are available. Unique components of ANTS include
+ multivariate similarity metrics, landmark guidance, the ability to
+ use label images to guide the mapping and both greedy and space-time
+ optimal implementations of diffeomorphisms. The symmetric
+ normalization (SyN) strategy is a part of the ANTS toolkit as is
+ directly manipulated free form deformation (DMFFD).
+ .
+ This package provides environment-modules configuration.
+ Use 'module load ants' to make all cmdline tools available in your shell.
+
 Package: castxml
 Version: 0.1+git20160706-2~xenial
 Architecture: amd64
