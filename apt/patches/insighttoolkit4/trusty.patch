@@ -1,15 +1,25 @@
-diff --git a/debian/rules b/debian/rules
-index 5d4ed24..3c58dcd 100755
---- a/debian/rules
-+++ b/debian/rules
-@@ -65,7 +65,9 @@ CMAKE_FLAGS = \
-         -DITK_WRAP_complex_double:BOOL=ON \
-         -DITK_WRAPPING:BOOL=ON \
-         -DITK_WRAP_PYTHON:BOOL=ON \
--       -DPython_ADDITIONAL_VERSIONS=2.7 
-+       -DPython_ADDITIONAL_VERSIONS=2.7 \
-+       -DSWIG_EXECUTABLE=/usr/bin/swig3.0
-+
- 
- 
- pkg_lib = libinsighttoolkit$(SOVERSION)
+diff -ru debian.orig/rules insighttoolkit4-4.12.2-dfsg1/debian/rules
+--- debian.orig/rules	2017-10-05 09:43:31.000000000 +0000
++++ insighttoolkit4-4.12.2-dfsg1/debian/rules	2018-01-15 15:24:15.323330822 +0000
+@@ -34,7 +34,7 @@
+ 	-DCMAKE_SKIP_RPATH:BOOL=ON \
+ 	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+ 	-DUSE_FFTWF=$(ENABLE_FFTW) \
+-	-DITK_FORBID_DOWNLOADS:BOOL=ON \
++	-DITK_FORBID_DOWNLOADS:BOOL=OFF \
+ 	-DITK_USE_FFTWD:BOOL=$(ENABLE_FFTW) \
+ 	-DITK_USE_FFTWF:BOOL=$(ENABLE_FFTW) \
+ 	-DITK_USE_STRICT_CONCEPT_CHECKING:BOOL=ON \
+@@ -62,6 +62,7 @@
+ 	-DITKV3_COMPATIBILITY:BOOL=ON \
+ 	-DVCL_INCLUDE_CXX_0X:BOOL=ON \
+ 	-DITK_USE_SYSTEM_SWIG:BOOL=ON \
++	-DSWIG_EXECUTABLE=/usr/bin/swig3.0 \
+ 	-DITK_USE_SYSTEM_CASTXML:BOOL=ON \
+ 	-DITK_WRAP_IMAGE_DIMS="2;3;4" \
+ 	-DITK_WRAP_unsigned_long:BOOL=$(ENABLE_UNSIGNED_LONG) \
+@@ -159,4 +160,3 @@
+ 	uscan --watchfile debian/data/watch --force-download --no-symlink --destdir $(TARBALLDIR)
+ 	uscan --force-download --rename --destdir $(TARBALLDIR)
+ 	cd $(TARBALLDIR) && mv `ls InsightData-$(VERSION).tar.xz` insighttoolkit$(VER_MAJOR)_$(VERSION)-dfsg1.orig-data.tar.xz
+-
