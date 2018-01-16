@@ -262,21 +262,21 @@ Description: PACS (DICOM server)
 
 Package: insighttoolkit4-examples
 Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~jessie
+Version: 4.12.2-dfsg1-1~jessie
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 2918
+Installed-Size: 2923
 Suggests: libinsighttoolkit4-dev
 Conflicts: insighttoolkit-examples
 Replaces: insighttoolkit-examples
 Homepage: http://www.itk.org/
 Priority: optional
 Section: devel
-Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~jessie_all.deb
-Size: 2579346
-SHA256: d675094cb26d345f9f7b76cee0f953e38863b1b084c041d02937a58cd55a05f1
-SHA1: fa8881b4b89c18a77110072c76e60e65f9053091
-MD5sum: a9d7f74eb12b34dafd58acc1835bb9d4
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.12.2-dfsg1-1~jessie_all.deb
+Size: 2585698
+SHA256: b24b58a4412599abf3d9c23e776a851067388d9046ce321172708a370bd6af8e
+SHA1: 7f99258b87194d744d585c83ac17a898b24a51f4
+MD5sum: aad7c36b0429e7d1784f7d236b01a1dc
 Description: Image processing toolkit for registration and segmentation - examples
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
@@ -292,21 +292,21 @@ Description: Image processing toolkit for registration and segmentation - exampl
 
 Package: insighttoolkit4-python
 Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~jessie
+Version: 4.12.2-dfsg1-1~jessie
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 1068707
-Depends: libc6 (>= 2.14), libfftw3-double3, libfftw3-single3, libgcc1 (>= 1:4.1.1), libgdcm2.4, libinsighttoolkit4.10, libstdc++6 (>= 4.9)
+Installed-Size: 1106010
+Depends: libc6 (>= 2.14), libfftw3-double3, libfftw3-single3, libgcc1 (>= 1:4.1.1), libgdcm2.4, libinsighttoolkit4.12 (>= 4.12.0-dfsg1-2~), libstdc++6 (>= 4.9)
 Conflicts: insighttoolkit-python
 Replaces: insighttoolkit-python
 Homepage: http://www.itk.org/
 Priority: optional
 Section: python
-Filename: pool/main/i/insighttoolkit4/insighttoolkit4-python_4.10.1-dfsg1-1.1~jessie_amd64.deb
-Size: 83433148
-SHA256: fc51bb1df40f2293b2f80a58a2c64a5becadf8682d4af9c19bdb7cc0510a3ea1
-SHA1: 8203c15363aa4a00fd6476fa2ae679ad48db209b
-MD5sum: c2b77803db1ae4acaf329be9f6a86da8
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-python_4.12.2-dfsg1-1~jessie_amd64.deb
+Size: 86204812
+SHA256: e359959786bc4a37f278b21861876b65ee322765bef62c46e315cdd6fdc39457
+SHA1: 10828b68cbae36afb91bcd604d7ddf702153de98
+MD5sum: b7b56c61b360d83b4dc06a1ded0e8dcc
 Description: Image processing toolkit for registration and segmentation - Python bindings
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
@@ -575,11 +575,11 @@ Description: Library for coverage-guided fuzz testing
 
 Package: libinsighttoolkit4-dev
 Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~jessie
+Version: 4.12.2-dfsg1-1~jessie
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 24938
-Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libinsighttoolkit4.10 (= 4.10.1-dfsg1-1.1~jessie), libstdc++6 (>= 4.9), libgdcm2-dev, libdcmtk-dev, libhdf5-dev, libdouble-conversion-dev, libexpat-dev, libnifti-dev
+Installed-Size: 25117
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libinsighttoolkit4.12 (= 4.12.2-dfsg1-1~jessie), libstdc++6 (>= 4.9), libgdcm2-dev, libdcmtk-dev, libhdf5-dev, libdouble-conversion-dev, libexpat-dev, libnifti-dev
 Recommends: libfftw3-dev, uuid-dev
 Suggests: insighttoolkit4-examples
 Conflicts: libinsighttoolkit-dev, libinsighttoolkit3-dev
@@ -587,11 +587,11 @@ Replaces: libinsighttoolkit-dev
 Homepage: http://www.itk.org/
 Priority: optional
 Section: libdevel
-Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4-dev_4.10.1-dfsg1-1.1~jessie_amd64.deb
-Size: 3002774
-SHA256: 596a14a823397a5851f3b3e63822eb8a59af721b11b9c20e5c98d4fc82d70a8e
-SHA1: 56f0bd46a627017563b22cbb108867612e4760e3
-MD5sum: 53d1f35871ddcb24f4991711738cd6a9
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4-dev_4.12.2-dfsg1-1~jessie_amd64.deb
+Size: 3025458
+SHA256: 54346c6d98d69f1ef97b3e2be59abe8ef66d44786882d059d4dcf3309920ae52
+SHA1: be126e181066f8ff143b6bca1e74af34d2ff04c5
+MD5sum: e7a47e94e2c99408591772a9bf589e97
 Description: Image processing toolkit for registration and segmentation - development
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
@@ -621,6 +621,34 @@ Size: 4889546
 SHA256: 6ce1645c86bffdba9e611ef3ec20f448da8f8bebc1221fb8e2d4273401f591aa
 SHA1: 7787887a2f8003346633aae32dc4a05474526198
 MD5sum: 6014e31eec3eaabd89efc748fc2e3d45
+Description: Image processing toolkit for registration and segmentation - runtime
+ ITK is an open-source software toolkit for performing registration and
+ segmentation. Segmentation is the process of identifying and
+ classifying data found in a digitally sampled
+ representation. Typically the sampled representation is an image
+ acquired from such medical instrumentation as CT or MRI
+ scanners. Registration is the task of aligning or developing
+ correspondences between data. For example, in the medical
+ environment, a CT scan may be aligned with a MRI scan in order to
+ combine the information contained in both.
+ .
+ This package contains the libraries needed to run ITK applications.
+
+Package: libinsighttoolkit4.12
+Source: insighttoolkit4
+Version: 4.12.2-dfsg1-1~jessie
+Architecture: amd64
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 23398
+Depends: libc6 (>= 2.15), libdouble-conversion1, libexpat1 (>= 2.0.1), libfftw3-double3, libfftw3-single3, libgcc1 (>= 1:4.1.1), libgdcm2.4, libhdf5-8, libhdf5-cpp-8 (>= 1.8.13), libjpeg62-turbo (>= 1.3.1), libnifti2, libpng12-0 (>= 1.2.13-4), libstdc++6 (>= 4.9), libtiff5 (>= 4.0.3), zlib1g (>= 1:1.2.3.4)
+Homepage: http://www.itk.org/
+Priority: optional
+Section: libs
+Filename: pool/main/i/insighttoolkit4/libinsighttoolkit4.12_4.12.2-dfsg1-1~jessie_amd64.deb
+Size: 4774450
+SHA256: 5a8c21cabf3ec9d9067ecc7192f6ea3eae0fac9af7b6da344f5aa2b8bf5df464
+SHA1: 20a24c88ee4083d3d72b27413e52b8c18c2990c1
+MD5sum: a63095d7be0f1f13eb23b718c5228b79
 Description: Image processing toolkit for registration and segmentation - runtime
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and

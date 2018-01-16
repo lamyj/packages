@@ -96,21 +96,21 @@ Description: Convert data to and from DICOM (GUI tools)
 
 Package: insighttoolkit4-examples
 Source: insighttoolkit4
-Version: 4.10.1-dfsg1-1.1~jessie
+Version: 4.12.2-dfsg1-1~jessie
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 2918
+Installed-Size: 2923
 Suggests: libinsighttoolkit4-dev
 Conflicts: insighttoolkit-examples
 Replaces: insighttoolkit-examples
 Homepage: http://www.itk.org/
 Priority: optional
 Section: devel
-Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.10.1-dfsg1-1.1~jessie_all.deb
-Size: 2579346
-SHA256: d675094cb26d345f9f7b76cee0f953e38863b1b084c041d02937a58cd55a05f1
-SHA1: fa8881b4b89c18a77110072c76e60e65f9053091
-MD5sum: a9d7f74eb12b34dafd58acc1835bb9d4
+Filename: pool/main/i/insighttoolkit4/insighttoolkit4-examples_4.12.2-dfsg1-1~jessie_all.deb
+Size: 2585698
+SHA256: b24b58a4412599abf3d9c23e776a851067388d9046ce321172708a370bd6af8e
+SHA1: 7f99258b87194d744d585c83ac17a898b24a51f4
+MD5sum: aad7c36b0429e7d1784f7d236b01a1dc
 Description: Image processing toolkit for registration and segmentation - examples
  ITK is an open-source software toolkit for performing registration and
  segmentation. Segmentation is the process of identifying and
