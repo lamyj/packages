@@ -1,35 +1,52 @@
+diff --git a/debian/changelog b/debian/changelog
+index c5118c6..4a566ad 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,3 +1,9 @@
++odil (0.9.1-1~trusty) trusty; urgency=medium
++
++  * Backport to trusty
++
++ -- Julien Lamy <lamy@unistra.fr>  Fri, 09 Mar 2018 13:55:44 +0000
++
+ odil (0.9.1-1) unstable; urgency=medium
+ 
+   [ Julien Lamy ]
 diff --git a/debian/control b/debian/control
-index 5d65fbd..9094ba6 100644
+index 3c86b04..db6e014 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -4,7 +4,7 @@ Uploaders: Julien Lamy <lamy@unistra.fr>
+@@ -3,11 +3,11 @@ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.
+ Uploaders: Julien Lamy <lamy@unistra.fr>
  Section: science
  Priority: optional
- Build-Depends: debhelper (>= 9),
--               d-shlibs (>= 0.79),
+-Build-Depends: debhelper (>= 10),
+-               d-shlibs (>= 0.81),
++Build-Depends: debhelper (>= 9),
 +               d-shlibs,
                 dh-python,
                 cmake,
+-               g++ (>= 4:7),
++               g++ (>= 4:4.8),
                 pkg-config,
-diff --git a/debian/python3-odil.install b/debian/python3-odil.install
-index 3d870b1..0a7fc69 100644
---- a/debian/python3-odil.install
-+++ b/debian/python3-odil.install
-@@ -1 +1 @@
--build-py3.5/wrappers/odil.so usr/lib/python3.5/dist-packages/
-+build-py3.4/wrappers/odil.so usr/lib/python3.4/dist-packages/
+                libjsoncpp-dev,
+                libdcmtk-dev | libdcmtk2-dev,
 diff --git a/debian/rules b/debian/rules
-index 3531df7..0da75ea 100755
+index ae7efce..723de3a 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -72,6 +72,10 @@ override_dh_install-arch:
- 		--override s/libdcm.*-dev/libdcmtk-dev/ \
- 		--override s/libof.*-dev/libdcmtk-dev/ \
- 		--override s/libicuuc.*-dev/libicu-dev/ \
+@@ -109,6 +109,14 @@ override_dh_install-arch:
+ 		--devunversioned \
+ 		--commit --multiarch --exclude-a --exclude-la \
+ 		--movedev debian/tmp/usr/include/* usr/include \
++		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
++		--override s/libdcm.*-dev/libdcmtk-dev/ \
++		--override s/libof.*-dev/libdcmtk-dev/ \
++		--override s/libicuuc.*-dev/libicu-dev/ \
 +		--override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
 +		--override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
 +		--override s/libboost_regex.*-dev/libboost-regex-dev/ \
 +		--override s/libboost_system.*-dev/libboost-system-dev/ \
  		debian/tmp/usr/lib/*.so
  
- override_dh_fixperms-indep:
+ 

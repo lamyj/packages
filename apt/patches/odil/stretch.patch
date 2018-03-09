@@ -1,0 +1,32 @@
+diff --git a/debian/control b/debian/control
+index 3c86b04..5704db6 100644
+--- a/debian/control
++++ b/debian/control
+@@ -4,10 +4,10 @@ Uploaders: Julien Lamy <lamy@unistra.fr>
+ Section: science
+ Priority: optional
+ Build-Depends: debhelper (>= 10),
+-               d-shlibs (>= 0.81),
++               d-shlibs,
+                dh-python,
+                cmake,
+-               g++ (>= 4:7),
++               g++ (>= 4:6),
+                pkg-config,
+                libjsoncpp-dev,
+                libdcmtk-dev | libdcmtk2-dev,
+diff --git a/debian/rules b/debian/rules
+index ae7efce..b2a02e2 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -109,6 +109,10 @@ override_dh_install-arch:
+ 		--devunversioned \
+ 		--commit --multiarch --exclude-a --exclude-la \
+ 		--movedev debian/tmp/usr/include/* usr/include \
++		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
++		--override s/libdcm.*-dev/libdcmtk-dev/ \
++		--override s/libof.*-dev/libdcmtk-dev/ \
++		--override s/libicuuc.*-dev/libicu-dev/ \
+ 		debian/tmp/usr/lib/*.so
+ 
+ 

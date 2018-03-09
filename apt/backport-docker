@@ -39,7 +39,7 @@ sudo -E ${APT_GET} install gnupg wget lsb-release
 
 DISTRIB=$(lsb_release -cs)
 
-PACKAGES="devscripts dpkg-dev equivs libwww-perl"
+PACKAGES="apt-utils devscripts dpkg-dev equivs libwww-perl"
 # Needed for uscan on https
 if [ "${DISTRIB}" = "wheezy" -o "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
   PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
