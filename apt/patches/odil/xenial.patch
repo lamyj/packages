@@ -35,6 +35,15 @@ diff --git a/debian/rules b/debian/rules
 index ae7efce..723de3a 100755
 --- a/debian/rules
 +++ b/debian/rules
+@@ -54,7 +54,7 @@ override_dh_auto_build-indep:
+ 	find documentation/_build -name "*.md5" -delete
+ 
+ override_dh_makeshlibs-arch:
+-	dh_makeshlibs -V'libodil0 (>= 0.9.1-1)'
++	dh_makeshlibs -V'libodil0 (>= 0.9.1-1~xenial)'
+ 
+ # Run C++ tests only on base build
+ override_dh_auto_test-arch-nopy:
 @@ -109,6 +109,14 @@ override_dh_install-arch:
  		--devunversioned \
  		--commit --multiarch --exclude-a --exclude-la \
