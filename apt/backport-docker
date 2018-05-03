@@ -95,3 +95,9 @@ cp ../*deb packages
 
 dh clean
 mv ${changelog_orig} debian/changelog
+
+if test "${has_patch}"; then
+  wget ${patch_url}
+  patch --reverse --batch --strip=1 --input=${DISTRIB}.patch
+  rm ${DISTRIB}.patch
+fi
