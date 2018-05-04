@@ -29,8 +29,8 @@ index ae7efce..723de3a 100755
  	find documentation/_build -name "*.md5" -delete
  
  override_dh_makeshlibs-arch:
--	dh_makeshlibs -V'libodil0 (>= 0.9.1-1)'
-+	dh_makeshlibs -V'libodil0 (>= 0.9.1-1~jessie)'
+-	dh_makeshlibs -V'libodil0 (>= 0.9.2-1)'
++	dh_makeshlibs -V'libodil0 (>= 0.9.2-1~jessie)'
  
  # Run C++ tests only on base build
  override_dh_auto_test-arch-nopy:
