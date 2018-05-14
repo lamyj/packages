@@ -1,0 +1,25 @@
+diff --git a/debian/rules b/debian/rules
+index e3af64f..e109caf 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -40,7 +40,7 @@ override_dh_auto_build-indep:
+ 	  -DPYTHON_EXECUTABLE=/usr/bin/python$(PYTHON3)
+ 
+ override_dh_makeshlibs-arch:
+-	dh_makeshlibs -V'libdicomifier1 (>= 1.1.0-1)'
++	dh_makeshlibs -V'libdicomifier1 (>= 1.1.0-1~jessie)'
+ 
+ # WARNING: Python2 and Python3 MUST be tested sequentially since they use the 
+ # same build directory
+@@ -76,6 +76,11 @@ override_dh_install-arch:
+ 		--override s/libdcm.*-dev/libdcmtk-dev/ \
+ 		--override s/libof.*-dev/libdcmtk-dev/ \
+ 		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
++		--override s/libicuuc.*-dev/libicu-dev/ \
++		--override s/libboost_date_time.*-dev/libboost-date-time-dev/ \
++		--override s/libboost_filesystem.*-dev/libboost-filesystem-dev/ \
++		--override s/libboost_regex.*-dev/libboost-regex-dev/ \
++		--override s/libboost_system.*-dev/libboost-system-dev/ \
+ 		debian/tmp/usr/lib/*.so
+ 
+ override_dh_clean:
