@@ -1,103 +1,125 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 set -u
 
-CONTACT=""
-JOBS=1
-UNOFFICIAL_REPO=""
-PROJECT=""
+# Parse the command-line arguments
+parse_args ( ) {
+  JOBS=1
+  PATCH=""
+  UNOFFICIAL_REPO=""
+  
+  usage="Usage: %s: [-j JOBS] [-u] PROJECT CONTACT\n"
 
-while getopts "c:j:p:u" OPT; do
-  case ${OPT} in
-    c) CONTACT=${OPTARG} ;;
-    j) JOBS=${OPTARG} ;;
-    p) PROJECT=${OPTARG} ;;
-    u) UNOFFICIAL_REPO="yes" ;;
-  esac
-done
+  while getopts "c:j:p:u" OPT; do
+    case ${OPT} in
+      j) JOBS=${OPTARG} ;;
+      p) PATCH=${OPTARG} ;;
+      u) UNOFFICIAL_REPO="yes" ;;
+      ?) 
+        printf "${USAGE}" $0
+        exit 2;;
+    esac
+  done
 
-if test -z "${PROJECT}"; then
-  echo "Missing project name"
-  exit 1
-fi
+  shift $(($OPTIND - 1))
+  
+  if test -z "$*"; then
+    printf "${USAGE}" $0
+    exit 1
+  fi
+  PROJECT="$1"
 
-if test -z "${CONTACT}"; then
-  echo "Missing contact"
-  exit 1
-fi
+  shift
 
-export DEBEMAIL="${CONTACT}"
+  if test -z "$*"; then
+    printf "${USAGE}" $0
+    exit 1
+  fi
+  DEBEMAIL="$1"
+  export DEBEMAIL
+}
 
-APT_GET="apt-get -qq -y --no-install-recommends"
-PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
-BINTRAY=http://dl.bintray.com/lamyj/generic
+prepare ( ) {
+  APT_GET="apt-get -qq -y --no-install-recommends"
+  PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
+  BINTRAY=http://dl.bintray.com/lamyj/generic
 
-sudo rm -f /etc/apt/apt.conf.d/docker-clean
-sudo -E ${APT_GET} update
-sudo -E ${APT_GET} install gnupg wget lsb-release
-
-DISTRIB=$(lsb_release -cs)
-
-PACKAGES="apt-utils devscripts dpkg-dev equivs libwww-perl"
-# Needed for uscan on https
-if [ "${DISTRIB}" = "wheezy" -o "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
-  PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
-fi
-
-if test "${UNOFFICIAL_REPO}"; then
-  wget -O - ${BINTRAY}/gpg.key | sudo apt-key add -
-  echo "deb ${BINTRAY}/apt ${DISTRIB} main" | sudo tee -a /etc/apt/sources.list
+  sudo rm -f /etc/apt/apt.conf.d/docker-clean
   sudo -E ${APT_GET} update
-fi
-sudo -E ${APT_GET} install ${PACKAGES}
+  sudo -E ${APT_GET} install gnupg wget lsb-release
 
-# Patch if needed
-patch_url=${PATCHES}/${PROJECT}/${DISTRIB}.patch
-wget ${patch_url} && has_patch="yes" || has_patch=""
-if test "${has_patch}"; then
-  patch --batch --strip=1 --input=${DISTRIB}.patch
-  rm ${DISTRIB}.patch
-else
-  echo "No patch for ${PROJECT} on ${DISTRIB}"
-fi
+  DISTRIB=$(lsb_release -cs)
 
-# Install build dependencies
-sudo mk-build-deps --tool "apt-get -y --no-install-recommends" --install
-rm -f ${PROJECT}-build*.deb
+  PACKAGES="apt-utils devscripts dpkg-dev equivs libwww-perl"
+  # Needed for uscan on https
+  if [ "${DISTRIB}" = "wheezy" -o "${DISTRIB}" = "precise" -o "${DISTRIB}" = "saucy" ]; then
+    PACKAGES="${PACKAGES} libcrypt-ssleay-perl"
+  fi
 
-# Fetch upstream archive
-uscan --force-download
+  if test -n "${UNOFFICIAL_REPO}"; then
+    wget -O - ${BINTRAY}/gpg.key | sudo apt-key add -
+    echo "deb ${BINTRAY}/apt ${DISTRIB} main" | sudo tee -a /etc/apt/sources.list
+    sudo -E ${APT_GET} update
+  fi
+  sudo -E ${APT_GET} install ${PACKAGES}
+  
+  # WARNING: bionic requires build and its parent to be under the same mount
+  cp -a source build
+  cd build
+  
+  # Patch if needed
+  if test -n "${PATCH}"; then
+    patch --batch --strip=1 --input="${PATCH}"
+  fi
+  
+  # Install build dependencies
+  sudo mk-build-deps --tool "apt-get -y --no-install-recommends" --install
+  rm -f ${PROJECT}-build*.deb
+}
 
-# Update changelog
-changelog_orig=$(mktemp)
+build ( ) {
+  # Fetch upstream archive
+  uscan --force-download
 
-cp debian/changelog ${changelog_orig}
+  # Update changelog
+  changelog_orig=$(mktemp)
 
-version=$(dpkg-parsechangelog | awk '$1 ~ /Version:/ { print $2 }')
-dch \
-  -v ${version}~${DISTRIB} --distribution ${DISTRIB} \
-  --force-bad-version --force-distribution \
-  "Backport to ${DISTRIB}"
+  cp debian/changelog ${changelog_orig}
 
-# Build all three independently to make sure "dh clean" is called each time
-DPKG_BUILDPACKAGE_OPTIONS="-j${JOBS} -us -uc"
-dpkg-buildpackage -S ${DPKG_BUILDPACKAGE_OPTIONS}
-dpkg-buildpackage -A ${DPKG_BUILDPACKAGE_OPTIONS}
-dpkg-buildpackage -B ${DPKG_BUILDPACKAGE_OPTIONS}
+  version=$(dpkg-parsechangelog | awk '$1 ~ /Version:/ { print $2 }')
+  dch \
+    -v ${version}~${DISTRIB} --distribution ${DISTRIB} \
+    --force-bad-version --force-distribution \
+    "Backport to ${DISTRIB}"
 
-# Run lintian, but do not record failures
-sudo ${APT_GET} --no-install-recommends install lintian
-lintian -I ../*changes || true
+  # Build all three independently to make sure "dh clean" is called each time
+  DPKG_BUILDPACKAGE_OPTIONS="-j${JOBS} -us -uc"
+  dpkg-buildpackage -S ${DPKG_BUILDPACKAGE_OPTIONS}
+  dpkg-buildpackage -A ${DPKG_BUILDPACKAGE_OPTIONS}
+  dpkg-buildpackage -B ${DPKG_BUILDPACKAGE_OPTIONS}
+}
 
-mkdir packages
-cp ../*deb packages
+finish ( ) {
+  # Run lintian, but do not record failures
+  sudo ${APT_GET} --no-install-recommends install lintian
+  lintian -I ../*changes || true
+  
+  mkdir -p ../source/packages
+  cp ../*deb ../source/packages
 
-dh clean
-mv ${changelog_orig} debian/changelog
+  dh clean
+  mv ${changelog_orig} debian/changelog
 
-if test "${has_patch}"; then
-  wget ${patch_url}
-  patch --reverse --batch --strip=1 --input=${DISTRIB}.patch
-  rm ${DISTRIB}.patch
-fi
+  if test -n "${PATCH}"; then
+    patch --reverse --batch --strip=1 --input=${PATCH}
+  fi
+}
+
+parse_args "$@"
+
+prepare
+
+build
+
+finish

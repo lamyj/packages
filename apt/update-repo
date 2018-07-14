@@ -28,7 +28,11 @@ def run(local_root, key):
 
     packages = {}
     for filename in glob.glob(os.path.join(local_root, "incoming", "*deb")):
-        dist = re.search(r"~(\w+)_\w+.deb", filename).group(1)
+        match = re.search(r"~(\w+)_\w+\.deb", filename)
+        if match is None:
+            print("WARNING: skipping {}".format(filename))
+            continue
+        dist = match.group(1)
         packages.setdefault(dist, []).append(filename)
 
     for dist, debs in packages.items():

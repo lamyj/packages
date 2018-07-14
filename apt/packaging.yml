@@ -4,12 +4,17 @@ services:
     image: ${IMAGE}
     volumes:
       - ${SOURCE}:/home/somebody/build
+    # FIXME: bionic requires build and its parent to be under the same mount
+    # dh_builddeb: mv debian/.debhelper/scratch-space/build-libodil0/libodil0-dbgsym_0.9.2-1\~bionic\~bionic_amd64.deb ../libodil0-dbgsym_0.9.2-1\~bionic\~bionic_amd64.ddeb: Invalid cross-device link
+    volumes:
+      - ${SOURCE}:/home/somebody/source
+      - ./patches:/patches
       - ./backport-docker:/backport-docker
       - ./entry.sh:/entry.sh
     entrypoint:
       - /entry.sh
       - /backport-docker
-    working_dir: /home/somebody/build
+    working_dir: /home/somebody
   update-repo:
     build: 
       context: ./docker
@@ -20,6 +25,6 @@ services:
       - /bin/bash
       - -i
 
-# e.g. IMAGE=debian:stretch SOURCE=~/src/odil/debian docker-compose -f ~/src/packages/apt/packaging.yml run --rm backport -p odil -c "Julien Lamy <lamy@unistra.fr>" -j6
+# e.g. IMAGE=debian:stretch SOURCE=~/src/odil/debian docker-compose -f ~/src/packages/apt/packaging.yml run --rm backport -j6 -p /patches/odil/stretch.patch odil "Julien Lamy <lamy@unistra.fr>"
 # e.g. docker-compose -f ~/src/packages/apt/packaging.yml run --name apt-update-repo update-repo
 # docker start -i apt-update-repo
