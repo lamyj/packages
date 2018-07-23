@@ -1,13 +1,13 @@
 Codename: stretch
-Date: Thu, 11 Jan 2018 17:55:45 UTC
+Date: Thu, 11 Jan 2018 18:01:47 UTC
 Architectures: i386 amd64
 Components: main
 MD5Sum:
  c8cb0f917581e0cc74089256f0f0b79a 10957 main/binary-i386/Packages
  095cd0f5d80f7c943234ceec88b025ad 3204 main/binary-i386/Packages.gz
  5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
- c534813b40ade1519048363734b35dfe 30647 main/binary-amd64/Packages
- 9a4d43fb6ce9d237ebdc3d365f829651 7935 main/binary-amd64/Packages.gz
+ 6beb8517ccaa6dc28d1dc8aa1f9ea73e 32096 main/binary-amd64/Packages
+ dffe44a40d639eae467f9424f07553ff 8370 main/binary-amd64/Packages.gz
  063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
@@ -16,8 +16,8 @@ SHA1:
  b37e05ec4fb15272f35d9cb22cecf7b29bd32610 10957 main/binary-i386/Packages
  7fa87e5e1c71b73fceac79407b5b173565c2e949 3204 main/binary-i386/Packages.gz
  ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
- 2045a29df73978f2a7254cb6456ceaf8d4474d60 30647 main/binary-amd64/Packages
- 2721dc7f79d97893a09126957f8603256de06a6b 7935 main/binary-amd64/Packages.gz
+ 4e79d1960e91b9d866c481882f901fb78b92715c 32096 main/binary-amd64/Packages
+ 602cabaf2cb0d47f00d63681e2cdc4d2e79fea6f 8370 main/binary-amd64/Packages.gz
  f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
@@ -26,8 +26,8 @@ SHA256:
  15033fd2fb72f22031983414c96bb8a70bd33c1ccc3d89a2d5e79aa61d1f3678 10957 main/binary-i386/Packages
  408e3923537c1598177d8cf3b01c4a917216f2a55a770c81b407b9318472bc98 3204 main/binary-i386/Packages.gz
  2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
- 7e0eb07ec08c92836968e116b66044f41457db787051ecc247070e799372b52c 30647 main/binary-amd64/Packages
- 250fb93eed544396b3c665fb6a0df364bd86679adb00735b2367567dc9b4f9a9 7935 main/binary-amd64/Packages.gz
+ 858b8aa3b7a199f22ebed2c8113995ad3b1826ed3291ae1bc8c9a524934273da 32096 main/binary-amd64/Packages
+ 6d92b71962ff50afd13fe652dc057a4ba16ac4ff6521c94bc979e7ec032aa9e9 8370 main/binary-amd64/Packages.gz
  f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
