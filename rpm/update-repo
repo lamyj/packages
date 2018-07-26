@@ -8,23 +8,32 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--docker", help="Run in docker")
+    parser.add_argument("--docker", metavar="image", help="Run in docker")
+    parser.add_argument(
+        "--no-sign", dest="sign", action="store_false", 
+        help="Update the repositories but do not sign the meta-data")
     arguments = parser.parse_args()
-
+    
     local_root = os.path.abspath(os.path.dirname(__file__))
 
     if arguments.docker:
         run_in_docker(local_root, arguments.docker)
     else:
-        run(local_root)
+        run(local_root, arguments.sign)
 
-def run(local_root):
+def get_repositories(local_root):
     distributions = ["centos"]
+    
+    repositories = []
     for distribution in distributions:
         for release in os.listdir(os.path.join(local_root, distribution)):
-            repository = os.path.join(local_root, distribution, release)
+            repositories.append(os.path.join(local_root, distribution, release))
+    return repositories
 
-            subprocess.check_call(["createrepo", repository])
+def run(local_root, sign):
+    for repository in get_repositories(local_root):
+        subprocess.check_call(["createrepo", repository])
+        if sign:
             subprocess.check_call([
                 "gpg", "--detach-sign", "--armor", "--yes",
                 "--default-key", "3EBD1CD4",
@@ -35,18 +44,19 @@ def run_in_docker(local_root, docker_image):
     subprocess.check_call([
         "docker", "run", "-t", "-i", "--rm",
         "-v", "{}:{}".format(local_root, docker_root),
-        "-v", "{}:{}".format(
-            os.path.expanduser("~/.gnupg/pubring.gpg"),
-            "/root/.gnupg/pubring.gpg"),
-        "-v", "{}:{}".format(
-            os.path.expanduser("~/.gnupg/secring.gpg"),
-            "/root/.gnupg/secring.gpg"),
         "-w", docker_root,
         docker_image,
         "/bin/sh", "-c", "; ".join([
-            "yum -y install createrepo gnupg2",
-            os.path.join(docker_root, os.path.basename(__file__))])
+            "yum -y install createrepo",
+            "{} --no-sign".format(
+                os.path.join(docker_root, os.path.basename(__file__)))
+        ])
     ])
+    for repository in get_repositories(local_root):
+        subprocess.check_call([
+            "gpg", "--detach-sign", "--armor", "--yes",
+            "--default-key", "3EBD1CD4",
+            os.path.join(repository, "repodata", "repomd.xml")])
 
 if __name__ == "__main__":
     sys.exit(main())
