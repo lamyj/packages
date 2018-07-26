@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backport:
+    image: ${IMAGE}
+    volumes:
+      - ${SOURCE}:/home/somebody/source
+      - ./patches:/patches
+      - ./backport-docker:/backport-docker
+      - ./entry.sh:/entry.sh
+    entrypoint:
+      - /entry.sh
+      - /backport-docker
+    working_dir: /home/somebody
+
+# e.g. IMAGE=centos:7 SOURCE=~/src/odil/rpm docker-compose -f ~/src/packages/rpm/packaging.yml run --rm backport /home/somebody/source/odil.spec

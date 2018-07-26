@@ -3,29 +3,26 @@
 set -e
 set -u
 
+usage="Usage: %s: [SPEC]"
+
 SPEC=""
 
-while getopts "s:" OPT; do
-  case ${OPT} in
-    s) SPEC=${OPTARG} ;;
-  esac
-done
-
-if test -z "${SPEC}"; then
-  echo "Missing .spec file"
+if test -z "$*"; then
+  printf "${USAGE}" $0
   exit 1
 fi
+SPEC="$1"
 
 sudo yum -q -y install centos-packager epel-release
 rpmdev-setuptree
 
 spectool -g -R ${SPEC}
-cp *patch ~/rpmbuild/SOURCES
+# cp *patch ~/rpmbuild/SOURCES
 sudo yum-builddep -q -y ${SPEC}
 
 rpmbuild -ba ${SPEC}
 
-rpmlint ~/rpmbuild/RPMS/*/*
+rpmlint ~/rpmbuild/RPMS/*/* || true
 
-mkdir packages
-cp -r ~/rpmbuild/RPMS ~/rpmbuild/SRPMS ./packages
+mkdir ~/source/packages
+cp -r ~/rpmbuild/RPMS ~/rpmbuild/SRPMS ~/source/packages
