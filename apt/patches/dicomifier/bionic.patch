@@ -6,8 +6,8 @@ index e3af64f..c913096 100755
  	  -DPYTHON_EXECUTABLE=/usr/bin/python$(PYTHON3)
  
  override_dh_makeshlibs-arch:
--	dh_makeshlibs -V'libdicomifier1 (>= 1.1.0-1)'
-+	dh_makeshlibs -V'libdicomifier1 (>= 1.1.0-1~bionic)'
+-	dh_makeshlibs -V'libdicomifier1 (>= 1.2.0-1)'
++	dh_makeshlibs -V'libdicomifier1 (>= 1.2.0-1~bionic)'
  
  # WARNING: Python2 and Python3 MUST be tested sequentially since they use the 
  # same build directory
