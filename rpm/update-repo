@@ -8,18 +8,14 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--docker", metavar="image", help="Run in docker")
-    parser.add_argument(
-        "--no-sign", dest="sign", action="store_false", 
-        help="Update the repositories but do not sign the meta-data")
     arguments = parser.parse_args()
     
     local_root = os.path.abspath(os.path.dirname(__file__))
 
-    if arguments.docker:
-        run_in_docker(local_root, arguments.docker)
-    else:
-        run(local_root, arguments.sign)
+    for repository in get_repositories(local_root):
+        sign_packages(repository)
+        update_repo(repository)
+        sign_repo(repository)            
 
 def get_repositories(local_root):
     distributions = ["centos"]
@@ -30,33 +26,29 @@ def get_repositories(local_root):
             repositories.append(os.path.join(local_root, distribution, release))
     return repositories
 
-def run(local_root, sign):
-    for repository in get_repositories(local_root):
-        subprocess.check_call(["createrepo", repository])
-        if sign:
-            subprocess.check_call([
-                "gpg", "--detach-sign", "--armor", "--yes",
-                "--default-key", "3EBD1CD4",
-                os.path.join(repository, "repodata", "repomd.xml")])
+def sign_packages(repository):
+    unsigned_packages = []
+    for dirpath, dirnames, filenames in os.walk(repository):
+        for filename in filenames:
+            if not filename.endswith(".rpm"):
+                continue
+            
+            package = os.path.join(dirpath, filename)
+            
+            is_signed = "pgp" in subprocess.check_output(["rpm", "--checksig", package])
+            if not is_signed:
+                unsigned_packages.append(package)
+    if unsigned_packages:
+        subprocess.check_call(["rpm", "--addsign"]+unsigned_packages)
 
-def run_in_docker(local_root, docker_image):
-    docker_root = "/root/rpm"
+def update_repo(repository):
+    subprocess.check_call(["createrepo", repository])
+
+def sign_repo(repository):
     subprocess.check_call([
-        "docker", "run", "-t", "-i", "--rm",
-        "-v", "{}:{}".format(local_root, docker_root),
-        "-w", docker_root,
-        docker_image,
-        "/bin/sh", "-c", "; ".join([
-            "yum -y install createrepo",
-            "{} --no-sign".format(
-                os.path.join(docker_root, os.path.basename(__file__)))
-        ])
-    ])
-    for repository in get_repositories(local_root):
-        subprocess.check_call([
-            "gpg", "--detach-sign", "--armor", "--yes",
-            "--default-key", "3EBD1CD4",
-            os.path.join(repository, "repodata", "repomd.xml")])
+        "gpg", "--detach-sign", "--armor", "--yes",
+        "--default-key", "3EBD1CD4",
+        os.path.join(repository, "repodata", "repomd.xml")])
 
 if __name__ == "__main__":
     sys.exit(main())
