@@ -3,9 +3,19 @@
 set -e
 set -u
 
-usage="Usage: %s: [SPEC]"
+usage="Usage: %s [-u] [SPEC]"
 
-SPEC=""
+UNOFFICIAL_REPO=""
+while getopts "u" OPT; do
+  case ${OPT} in
+    u) UNOFFICIAL_REPO="yes" ;;
+    ?) 
+      printf "${USAGE}" $0
+      exit 2;;
+  esac
+done
+
+shift $(($OPTIND - 1))
 
 if test -z "$*"; then
   printf "${USAGE}" $0
@@ -14,6 +24,24 @@ fi
 SPEC="$1"
 
 sudo yum -q -y install centos-packager epel-release
+
+# WARNING: cannot install repo-configuration packages, since they conflict with
+# centos-release-7-5.1804.el7.centos.2.x86_64
+cat > puias-computational.repo << 'EOF'
+[puias-computational]
+name=Scientific and research packages from Springdale 7
+baseurl=http://springdale.math.ias.edu/data/puias/computational/$releasever/$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=http://springdale.math.ias.edu/data/puias/$releasever/$basearch/os/RPM-GPG-KEY-puias
+EOF
+sudo yum-config-manager --add-repo puias-computational.repo
+
+if test -n "${UNOFFICIAL_REPO}"; then
+  sudo yum-config-manager --add-repo http://dl.bintray.com/lamyj/generic/rpm/centos/7/lamyj.repo
+fi
+
 rpmdev-setuptree
 
 spectool -g -R ${SPEC}
