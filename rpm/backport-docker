@@ -52,5 +52,5 @@ rpmbuild -ba ${SPEC}
 
 rpmlint ~/rpmbuild/RPMS/*/* || true
 
-mkdir ~/source/packages
+mkdir -p ~/source/packages
 cp -r ~/rpmbuild/RPMS ~/rpmbuild/SRPMS ~/source/packages
