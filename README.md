@@ -41,7 +41,7 @@ The following steps must be run by root, either directly or using `sudo`.
       repo_gpgcheck=0
       gpgkey=http://springdale.math.ias.edu/data/puias/$releasever/$basearch/os/RPM-GPG-KEY-puias
       EOF
-      sudo yum-config-manager --add-repo puias-computational.repo
+      yum-config-manager --add-repo puias-computational.repo
 
 * Add the repository:
 
