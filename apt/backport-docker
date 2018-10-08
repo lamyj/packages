@@ -98,8 +98,8 @@ build ( ) {
   # Build all three independently to make sure "dh clean" is called each time
   DPKG_BUILDPACKAGE_OPTIONS="-j${JOBS} -us -uc"
   dpkg-buildpackage -S ${DPKG_BUILDPACKAGE_OPTIONS}
-  grep "Architecture: all" debian/control && dpkg-buildpackage -A ${DPKG_BUILDPACKAGE_OPTIONS}
-  grep "Architecture: any" debian/control && dpkg-buildpackage -B ${DPKG_BUILDPACKAGE_OPTIONS}
+  grep "Architecture: all" debian/control && dpkg-buildpackage -A ${DPKG_BUILDPACKAGE_OPTIONS} || true
+  grep "Architecture: any" debian/control && dpkg-buildpackage -B ${DPKG_BUILDPACKAGE_OPTIONS} || true
 }
 
 finish ( ) {
