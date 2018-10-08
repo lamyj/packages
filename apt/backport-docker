@@ -41,7 +41,7 @@ parse_args ( ) {
 }
 
 prepare ( ) {
-  APT_GET="apt-get -qq -y --no-install-recommends"
+  APT_GET="apt-get -y --no-install-recommends"
   PATCHES=https://raw.githubusercontent.com/lamyj/packages/master/apt/patches
   BINTRAY=http://dl.bintray.com/lamyj/generic
 
@@ -80,7 +80,9 @@ prepare ( ) {
 
 build ( ) {
   # Fetch upstream archive
-  uscan --force-download
+  # WARNING: the build fails if the version of the upstream tarball does not 
+  # match the version of the package. Use --download-current-version
+  uscan --force-download --download-current-version
 
   # Update changelog
   changelog_orig=$(mktemp)
