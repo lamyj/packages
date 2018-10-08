@@ -1,0 +1,22 @@
+diff -ur pybind11-2.0.1.orig/debian/compat pybind11-2.0.1/debian/compat
+--- pybind11-2.0.1.orig/debian/compat
++++ pybind11-2.0.1/debian/compat
+@@ -1 +1 @@
+-10
++9
+diff -ur pybind11-2.0.1.orig/debian/control pybind11-2.0.1/debian/control
+--- pybind11-2.0.1.orig/debian/control
++++ pybind11-2.0.1/debian/control
+@@ -4,10 +4,11 @@
+ Section: libs
+ Priority: optional
+ Build-Depends: cmake (>= 2.8.12),
+-               debhelper (>= 10),
++               debhelper (>= 9),
+                dpkg-dev (>= 1.17.14),
+                dh-python,
+                python-all,
++               python-dev <!nocheck>,
+                python-pytest <!nocheck>,
+                python-setuptools,
+                python-sphinx <!nodoc>,
