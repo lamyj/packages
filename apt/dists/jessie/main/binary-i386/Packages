@@ -303,20 +303,21 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: pybind11-dev
 Source: pybind11
-Version: 2.0.1-3~jessie
+Version: 2.2.4-1~jessie
 Architecture: all
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
-Installed-Size: 404
-Suggests: libeigen3-dev, pybind11-doc
+Installed-Size: 604
+Recommends: libeigen3-dev
+Suggests: pybind11-doc
 Multi-Arch: foreign
 Homepage: https://github.com/pybind/pybind11
 Priority: optional
 Section: libdevel
-Filename: pool/main/p/pybind11/pybind11-dev_2.0.1-3~jessie_all.deb
-Size: 82140
-SHA256: 353251a96a5339ce6738de2016e8d3a5583d836e0ac95ade8ebe42e9b9abbc9e
-SHA1: 6b006e26e47967fe70fd3656afe32402aac7e6f3
-MD5sum: a73ca59dfb337b5d825c1c7aaac992df
+Filename: pool/main/p/pybind11/pybind11-dev_2.2.4-1~jessie_all.deb
+Size: 131124
+SHA256: 2b97ab6e716b42f9ed4f9950989e04c09d0a86ae5e73cef8bb5fb6ede8c504ac
+SHA1: cb0c8fcd5fdc680d99e5c8ae602aa97410012ce8
+MD5sum: 0f24dcffadbc8139b45bc97506f28afe
 Description: seamless operability between C++11 and Python
  pybind11 is a lightweight header library that exposes C++ types in
  Python and vice versa, mainly to create Python bindings of existing C++
@@ -329,20 +330,20 @@ Description: seamless operability between C++11 and Python
 
 Package: pybind11-doc
 Source: pybind11
-Version: 2.0.1-3~jessie
+Version: 2.2.4-1~jessie
 Architecture: all
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
-Installed-Size: 1669
+Installed-Size: 2056
 Depends: libjs-sphinxdoc (>= 1.0)
 Multi-Arch: foreign
 Homepage: https://github.com/pybind/pybind11
 Priority: optional
 Section: doc
-Filename: pool/main/p/pybind11/pybind11-doc_2.0.1-3~jessie_all.deb
-Size: 479426
-SHA256: af7ce653541e25904b7fba70db8a2b70589b215ec63e7d3cccde702834a7bfa5
-SHA1: 84b86a4a46899b5258d4f450dfc6f12ca4d02782
-MD5sum: 9a2aafd9cb0e7913e7c64e7be5b0d7b1
+Filename: pool/main/p/pybind11/pybind11-doc_2.2.4-1~jessie_all.deb
+Size: 538546
+SHA256: c3c9a84af613ab0128604735e141c47a57f169fee706952916b226bcebf6da2c
+SHA1: bb24cd286356e8afe612edbcba8f5928a051bb5c
+MD5sum: 6a5a63c7e0c11af78f207910578d8dda
 Description: documentation for pybind11
  pybind11 is a lightweight header library that exposes C++ types in
  Python and vice versa, mainly to create Python bindings of existing C++
@@ -378,20 +379,21 @@ Description: Convert data to and from DICOM (Python modules)
 
 Package: python-pybind11
 Source: pybind11
-Version: 2.0.1-3~jessie
+Version: 2.2.4-1~jessie
 Architecture: all
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
-Installed-Size: 62
-Depends: python:any (<< 2.8), python:any (>= 2.7.5-5~), pybind11-dev (= 2.0.1-3~jessie)
+Installed-Size: 71
+Depends: python:any (<< 2.8), python:any (>= 2.7.5-5~), pybind11-dev (= 2.2.4-1~jessie)
+Recommends: python-numpy
 Multi-Arch: foreign
 Homepage: https://github.com/pybind/pybind11
 Priority: optional
 Section: python
-Filename: pool/main/p/pybind11/python-pybind11_2.0.1-3~jessie_all.deb
-Size: 15104
-SHA256: b01837bdb778b85fc81b67b74684e16fb63365612a5a452754fa79b2cf144533
-SHA1: 42aea33728e1c7227c0e16e7e018742f876e8d23
-MD5sum: 5568a7078d724ef470c1a9ecbdf3b8f8
+Filename: pool/main/p/pybind11/python-pybind11_2.2.4-1~jessie_all.deb
+Size: 23360
+SHA256: 624f8bfcfa045aef687639fc3760e902aaa0b778ddb888d952ebbe49c5c26ddd
+SHA1: 76b9588803e2c35d3ddfc4223c1c3a6e65814570
+MD5sum: 19922c2e06ee0dc6f18e775c7e772185
 Description: pybind11 helper module for Python 2
  pybind11 is a lightweight header library that exposes C++ types in
  Python and vice versa, mainly to create Python bindings of existing C++
@@ -404,20 +406,21 @@ Description: pybind11 helper module for Python 2
 
 Package: python3-pybind11
 Source: pybind11
-Version: 2.0.1-3~jessie
+Version: 2.2.4-1~jessie
 Architecture: all
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
-Installed-Size: 62
-Depends: python3:any (>= 3.3.2-2~), pybind11-dev (= 2.0.1-3~jessie)
+Installed-Size: 71
+Depends: python3:any (>= 3.3.2-2~), pybind11-dev (= 2.2.4-1~jessie)
+Recommends: python3-numpy
 Multi-Arch: foreign
 Homepage: https://github.com/pybind/pybind11
 Priority: optional
 Section: python
-Filename: pool/main/p/pybind11/python3-pybind11_2.0.1-3~jessie_all.deb
-Size: 15178
-SHA256: 735e3a13452487640cef0e39b244acce456155aef3b354832d9151c2484dd27c
-SHA1: 3e6af2b61ed0f72aec3a521728f6a75cfa9584b9
-MD5sum: 5e94466550cd119e76c13611df6de6b1
+Filename: pool/main/p/pybind11/python3-pybind11_2.2.4-1~jessie_all.deb
+Size: 23428
+SHA256: ec868001cd7c875ac0e7c810c7bb6528d528eb578b82909b2478c970691a4eea
+SHA1: 7f22beaaca0e3ce7610d866e5dd418ced3b0f87a
+MD5sum: e298c5c11ad56014099d967356ff028c
 Description: pybind11 helper module for Python 3
  pybind11 is a lightweight header library that exposes C++ types in
  Python and vice versa, mainly to create Python bindings of existing C++

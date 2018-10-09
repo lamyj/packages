@@ -1,55 +1,72 @@
-diff -r -u -N pybind11-2.0.1.orig/debian/compat pybind11-2.0.1/debian/compat
---- pybind11-2.0.1.orig/debian/compat	2017-02-26 21:43:11.000000000 +0100
-+++ pybind11-2.0.1/debian/compat	2018-10-08 18:59:00.000000000 +0200
+diff -ruN a/debian/compat b/debian/compat
+--- a/debian/compat	2018-09-22 02:26:31.000000000 +0000
++++ b/debian/compat	2018-10-09 15:14:10.590000000 +0000
 @@ -1 +1 @@
--10
+-11
 +9
-diff -r -u -N pybind11-2.0.1.orig/debian/control pybind11-2.0.1/debian/control
---- pybind11-2.0.1.orig/debian/control	2017-02-26 21:43:11.000000000 +0100
-+++ pybind11-2.0.1/debian/control	2018-10-08 18:59:00.000000000 +0200
-@@ -4,17 +4,17 @@
+diff -ruN a/debian/control b/debian/control
+--- a/debian/control	2018-09-22 02:26:31.000000000 +0000
++++ b/debian/control	2018-10-09 15:17:06.120000000 +0000
+@@ -4,22 +4,22 @@
  Section: libs
  Priority: optional
  Build-Depends: cmake (>= 2.8.12),
--               debhelper (>= 10),
+-               debhelper (>= 11),
 -               dpkg-dev (>= 1.17.14),
 +               debhelper (>= 9),
 +               dpkg-dev (>= 1.17.5),
                 dh-python,
+-               libboost-dev (>= 1.56) <!nocheck>,
+-               libeigen3-dev <!nocheck>,
++               libboost-dev (>= 1.54),
++               libeigen3-dev,
                 python-all,
--               python-pytest <!nocheck>,
 +               python-dev,
 +               python-pytest,
                 python-setuptools,
--               python-sphinx <!nodoc>,
--               python-sphinx-rtd-theme <!nodoc>,
-+               python-sphinx,
                 python3-all,
+-               python3-breathe <!nodoc>,
 -               python3-dev <!nocheck>,
+-               python3-numpy <!nocheck>,
 -               python3-pytest <!nocheck>,
+-               python3-scipy <!nocheck>,
 +               python3-dev,
++               python3-numpy,
 +               python3-pytest,
++               python3-scipy,
                 python3-setuptools,
+-               python3-sphinx <!nodoc>,
+-               python3-sphinx-rtd-theme <!nodoc>,
++               python3-sphinx,
                 sphinx-common
- Standards-Version: 3.9.8
-@@ -30,7 +30,7 @@
- Section: libdevel
- Depends: ${misc:Depends}
- Suggests: libeigen3-dev,
--          pybind11-doc <!nodoc>
-+          pybind11-doc
- Description: seamless operability between C++11 and Python
-  pybind11 is a lightweight header library that exposes C++ types in
-  Python and vice versa, mainly to create Python bindings of existing C++
-diff -r -u -N pybind11-2.0.1.orig/debian/patches/0003-Sphinx-theme.patch pybind11-2.0.1/debian/patches/0003-Sphinx-theme.patch
---- pybind11-2.0.1.orig/debian/patches/0003-Sphinx-theme.patch	1970-01-01 01:00:00.000000000 +0100
-+++ pybind11-2.0.1/debian/patches/0003-Sphinx-theme.patch	2018-10-08 18:59:00.000000000 +0200
+ Standards-Version: 4.2.1
+ Vcs-Browser: https://salsa.debian.org/science-team/pybind11
+diff -ruN a/debian/patches/0001_Remove_breathe.patch b/debian/patches/0001_Remove_breathe.patch
+--- a/debian/patches/0001_Remove_breathe.patch	1970-01-01 00:00:00.000000000 +0000
++++ b/debian/patches/0001_Remove_breathe.patch	2018-10-09 15:14:10.600000000 +0000
+@@ -0,0 +1,13 @@
++Index: build/docs/conf.py
++===================================================================
++--- build.orig/docs/conf.py
+++++ build/docs/conf.py
++@@ -31,7 +31,7 @@ import subprocess
++ # Add any Sphinx extension module names here, as strings. They can be
++ # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
++ # ones.
++-extensions = ['breathe']
+++extensions = []
++ 
++ breathe_projects = {'pybind11': '.build/doxygenxml/'}
++ breathe_default_project = 'pybind11'
+diff -ruN a/debian/patches/0002_Sphinx-theme.patch b/debian/patches/0002_Sphinx-theme.patch
+--- a/debian/patches/0002_Sphinx-theme.patch	1970-01-01 00:00:00.000000000 +0000
++++ b/debian/patches/0002_Sphinx-theme.patch	2018-10-09 15:14:10.600000000 +0000
 @@ -0,0 +1,15 @@
 +Index: build/docs/conf.py
 +===================================================================
-+--- build.orig/docs/conf.py	2018-10-08 16:49:55.780000000 +0000
-++++ build/docs/conf.py	2018-10-08 16:50:10.350000000 +0000
-+@@ -113,10 +113,6 @@
++--- build.orig/docs/conf.py	2018-10-09 15:03:00.000000000 +0000
+++++ build/docs/conf.py	2018-10-09 15:04:37.240000000 +0000
++@@ -118,10 +118,6 @@
 + on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 + 
 + if not on_rtd:  # only import and set the theme if we're building docs locally
@@ -60,10 +77,32 @@ diff -r -u -N pybind11-2.0.1.orig/debian/patches/0003-Sphinx-theme.patch pybind1
 +     html_context = {
 +         'css_files': [
 +             '_static/theme_overrides.css'
-diff -r -u -N pybind11-2.0.1.orig/debian/patches/series pybind11-2.0.1/debian/patches/series
---- pybind11-2.0.1.orig/debian/patches/series	2017-02-26 21:43:11.000000000 +0100
-+++ pybind11-2.0.1/debian/patches/series	2018-10-08 18:59:21.000000000 +0200
-@@ -1,2 +1,3 @@
- 0001-Use-system-include-path.patch
- 0002-Arch-indep-CMake-package-configuration.patch
-+0003-Sphinx-theme.patch
+diff -ruN a/debian/patches/series b/debian/patches/series
+--- a/debian/patches/series	1970-01-01 00:00:00.000000000 +0000
++++ b/debian/patches/series	2018-10-09 15:14:10.600000000 +0000
+@@ -0,0 +1,2 @@
++0001_Remove_breathe.patch
++0002_Sphinx-theme.patch
+diff -ruN a/debian/rules b/debian/rules
+--- a/debian/rules	2018-09-22 02:26:31.000000000 +0000
++++ b/debian/rules	2018-10-09 15:14:10.600000000 +0000
+@@ -10,7 +10,7 @@
+ 
+ CONFIGURE_ARGS=-DPYBIND11_INSTALL:BOOL=ON
+ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+-CONFIGURE_ARGS+=-DPYBIND11_TEST:BOOL=ON \
++CONFIGURE_ARGS+=-DPYBIND11_TEST:BOOL=OFF \
+ 	-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/$(shell py3versions -d)
+ else
+ CONFIGURE_ARGS+=-DPYBIND11_TEST:BOOL=OFF
+diff -ruN a/debian/watch b/debian/watch
+--- a/debian/watch	2018-09-22 02:26:31.000000000 +0000
++++ b/debian/watch	2018-10-09 15:14:10.600000000 +0000
+@@ -1,4 +1,3 @@
+-version=4
+-opts=uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\d*)$/$1~$2/,\
+-  filenamemangle=s/.+\/v?@ANY_VERSION@\.tar\.gz/pybind11-$1\.tar\.gz/ \
+-  https://github.com/pybind/pybind11/tags .*/v?@ANY_VERSION@\.tar\.gz
++version=3
++opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/pybind11-$1\.tar\.gz/ \
++  https://github.com/pybind/pybind11/tags .*/v?(\d\S*)\.tar\.gz

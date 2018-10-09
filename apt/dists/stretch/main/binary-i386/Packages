@@ -212,6 +212,60 @@ Description: C++11 library for the DICOM standard (application)
  .
  This package contains the command-line application.
 
+Package: pybind11-dev
+Source: pybind11
+Version: 2.2.4-1~stretch
+Architecture: all
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Installed-Size: 585
+Recommends: libeigen3-dev
+Suggests: pybind11-doc
+Multi-Arch: foreign
+Homepage: https://github.com/pybind/pybind11
+Priority: optional
+Section: libdevel
+Filename: pool/main/p/pybind11/pybind11-dev_2.2.4-1~stretch_all.deb
+Size: 130936
+SHA256: 2130c4abf64a27bba7521af4d95f6e37a72e6f764d7a6b886424392a120cc48e
+SHA1: e718e29dfa3fcff1a11014d092a61b229d75b756
+MD5sum: 0a8b014910293e821eea516b7e400436
+Description: seamless operability between C++11 and Python
+ pybind11 is a lightweight header library that exposes C++ types in
+ Python and vice versa, mainly to create Python bindings of existing C++
+ code. Its goals and syntax are similar to the excellent Boost.Python
+ library by David Abrahams: to minimize boilerplate code in traditional
+ extension modules by inferring type information using compile-time
+ introspection.
+ .
+ This package provides the header-only library.
+
+Package: pybind11-doc
+Source: pybind11
+Version: 2.2.4-1~stretch
+Architecture: all
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Installed-Size: 1681
+Depends: libjs-sphinxdoc (>= 1.0), sphinx-rtd-theme-common
+Built-Using: sphinx (= 1.4.9-2)
+Multi-Arch: foreign
+Homepage: https://github.com/pybind/pybind11
+Priority: optional
+Section: doc
+Filename: pool/main/p/pybind11/pybind11-doc_2.2.4-1~stretch_all.deb
+Size: 279770
+SHA256: 60239299f8731746c259ed1490ab1445d5e599e612b83f5072b9b737fea9a81a
+SHA1: 7785912a76ebe0da39a9501dc32045dbf50e8807
+MD5sum: a57f7d650fb240fe902d1a9cb6c39551
+Description: documentation for pybind11
+ pybind11 is a lightweight header library that exposes C++ types in
+ Python and vice versa, mainly to create Python bindings of existing C++
+ code. Its goals and syntax are similar to the excellent Boost.Python
+ library by David Abrahams: to minimize boilerplate code in traditional
+ extension modules by inferring type information using compile-time
+ introspection.
+ .
+ This package provides the documentation.
+
 Package: python-dicomifier
 Source: dicomifier
 Version: 1.0.2-1~stretch
@@ -253,4 +307,58 @@ SHA1: bf9c275368d6ae634c562e8087d8c5f2b5e12cf2
 MD5sum: e83c0625378157cdc6c5ca15f669c8b8
 Description: Debug symbols for python-dicomifier
 Build-Ids: 448a1979bca1ac0fae075e16d55a819971fa5543 c6b6a9b3a623f1e5f8dce81530d9367215296e5d fb6cc0bcf2acd64d09a910de7284210417e3daec
+
+Package: python-pybind11
+Source: pybind11
+Version: 2.2.4-1~stretch
+Architecture: all
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Installed-Size: 45
+Depends: python:any (<< 2.8), python:any (>= 2.7.5-5~), pybind11-dev (= 2.2.4-1~stretch)
+Recommends: python-numpy
+Multi-Arch: foreign
+Homepage: https://github.com/pybind/pybind11
+Priority: optional
+Section: python
+Filename: pool/main/p/pybind11/python-pybind11_2.2.4-1~stretch_all.deb
+Size: 23242
+SHA256: 5033d745de4471b889dfca132b6441ef8f52991dca5ba47731a73755152e9ada
+SHA1: e48560342a643592a4615bee900224bf96628b0c
+MD5sum: ff3c9167b16d37ed5d587b51aaa81bde
+Description: pybind11 helper module for Python 2
+ pybind11 is a lightweight header library that exposes C++ types in
+ Python and vice versa, mainly to create Python bindings of existing C++
+ code. Its goals and syntax are similar to the excellent Boost.Python
+ library by David Abrahams: to minimize boilerplate code in traditional
+ extension modules by inferring type information using compile-time
+ introspection.
+ .
+ This package provides pybind11 for Python 2.
+
+Package: python3-pybind11
+Source: pybind11
+Version: 2.2.4-1~stretch
+Architecture: all
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Installed-Size: 45
+Depends: python3:any (>= 3.3.2-2~), pybind11-dev (= 2.2.4-1~stretch)
+Recommends: python3-numpy
+Multi-Arch: foreign
+Homepage: https://github.com/pybind/pybind11
+Priority: optional
+Section: python
+Filename: pool/main/p/pybind11/python3-pybind11_2.2.4-1~stretch_all.deb
+Size: 23310
+SHA256: a486e8c944a5e7d6dba4f8e58eb33e76e2a62c2464fdf3586c77ca6a18154f88
+SHA1: 78c592aeae43b8c2f41553efdc38a2201ffb7037
+MD5sum: 245ac5a3b38f4dd8a2c8557b5e266f1d
+Description: pybind11 helper module for Python 3
+ pybind11 is a lightweight header library that exposes C++ types in
+ Python and vice versa, mainly to create Python bindings of existing C++
+ code. Its goals and syntax are similar to the excellent Boost.Python
+ library by David Abrahams: to minimize boilerplate code in traditional
+ extension modules by inferring type information using compile-time
+ introspection.
+ .
+ This package provides pybind11 for Python 3.
 
