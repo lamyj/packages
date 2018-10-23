@@ -1315,6 +1315,60 @@ Description: Next generation, high-performance debugger, python lib
  .
  This binding package provides access to lldb.
 
+Package: python-nibabel
+Source: nibabel
+Version: 2.1.0-1~jessie
+Architecture: all
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Installed-Size: 64177
+Depends: python (>= 2.7), python (<< 2.8), python-numpy, python-scipy
+Recommends: python-dicom, python-fuse, python-mock
+Suggests: python-nibabel-doc
+Homepage: http://nipy.sourceforge.net/nibabel
+Priority: extra
+Section: python
+Filename: pool/main/n/nibabel/python-nibabel_2.1.0-1~jessie_all.deb
+Size: 2176042
+SHA256: 5a3a0b14ac2e4ce407c22e10a2500d348c9025eeab81e5deacb72f12c129a789
+SHA1: 257f1a03ebbc606cfb29827895e694a17052c652
+MD5sum: c363633c1ee72327afafab064492f89f
+Description: Python bindings to various neuroimaging data formats
+ NiBabel provides read and write access to some common medical and
+ neuroimaging file formats, including: ANALYZE (plain, SPM99, SPM2), GIFTI,
+ NIfTI1, MINC, as well as PAR/REC. The various image format classes give full
+ or selective access to header (meta) information and access to the image data
+ is made available via NumPy arrays.  NiBabel is the successor of PyNIfTI.
+ .
+ This package also provides a commandline tools:
+ .
+  - dicomfs - FUSE filesystem on top of a directory with DICOMs
+  - nib-ls - 'ls' for neuroimaging files
+  - parrec2nii - for conversion of PAR/REC to NIfTI images
+
+Package: python-nibabel-doc
+Source: nibabel
+Version: 2.1.0-1~jessie
+Architecture: all
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Installed-Size: 22072
+Depends: libjs-jquery, libjs-mathjax
+Homepage: http://nipy.sourceforge.net/nibabel
+Priority: extra
+Section: doc
+Filename: pool/main/n/nibabel/python-nibabel-doc_2.1.0-1~jessie_all.deb
+Size: 2678378
+SHA256: 1642ebe9e106d679d12696b1b0ea898739efcc7fe6ce8f368f50fa6225548a5a
+SHA1: e242ffcf902240a382bbfcef3a38a3b2f56997d6
+MD5sum: bd5d40a16b159dc1cb58999021b16e47
+Description: documentation for NiBabel
+ NiBabel provides read and write access to some common medical and
+ neuroimaging file formats, including: ANALYZE (plain, SPM99, SPM2), GIFTI,
+ NIfTI1, MINC, as well as PAR/REC. The various image format classes give full
+ or selective access to header (meta) information and access to the image data
+ is made available via NumPy arrays.  NiBabel is the successor of PyNIfTI.
+ .
+ This package provides the documentation in HTML format.
+
 Package: python-odil
 Source: odil
 Version: 0.9.2-1~jessie
@@ -1366,6 +1420,29 @@ Description: pybind11 helper module for Python 2
  introspection.
  .
  This package provides pybind11 for Python 2.
+
+Package: python3-nibabel
+Source: nibabel
+Version: 2.1.0-1~jessie
+Architecture: all
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Installed-Size: 64145
+Depends: python3-numpy, python3-scipy
+Suggests: python-nibabel-doc, python3-dicom, python3-fuse, python3-mock
+Homepage: http://nipy.sourceforge.net/nibabel
+Priority: extra
+Section: python
+Filename: pool/main/n/nibabel/python3-nibabel_2.1.0-1~jessie_all.deb
+Size: 2172858
+SHA256: c14e6837def0b7b49f54fb0362b66c5f9f4a2e7f80f9b07c9512946b2f2b7397
+SHA1: f89288c1373a5acdc3213878e50fcf8b041aa0e4
+MD5sum: c0775ca6fafaf620e4deb2f5c55265f5
+Description: Python3 bindings to various neuroimaging data formats
+ NiBabel provides read and write access to some common medical and
+ neuroimaging file formats, including: ANALYZE (plain, SPM99, SPM2), GIFTI,
+ NIfTI1, MINC, as well as PAR/REC. The various image format classes give full
+ or selective access to header (meta) information and access to the image data
+ is made available via NumPy arrays.  NiBabel is the successor of PyNIfTI.
 
 Package: python3-odil
 Source: odil
