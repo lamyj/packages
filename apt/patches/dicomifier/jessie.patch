@@ -19,6 +19,15 @@ diff -r -u a/debian/control b/debian/control
 diff -r -u a/debian/rules b/debian/rules
 --- a/debian/rules
 +++ b/debian/rules
+@@ -40,7 +40,7 @@
+ 	  -DPYTHON_EXECUTABLE=/usr/bin/python$(PYTHON3)
+ 
+ override_dh_makeshlibs-arch:
+-	dh_makeshlibs -V'libdicomifier1 (>= 1.2.1-1)'
++	dh_makeshlibs -V'libdicomifier1 (>= 1.2.1-1~jessie)'
+ 
+ # WARNING: Python2 and Python3 MUST be tested sequentially since they use the 
+ # same build directory
 @@ -76,6 +76,7 @@
  		--override s/libdcm.*-dev/libdcmtk-dev/ \
  		--override s/libof.*-dev/libdcmtk-dev/ \
