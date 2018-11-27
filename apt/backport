@@ -1,0 +1,179 @@
+#!/usr/bin/env python
+
+import argparse
+import glob
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Backport a deb package (sudo capabilities required)")
+    parser.add_argument(
+        "source_directory", help="Source directory of the package")
+    parser.add_argument(
+        "package_directory", help="Directory to store the built packages")
+    parser.add_argument(
+        "--unofficial-repo", "-u", action="store_true", 
+        help="Set up the unofficial repository")
+    parser.add_argument(
+        "--build-directory", 
+        help="Build directory, defaults to a temporary directory deleted once "
+            "the build is finished")
+    parser.add_argument(
+        "--patch", "-p", help="Optional patch to apply before building")
+    parser.add_argument(
+        "--jobs", "-j", type=int, default=1, 
+        help="Number of concurrent build tasks (defaults to 1)")
+    parser.add_argument(
+        "--backport", help="Name and email of package maintainer")
+    # TODO: backporter
+    
+    arguments = parser.parse_args()
+    
+    remove_build_directory = False
+    if arguments.build_directory is None:
+        arguments.build_directory = tempfile.mkdtemp()
+        shutil.rmtree(arguments.build_directory)
+        remove_build_directory = True
+    
+    try:
+        if os.path.abspath(arguments.build_directory) != os.path.abspath(arguments.source_directory):
+            subprocess.check_call([
+                "cp", "-a", 
+                arguments.source_directory, arguments.build_directory])
+        
+        prepare(
+            arguments.build_directory, arguments.unofficial_repo, 
+            arguments.patch)
+        build(arguments.build_directory, arguments.jobs, arguments.backport)
+        finish(arguments.build_directory, arguments.package_directory)
+    finally:
+        if remove_build_directory:
+            shutil.rmtree(arguments.build_directory)
+        else:
+            subprocess.check_call(
+                ["dh", "clean"], cwd=arguments.build_directory)
+            if arguments.patch is not None:
+                subprocess.check_call(
+                    ["patch", "--reverse", "--batch", "--strip=1", 
+                    "--input={}".format(os.path.abspath(arguments.patch))],
+                    cwd=arguments.build_directory)
+
+def prepare(source_directory, unofficial_repo, patch):
+    with open(os.path.join(source_directory, "debian", "control")) as fd:
+        package = re.search("^Source: (\w+)$", fd.read(), re.M).group(1)
+        
+    sudo(["rm", "-f", "/etc/apt/apt.conf.d/docker-clean"])
+    sudo(["apt-get", "update"])
+    
+    apt_get_install = ["apt-get", "-y", "--no-install-recommends", "install"]
+    sudo(apt_get_install+["gnupg", "wget", "lsb-release"])
+    
+    distrib = subprocess.check_output(["lsb_release", "-cs"]).strip()
+    
+    if unofficial_repo:
+        bintray = "http://dl.bintray.com/lamyj/generic"
+        
+        subprocess.check_call(
+            "wget -O - {}/gpg.key | sudo apt-key add -".format(bintray), 
+            shell=True)
+        subprocess.check_call(
+            "echo \"deb {}/apt {} main\" "
+                "| sudo tee -a /etc/apt/sources.list".format(bintray, distrib),
+            shell=True)
+        
+        sudo(["apt-get", "update"])
+    
+    packages = ["apt-utils", "devscripts", "dpkg-dev", "equivs", "libwww-perl"]
+    
+    if distrib in ["wheezy", "precise", "saucy"]:
+        # Needed for uscan on https
+        packages.append("libcrypt-ssleay-perl")
+    sudo(apt_get_install+packages)
+    
+    # Patch if needed
+    if patch:
+        subprocess.check_call(
+            ["patch", "--batch", "--strip=1", 
+            "--input={}".format(os.path.abspath(patch))],
+            cwd=source_directory)
+    
+    # Install build dependencies
+    sudo(
+        ["mk-build-deps", "--tool", "apt-get -y --no-install-recommends", "--install"],
+        cwd=source_directory)
+    subprocess.check_call(
+        ["rm", "-f"]
+        +glob.glob(
+            os.path.join(source_directory, "{}-build*.deb".format(package))))
+
+def build(build_directory, jobs, backporter):
+    # Fetch upstream archive
+    subprocess.check_call(
+        ["uscan", "--force-download", "--download-current-version"], 
+        cwd=build_directory)
+    
+    changelog_backup = None
+    if backporter is not None:
+        # Update changelog
+        distrib = subprocess.check_output(["lsb_release", "-cs"]).strip()
+        
+        fd, changelog_backup = tempfile.mkstemp()
+        os.close(fd)
+        shutil.copy(
+            os.path.join(build_directory, "debian", "changelog"), 
+            changelog_backup)
+        
+        changelog = subprocess.check_output(
+            ["dpkg-parsechangelog"], cwd=build_directory)
+        version = re.search(r"^Version:\s+(\S+)$", changelog, re.M).group(1)
+        environment = os.environ.copy()
+        environment["DEBEMAIL"] = backporter
+        subprocess.check_call([
+                "dch", "-v", "{}~{}".format(version, distrib),
+                "--distribution", distrib, 
+                "--force-bad-version", "--force-distribution",
+                "Backport to {}".format(distrib)],
+            cwd=build_directory, env=environment)
+    
+    try:
+        options = ["-j{}".format(jobs), "-us", "-uc"]
+        subprocess.check_call(
+            ["dpkg-buildpackage", "-S"] + options, cwd=build_directory)
+        
+        with open(os.path.join(build_directory, "debian", "control")) as fd:
+            control = fd.read()
+        
+        if "Architecture: all" in control:
+            subprocess.check_call(["dpkg-buildpackage", "-A"] + options, 
+            cwd=build_directory)
+        if "Architecture: any" in control:
+            subprocess.check_call(["dpkg-buildpackage", "-B"] + options, 
+            cwd=build_directory)
+    finally:
+        if changelog_backup is not None:
+            shutil.copy(
+                changelog_backup,
+                os.path.join(build_directory, "debian", "changelog"))
+            os.remove(changelog_backup)
+
+def finish(build_directory, destination_dir):
+    sudo(["apt-get", "install", "-y", "lintian"])
+    subprocess.call(
+        ["lintian", "-I", "-o"] 
+        + glob.glob(os.path.join(build_directory, "../*.changes")))
+    
+    if not os.path.isdir(destination_dir):
+        os.makedirs(destination_dir)
+    for package in glob.glob(os.path.join(build_directory, "../*.deb")):
+        shutil.copy(package, destination_dir)
+
+def sudo(command, *args, **kwargs):
+    subprocess.check_call(["sudo"]+command, *args, **kwargs)
+
+if __name__ == "__main__":
+    sys.exit(main())
