@@ -39,7 +39,8 @@ def main():
     local_files = get_local_files([
         "gpg.key",
         "apt/dists", "apt/pool",
-        "rpm/centos"])
+        "rpm/centos",
+        "vcpkg-exports"])
     logging.info(
         "{} local file{}".format(
             len(local_files), "s" if len(local_files)>1 else ""))
