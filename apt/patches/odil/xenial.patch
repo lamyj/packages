@@ -1,3 +1,10 @@
+diff --git a/debian/compat b/debian/compat
+index f599e28..ec63514 100644
+--- a/debian/compat
++++ b/debian/compat
+@@ -1 +1 @@
+-10
++9
 diff --git a/debian/control b/debian/control
 index 3c86b04..f82803e 100644
 --- a/debian/control
@@ -21,19 +28,27 @@ diff --git a/debian/rules b/debian/rules
 index ae7efce..723de3a 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -54,7 +54,7 @@ override_dh_auto_build-indep:
- 	find documentation/_build -name "*.md5" -delete
+@@ -1,6 +1,6 @@
+ #!/usr/bin/make -f
  
- override_dh_makeshlibs-arch:
--	dh_makeshlibs -V'libodil0 (>= 0.9.2-1)'
-+	dh_makeshlibs -V'libodil0 (>= 0.9.2-1~xenial)'
+-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
++export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-pie
  
- # Run C++ tests only on base build
- override_dh_auto_test-arch-nopy:
-@@ -109,6 +109,14 @@ override_dh_install-arch:
- 		--devunversioned \
+ # Find all Python versions
+ PYTHON2=$(shell pyversions -vrd)
+@@ -8,7 +8,7 @@ PYTHON3=$(shell py3versions -vrd)
+ ALLPY=$(PYTHON2) $(PYTHON3)
+ 
+ %:
+-	dh $@ --builddirectory=build --with python2,python3
++	dh $@ --builddirectory=build --with python2,python3 --parallel
+ 
+ # Base build: no wrappers
+ override_dh_auto_configure-arch:
+@@ -99,6 +99,14 @@ override_dh_install-arch:
  		--commit --multiarch --exclude-a --exclude-la \
  		--movedev debian/tmp/usr/include/* usr/include \
+ 		--override s/libboost_log.*-dev/libboost-log-dev/ \
 +		--override s/libjsoncpp.-dev/libjsoncpp-dev/ \
 +		--override s/libdcm.*-dev/libdcmtk-dev/ \
 +		--override s/libof.*-dev/libdcmtk-dev/ \
@@ -44,4 +59,4 @@ index ae7efce..723de3a 100755
 +		--override s/libboost_system.*-dev/libboost-system-dev/ \
  		debian/tmp/usr/lib/*.so
  
- 
+ override_dh_clean:

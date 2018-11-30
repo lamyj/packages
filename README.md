@@ -6,11 +6,11 @@ The following commands must be run by root, either directly or using `sudo`.
 * Add required packages
   * For Ubuntu 16.04 (xenial), Ubuntu 14.04 (trusty) and Debian 8 (jessie):
 
-          apt-get install software-properties-common
+          apt-get install software-properties-common wget
 
   * For Ubuntu 12.04 (precise) and Debian 7 (wheezy):
 
-          apt-get install python-software-properties
+          apt-get install python-software-properties wget
 
 * Fetch the public key of the repository:
 

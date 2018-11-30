@@ -30,7 +30,6 @@ def main():
         help="Number of concurrent build tasks (defaults to 1)")
     parser.add_argument(
         "--backport", help="Name and email of package maintainer")
-    # TODO: backporter
     
     arguments = parser.parse_args()
     
@@ -150,10 +149,10 @@ def build(build_directory, jobs, backporter):
         
         if "Architecture: all" in control:
             subprocess.check_call(["dpkg-buildpackage", "-A"] + options, 
-            cwd=build_directory)
+                cwd=build_directory)
         if "Architecture: any" in control:
             subprocess.check_call(["dpkg-buildpackage", "-B"] + options, 
-            cwd=build_directory)
+                cwd=build_directory)
     finally:
         if changelog_backup is not None:
             shutil.copy(
