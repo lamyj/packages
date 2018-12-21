@@ -48,7 +48,7 @@ fi
 mk-build-deps --tool "${APT_GET}" --install "${DIRECTORY}/debian/control"
 
 CHANGELOG="${DIRECTORY}/debian/changelog"
-SOURCE_PACKAGE=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Source)
-VERSION=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Version)
+SOURCE_PACKAGE=$(dpkg-parsechangelog -l"${CHANGELOG}" -S Source)
+VERSION=$(dpkg-parsechangelog -l"${CHANGELOG}" -S Version)
 
 rm -f ${SOURCE_PACKAGE}-build-deps_${VERSION}_all.deb

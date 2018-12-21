@@ -24,7 +24,7 @@ uscan --force-download --download-current-version ${DIRECTORY}
 if [ -n "${BACKPORTER}" ]; then
   
   CHANGELOG="${DIRECTORY}/debian/changelog"
-  VERSION=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Version)
+  VERSION=$(dpkg-parsechangelog -l"${CHANGELOG}" -S Version)
   
   DISTRIB=$(lsb_release -cs)
   
@@ -39,8 +39,7 @@ fi
 
 cd "${DIRECTORY}"
 
-DPKG_BUILDPACKAGE="dpkg-buildpackage --jobs=${JOBS}"
-DPKG_BUILDPACKAGE="${DPKG_BUILDPACKAGE} --unsigned-source --unsigned-changes"
+DPKG_BUILDPACKAGE="dpkg-buildpackage -j${JOBS} -us -uc"
 
 ${DPKG_BUILDPACKAGE} -S
 
