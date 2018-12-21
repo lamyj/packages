@@ -1,6 +1,6 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.2.1-1~bionic
+Version: 1.2.2-1~bionic
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 54
@@ -11,11 +11,11 @@ Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.2.1-1~bionic_all.deb
-Size: 16252
-SHA256: 4c361306523d648322ab627aa127451262a0fa1740966941d128be5171db3dbe
-SHA1: ed251d79be47b01cbf0f3657f8d56d869e2c7b5b
-MD5sum: 518c7061f15eee3817100135cfc7d9e4
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.2.2-1~bionic_all.deb
+Size: 16280
+SHA256: c801f62d4aeb04f9c2476eeea1e36f26d793d7e7e5b58120532115e12f4867e0
+SHA1: 40d6f688d89800f8f56f0724ab59ecc9a0cfd008
+MD5sum: 80bec44a7174e1092a5aa837d39096d3
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
