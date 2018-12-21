@@ -4,13 +4,9 @@
 
 The following commands must be run by root, either directly or using `sudo`.
 * Add required packages
-  * For Ubuntu 16.04 (xenial), Ubuntu 14.04 (trusty) and Debian 8 (jessie):
+  * For Ubuntu 14.04 (trusty), 16.04 (xenuial) and 18.04 (bionic) and Debian 8 (jessie) and 9 (stretch):
 
-          apt-get install software-properties-common wget
-
-  * For Ubuntu 12.04 (precise) and Debian 7 (wheezy):
-
-          apt-get install python-software-properties wget
+          apt-get install gnupg software-properties-common wget
 
 * Fetch the public key of the repository:
 

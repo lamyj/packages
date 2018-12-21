@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -eu
+
+DIRECTORY=$1
+
+apt-get install -y lintian
+
+CHANGELOG="${DIRECTORY}/debian/changelog"
+SOURCE_PACKAGE=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Source)
+VERSION=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Version)
+
+lintian -I -o ${DIRECTORY}/../${SOURCE_PACKAGE}_${VERSION}_*.changes

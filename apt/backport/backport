@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -eu
+
+BACKPORTER=""
+JOBS=1
+PATCH=""
+UNOFFICIAL_REPO="no"
+while getopts "b:j:p:uh" OPT; do
+  case ${OPT} in
+    b) BACKPORTER="${OPTARG}" ;;
+    j) JOBS="${OPTARG}" ;;
+    p) PATCH="${OPTARG}" ;;
+    u) UNOFFICIAL_REPO="-u" ;;
+    h) printf "Usage: %s: [-b backporter] [-j jobs] [-p patch] [-u] directory\n" $0
+       exit 2;;
+  esac
+done
+shift $(($OPTIND - 1))
+DIRECTORY=$1
+
+$(dirname "$0")/prepare -p "${PATCH}" ${UNOFFICIAL_REPO} "${DIRECTORY}"
+$(dirname "$0")/build -b "${BACKPORTER}" -j "${JOBS}" "${DIRECTORY}"
+$(dirname "$0")/check "${DIRECTORY}"
+# TODO? copy packages
+$(dirname "$0")/clean -p "${PATCH}" -b "${BACKPORTER}" "${DIRECTORY}"

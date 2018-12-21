@@ -1,0 +1,55 @@
+#!/bin/sh
+
+set -eu
+
+for i in $*; do
+  printf "'%s'\n" "$i"
+done
+
+BACKPORTER=""
+JOBS=1
+while getopts "b:j:h" OPT; do
+  case ${OPT} in
+    b) BACKPORTER="${OPTARG}" ;;
+    j) JOBS="${OPTARG}" ;;
+    h) printf "Usage: %s: [-b backporter] [-j jobs] directory\n" $0
+       exit 2;;
+  esac
+done
+shift $(($OPTIND - 1))
+DIRECTORY=$1
+
+uscan --force-download --download-current-version ${DIRECTORY}
+
+if [ -n "${BACKPORTER}" ]; then
+  
+  CHANGELOG="${DIRECTORY}/debian/changelog"
+  VERSION=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Version)
+  
+  DISTRIB=$(lsb_release -cs)
+  
+  cd "${DIRECTORY}"
+  export DEBEMAIL="${BACKPORTER}"
+  dch \
+    -v "${VERSION}~${DISTRIB}" --distribution "${DISTRIB}" \
+    --force-bad-version --force-distribution \
+    "Backport to ${DISTRIB}"
+  cd "${OLDPWD}"
+fi
+
+cd "${DIRECTORY}"
+
+DPKG_BUILDPACKAGE="dpkg-buildpackage --jobs=${JOBS}"
+DPKG_BUILDPACKAGE="${DPKG_BUILDPACKAGE} --unsigned-source --unsigned-changes"
+
+${DPKG_BUILDPACKAGE} -S
+
+CONTROL="${DIRECTORY}/debian/control"
+if [ -n "$(grep 'Architecture: all' ${CONTROL})" ]; then
+  ${DPKG_BUILDPACKAGE} -A
+fi
+if [ -n "$(grep 'Architecture: any' ${CONTROL})" ]; then
+  ${DPKG_BUILDPACKAGE} -B
+fi
+
+${DPKG_BUILDPACKAGE} -T clean

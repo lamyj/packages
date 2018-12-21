@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -eu
+
+PATCH=""
+BACKPORTER=""
+while getopts "b:p:" OPT; do
+  case ${OPT} in
+    b) BACKPORTER="${OPTARG}" ;;
+    p) PATCH="${OPTARG}" ;;
+    h) printf "Usage: %s: [-b backporter] [-p patch] directory\n" $0
+       exit 2;;
+  esac
+done
+shift $(($OPTIND - 1))
+DIRECTORY=$1
+
+if [ -n "${BACKPORTER}" ]; then
+  CHANGELOG="${DIRECTORY}/debian/changelog"
+  # Find the first line starting with "--" (end of first changelog entry)
+  LINE=$(grep -n "^ -- " "${CHANGELOG}" | head -n 1 | cut -d: -f1)
+  # Print the rest of the file, skipping the line itself and the following blank
+  tail -n +$(( ${LINE} + 2 )) "${CHANGELOG}" > "${CHANGELOG}.new"
+  mv "${CHANGELOG}.new" "${CHANGELOG}"
+fi
+
+if [ -n "${PATCH}" ]; then
+  cd "${DIRECTORY}"
+  patch --reverse --batch --strip=1 --input="${PATCH}"
+  cd "${OLDPWD}"
+fi

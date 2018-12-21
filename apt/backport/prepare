@@ -1,0 +1,54 @@
+#!/bin/sh
+
+set -eu
+
+PATCH=""
+UNOFFICIAL_REPO="no"
+while getopts "p:uh" OPT; do
+  case ${OPT} in
+    p) PATCH="${OPTARG}" ;;
+    u) UNOFFICIAL_REPO="yes" ;;
+    h) printf "Usage: %s: [-u] [-p patch] directory\n" $0
+       exit 2;;
+  esac
+done
+shift $(($OPTIND - 1))
+DIRECTORY=$1
+
+APT_GET="apt-get -y --no-install-recommends"
+
+rm -f /etc/apt/apt.conf.d/docker-clean
+
+export DEBIAN_FRONTEND=noninteractive
+
+apt-get update
+${APT_GET} install gnupg lsb-release software-properties-common wget
+
+DISTRIB=$(lsb_release -cs)
+
+if [ "${UNOFFICIAL_REPO}" = "yes" ]; then
+  ${APT_GET} install gnupg software-properties-common wget
+
+  REPO="http://dl.bintray.com/lamyj/generic"
+  wget -O - "${REPO}/gpg.key" | apt-key add -
+  add-apt-repository -s "deb ${REPO}/apt $(lsb_release -cs) main"
+
+  apt-get update
+fi
+
+PACKAGES="apt-utils devscripts dpkg-dev equivs libwww-perl"
+${APT_GET} install ${PACKAGES}
+
+if [ -n "${PATCH}" ]; then
+  cd "${DIRECTORY}"
+  patch --batch --strip=1 --input="${PATCH}"
+  cd "${OLDPWD}"
+fi
+
+mk-build-deps --tool "${APT_GET}" --install "${DIRECTORY}/debian/control"
+
+CHANGELOG="${DIRECTORY}/debian/changelog"
+SOURCE_PACKAGE=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Source)
+VERSION=$(dpkg-parsechangelog -l "${CHANGELOG}" -S Version)
+
+rm -f ${SOURCE_PACKAGE}-build-deps_${VERSION}_all.deb
