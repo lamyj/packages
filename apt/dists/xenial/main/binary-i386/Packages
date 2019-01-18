@@ -49,10 +49,10 @@ Description: OFFIS DICOM toolkit documentation
 
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.2.2-1~xenial
+Version: 1.3.0-1~xenial
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 54
+Installed-Size: 55
 Depends: python3-dicomifier, python3.5:any
 Conflicts: dicomifier
 Replaces: dicomifier
@@ -60,11 +60,11 @@ Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.2.2-1~xenial_all.deb
-Size: 16198
-SHA256: 56bc37045566f30a84c20615f97658f7bf36368d17bf715f583fb1acd3366153
-SHA1: e7234b94755bfcadd28e676e05d1213de81ca55d
-MD5sum: f28017cec052f93ecea6070a47e21160
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.3.0-1~xenial_all.deb
+Size: 16302
+SHA256: 0248b4da4c1032f46b7a8f9a394e037f4b77ddb09687b9da7f754e4c17d1d303
+SHA1: 2b1483a30e935865bd7101ec23cb602de42a7a8e
+MD5sum: 60c727ceb4128dbd1d93e434fb45a4ea
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
