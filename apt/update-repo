@@ -37,7 +37,7 @@ def run(local_root, key):
 
     for dist, debs in packages.items():
         command = ["reprepro", "-b", ".", "includedeb", dist]+debs
-        subprocess.call(command, cwd=local_root)
+        subprocess.check_call(command, cwd=local_root)
 
 def is_signed(filename):
     result = None
