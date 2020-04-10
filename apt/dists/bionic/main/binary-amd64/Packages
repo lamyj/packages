@@ -1,21 +1,21 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.3.0-2~bionic
+Version: 1.4.0-1~bionic
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 55
-Depends: python3-dicomifier (>= 1.3.0-2~bionic), python3.6:any
+Installed-Size: 54
+Depends: python3-dicomifier (>= 1.4.0-1~bionic), python3.6:any
 Conflicts: dicomifier
 Replaces: dicomifier
 Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.3.0-2~bionic_all.deb
-Size: 16428
-SHA256: 29bb407841886ddd35e5b00af0c6f556495fc1cfa8de85b1adead1343bdad400
-SHA1: 72f4e9dd6b70bb65a1c1391c32dd723a2e5d8a33
-MD5sum: 6e765176d077890449259662e8b79fd9
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.4.0-1~bionic_all.deb
+Size: 16320
+SHA256: e642edb3c924db8b34f1515c8e8c9d4a9d15b1544748338998ad4005868e9833
+SHA1: 9067ada2a9b8bb2307e317b53ee6f71df7067544
+MD5sum: 1ce56f33d547596971b755395c1dd2a4
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -25,20 +25,20 @@ Description: Convert data to and from DICOM (command line tools)
 
 Package: libdicomifier-dev
 Source: dicomifier
-Version: 1.3.0-2~bionic
+Version: 1.4.0-1~bionic
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 59
-Depends: libdicomifier1 (= 1.3.0-2~bionic), libboost-filesystem1.65-dev, libboost-regex1.65-dev, libboost-system1.65-dev, libjsoncpp-dev, liblog4cpp5-dev
+Installed-Size: 51
+Depends: libdicomifier1 (= 1.4.0-1~bionic), libboost-filesystem1.65-dev, libboost-regex1.65-dev, libboost-system1.65-dev
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libdevel
-Filename: pool/main/d/dicomifier/libdicomifier-dev_1.3.0-2~bionic_amd64.deb
-Size: 15160
-SHA256: d917f2a3108b6a51644995aaf07ae0b044233e00b94cc1b9bfb84d7ec9e9a016
-SHA1: af40b5e39314354f31f61eb1d6c5698492ca6f2a
-MD5sum: a6872a88b294620e02c8ae716cf0a2fa
+Filename: pool/main/d/dicomifier/libdicomifier-dev_1.4.0-1~bionic_amd64.deb
+Size: 13960
+SHA256: b4fdb2f47b8e115ea407892a27951243bc8344c727b66604c5f3e3fb5bdd0584
+SHA1: 1084ed6208dd69e020d5689ac08c7545ec159613
+MD5sum: df7cfc8b1527edaa617429f880614f3c
 Description: Convert data to and from DICOM (development files)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -48,20 +48,20 @@ Description: Convert data to and from DICOM (development files)
 
 Package: libdicomifier1
 Source: dicomifier
-Version: 1.3.0-2~bionic
+Version: 1.4.0-1~bionic
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 697
-Depends: libboost-filesystem1.65.1, libboost-regex1.65.1, libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libstdc++6 (>= 5.2)
+Installed-Size: 385
+Depends: libboost-filesystem1.65.1, libboost-regex1.65.1, libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libstdc++6 (>= 5.2)
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libs
-Filename: pool/main/d/dicomifier/libdicomifier1_1.3.0-2~bionic_amd64.deb
-Size: 182540
-SHA256: 5a54cabf5b0f318aeb7f8ccdc61eeccaa2a32e861a96104f2a9999f02bb643ca
-SHA1: edf01fb91fb5ef540538c44e8b7628a503ddd50b
-MD5sum: 7d3d55fc15b3dc696cabfefdf250970b
+Filename: pool/main/d/dicomifier/libdicomifier1_1.4.0-1~bionic_amd64.deb
+Size: 104132
+SHA256: f05af92a4aace50ceaf598376119dcb1d372eceaa9719ec0934b68f65fa1118b
+SHA1: 4f2a7fef7aa72dc6600b520360f69428abe9ca34
+MD5sum: 3be48350a87ad556a0bd73e2d14c6370
 Description: Convert data to and from DICOM (shared libraries)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -71,11 +71,11 @@ Description: Convert data to and from DICOM (shared libraries)
 
 Package: libodil-dev
 Source: odil
-Version: 0.11.0-1~bionic
+Version: 0.12.0-1~bionic
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 715
-Depends: libodil0 (= 0.11.0-1~bionic), libboost-filesystem1.65-dev, libboost-log-dev, libboost-system1.65-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev
+Installed-Size: 716
+Depends: libodil0 (= 0.12.0-1~bionic), libboost-filesystem1.65-dev, libboost-log-dev, libboost-system1.65-dev, libdcmtk-dev, libicu-dev, libjsoncpp-dev
 Conflicts: libdcmtkpp-dev, libodil0-dev
 Replaces: libdcmtkpp-dev, libodil0-dev
 Provides: libdcmtkpp-dev, libodil0-dev
@@ -83,11 +83,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libdevel
-Filename: pool/main/o/odil/libodil-dev_0.11.0-1~bionic_amd64.deb
-Size: 93208
-SHA256: 6f433625e4298797772e69e8e1d9ae01b7251c380044a2035b7fb503d0dcb2e8
-SHA1: be2af9a40f6d647a0d7c44180f48debbef5cf84b
-MD5sum: 95b69a3d3817dbd6052fe5fe9cb25464
+Filename: pool/main/o/odil/libodil-dev_0.12.0-1~bionic_amd64.deb
+Size: 93404
+SHA256: 96c88d3ae103da7f6d5ee408bbb8b8f44294caa00e500f402d5e01a3b3580538
+SHA1: 5132a82d98f90fd169a666eaaad5bb1c709044aa
+MD5sum: 39982e75f318ae1886da85dfe7ab01c8
 Description: C++11 library for the DICOM standard (development files)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -99,10 +99,10 @@ Description: C++11 library for the DICOM standard (development files)
 
 Package: libodil-doc
 Source: odil
-Version: 0.11.0-1~bionic
+Version: 0.12.0-1~bionic
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 97437
+Installed-Size: 97439
 Depends: libjs-jquery
 Conflicts: libdcmtkpp0-doc, libodil0-doc
 Replaces: libdcmtkpp0-doc, libodil0-doc
@@ -111,11 +111,11 @@ Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: doc
-Filename: pool/main/o/odil/libodil-doc_0.11.0-1~bionic_all.deb
-Size: 56454724
-SHA256: 048a049ad91cbadfc692049161de27e5e0222a402e9ed4baa8f4234d3ea06774
-SHA1: c80aebffc8ccd794ed20bf6c8ef2ecc54898067a
-MD5sum: e8435e20206ac1cec98f049b7999f159
+Filename: pool/main/o/odil/libodil-doc_0.12.0-1~bionic_all.deb
+Size: 56454052
+SHA256: e588f5fd3e8b95965fba5da48462571d12e149cd102f5a9dc4f43430fde077ee
+SHA1: be3808e7a1f5deacc52c400bcabedb1ac2831d19
+MD5sum: aea50e6e367a551fb5627482ed281b76
 Description: C++11 library for the DICOM standard (documentation)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -127,10 +127,10 @@ Description: C++11 library for the DICOM standard (documentation)
 
 Package: libodil0
 Source: odil
-Version: 0.11.0-1~bionic
+Version: 0.12.0-1~bionic
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 11211
+Installed-Size: 11184
 Depends: libboost-filesystem1.65.1, libboost-log1.65.1, libboost-system1.65.1, libc6 (>= 2.14), libdcmtk12, libgcc1 (>= 1:3.0), libicu60 (>= 60.1-1~), libjsoncpp1 (>= 1.7.4), libstdc++6 (>= 5.2)
 Conflicts: libdcmtkpp0
 Replaces: libdcmtkpp0
@@ -139,11 +139,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libs
-Filename: pool/main/o/odil/libodil0_0.11.0-1~bionic_amd64.deb
-Size: 1790630
-SHA256: eff5b95941d244394b47fb30a6f7716d8a0b143678fa592d4bedb27f31fcea66
-SHA1: b60f1fb4242a2af9bd0fd147d9216359314d3348
-MD5sum: b8dc765aa56410768ce207b833c6f0a2
+Filename: pool/main/o/odil/libodil0_0.12.0-1~bionic_amd64.deb
+Size: 1792326
+SHA256: 0530ce45c3bacf3bd40a3f699284cfb04bf67da634a4716d23b8365ceab13d15
+SHA1: a43aad5eb73b74814e3e061218b30971b2596b6f
+MD5sum: 13e480872477e38cad0461ce34dfc3aa
 Description: C++11 library for the DICOM standard
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -156,19 +156,19 @@ Description: C++11 library for the DICOM standard
  This package contains the shared library.
 
 Package: odil
-Version: 0.11.0-1~bionic
+Version: 0.12.0-1~bionic
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 75
+Installed-Size: 76
 Depends: python3-odil, python3.6:any, python3:any (>= 3.3.2-2~)
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.11.0-1~bionic_all.deb
-Size: 18680
-SHA256: 3a9afafe184e1f45ef5f22350083646717ae13b8f26f05c9f82cfb98e20e2d80
-SHA1: 60e017fa08a29e21a9e5abbbce0f5b7c6879a07a
-MD5sum: 874ee4b0f5974ee42c182aa5445844d2
+Filename: pool/main/o/odil/odil_0.12.0-1~bionic_all.deb
+Size: 18812
+SHA256: 66707e9559f7a300019bd57f50f19db82cc04464137902a2bf792b9cc562719c
+SHA1: 81b54254a0fbd85c2609df2c26bb637859af0eb9
+MD5sum: 40706fa0d24c7b2d8f2dc3b0d5e3128e
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -309,20 +309,20 @@ Description: pybind11 helper module for Python 2
 
 Package: python3-dicomifier
 Source: dicomifier
-Version: 1.3.0-2~bionic
+Version: 1.4.0-1~bionic
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 629
-Depends: libdicomifier1 (= 1.3.0-2~bionic), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.10.0), libboost-python1.65.1, libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), libpython3.6 (>= 3.6.5), libstdc++6 (>= 5.2), python3 (<< 3.7), python3 (>= 3.6~), python3:any (>= 3.3.2-2~)
+Installed-Size: 416
+Depends: libdicomifier1 (= 1.4.0-1~bionic), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.11.0), libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.3.1), libpython3.6 (>= 3.6.5), libstdc++6 (>= 5.2), python3 (<< 3.7), python3 (>= 3.6~), python3:any (>= 3.3.2-2~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: python
-Filename: pool/main/d/dicomifier/python3-dicomifier_1.3.0-2~bionic_amd64.deb
-Size: 116918
-SHA256: 920bf6acab33110c761f59ce54ff1ef0209d378375db35b90800b0cd55407f76
-SHA1: e5aa4f7a96bc7687172bccd5e9ed5f3f579fbcde
-MD5sum: 73ba2d741bb18785083e605bd75720a0
+Filename: pool/main/d/dicomifier/python3-dicomifier_1.4.0-1~bionic_amd64.deb
+Size: 111358
+SHA256: fc36a91c40759d8552fb26a8d6534542f484c7c56c0852beef9a457c56e7ea24
+SHA1: b8c8301fae04f51fc641790c4ebcbeb47198a112
+MD5sum: 3df9b9c59df894ff49f2c88f7025f424
 Description: Convert data to and from DICOM (Python 3 modules)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -332,20 +332,20 @@ Description: Convert data to and from DICOM (Python 3 modules)
 
 Package: python3-odil
 Source: odil
-Version: 0.11.0-1~bionic
+Version: 0.12.0-1~bionic
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 6080
-Depends: libodil0 (= 0.11.0-1~bionic), libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.3.1), libjsoncpp1 (>= 1.7.4), libstdc++6 (>= 5.2), python3 (<< 3.7), python3 (>= 3.6~), python3:any (>= 3.3.2-2~)
+Installed-Size: 6205
+Depends: libodil0 (= 0.12.0-1~bionic), libboost-system1.65.1, libc6 (>= 2.14), libgcc1 (>= 1:3.3.1), libjsoncpp1 (>= 1.7.4), libstdc++6 (>= 5.2), python3 (<< 3.7), python3 (>= 3.6~), python3:any (>= 3.3.2-2~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: python
-Filename: pool/main/o/odil/python3-odil_0.11.0-1~bionic_amd64.deb
-Size: 941382
-SHA256: 84ca4ddfb8b7fa9e31bde7e9e811f310ae344142db6b7803ed66a2d1e54c97ae
-SHA1: c8e612e6ae23d4f195b12f48d557ebbdc37f15d4
-MD5sum: 63a0d05a080801d5a784c3cff5bd2210
+Filename: pool/main/o/odil/python3-odil_0.12.0-1~bionic_amd64.deb
+Size: 953558
+SHA256: 136bf2de69fbd31ebf215f4aabe1f3bbad404ad65d86a72e9daa5ddeffbdda07
+SHA1: 9c0c2ae3afadd67050ccad3a509564660cfea745
+MD5sum: 49dcb7f5940fda77ed6c0328c490a2d7
 Description: C++11 library for the DICOM standard (Python 3 wrappers)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based

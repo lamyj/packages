@@ -32,22 +32,22 @@ Description: advanced normalization tools for brain and image analysis
 
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 55
-Depends: python3-dicomifier (>= 1.3.0-2~stretch), python3.5:any
+Installed-Size: 54
+Depends: python3-dicomifier (>= 1.4.0-1~stretch), python3.5:any
 Conflicts: dicomifier
 Replaces: dicomifier
 Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.3.0-2~stretch_all.deb
-Size: 16348
-SHA256: d4d89e5131ee61fe26dccb2970c5ca3b64ef1c524e01368d69280d89232f5023
-SHA1: d1c1dbb4732f7dd68a2d78b52fea60ca47695347
-MD5sum: 97c26361e85e324fe8967f00f2eeac5d
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.4.0-1~stretch_all.deb
+Size: 16238
+SHA256: 4a6d58dbc16301c128609bd7f53962d81c097148a79c1b7c0778aac4d2e776fd
+SHA1: 73881de3b5a6254cbfbb94da9ed4014939ad1faf
+MD5sum: d93c4d55f9490ae5f4bf5cfe714711cf
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -194,20 +194,20 @@ Description: Image processing toolkit for registration and segmentation - Python
 
 Package: libdicomifier-dev
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 59
-Depends: libdicomifier1 (= 1.3.0-2~stretch), libboost-date-time1.62-dev, libboost-filesystem1.62-dev, libboost-regex1.62-dev, libboost-system1.62-dev, libjsoncpp-dev, liblog4cpp5-dev
+Installed-Size: 51
+Depends: libdicomifier1 (= 1.4.0-1~stretch), libboost-date-time1.62-dev, libboost-filesystem1.62-dev, libboost-regex1.62-dev, libboost-system1.62-dev
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libdevel
-Filename: pool/main/d/dicomifier/libdicomifier-dev_1.3.0-2~stretch_amd64.deb
-Size: 15088
-SHA256: ad84b1e592e99099950232e39986362b2eb7cbd53af160fbd04fefab96614a70
-SHA1: 06ac33d9b640e297b98d6fb70f08dbf58fd30e53
-MD5sum: e2dcca8af642b81a3e548b4e4d53e573
+Filename: pool/main/d/dicomifier/libdicomifier-dev_1.4.0-1~stretch_amd64.deb
+Size: 13894
+SHA256: abd65c051c78385193ff7898a9783068a5b864ba382d372f933c8befb8ff7958
+SHA1: 3579e4654023895b02c55e3c98f6d000d7cfd0cd
+MD5sum: 815ccf971b80736eb1effd38858c3dc6
 Description: Convert data to and from DICOM (development files)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -217,20 +217,20 @@ Description: Convert data to and from DICOM (development files)
 
 Package: libdicomifier1
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 713
-Depends: libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libstdc++6 (>= 5.2)
+Installed-Size: 385
+Depends: libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libstdc++6 (>= 5.2)
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libs
-Filename: pool/main/d/dicomifier/libdicomifier1_1.3.0-2~stretch_amd64.deb
-Size: 182000
-SHA256: 8805da13436739b3a120c4591701cdaa81bd33f438ed95983ed00e2abef14bcc
-SHA1: 522717daec454dc4ddbcddcf1a060266fdbf36a7
-MD5sum: 31b146078b9881bc843b4ea4e1c8956b
+Filename: pool/main/d/dicomifier/libdicomifier1_1.4.0-1~stretch_amd64.deb
+Size: 100522
+SHA256: da01ef97eb950c20cb8cf8972ea89cb8aaf437e35ef846a962838a48c7b73ae1
+SHA1: 66cae41a90522ae6712e17cf3d7e10ae238f6ee3
+MD5sum: 2a1989d1a8b7d7a3a560ecae0d8d6150
 Description: Convert data to and from DICOM (shared libraries)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -240,23 +240,23 @@ Description: Convert data to and from DICOM (shared libraries)
 
 Package: libdicomifier1-dbgsym
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Auto-Built-Package: debug-symbols
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 3077
-Depends: libdicomifier1 (= 1.3.0-2~stretch)
+Installed-Size: 2359
+Depends: libdicomifier1 (= 1.4.0-1~stretch)
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: extra
 Section: debug
-Filename: pool/main/d/dicomifier/libdicomifier1-dbgsym_1.3.0-2~stretch_amd64.deb
-Size: 2899994
-SHA256: 369ecd714b9c057f12be8e5427b2999efa7e9da03a972ebfff471cd895687a40
-SHA1: 9ee74073fb88e86b06184a73a174d758bdcd61ac
-MD5sum: ec33af9598cd9800e520b5af70c0205b
+Filename: pool/main/d/dicomifier/libdicomifier1-dbgsym_1.4.0-1~stretch_amd64.deb
+Size: 2272398
+SHA256: b146e599026ab3d81f52a69bcff636f9808c8cc4ccd0d541db0144a2846194d1
+SHA1: 2d803442f045aff3fb850f2f37317347f3ee9b9f
+MD5sum: 5352ea771860ad01dcce0b460b087cc9
 Description: Debug symbols for libdicomifier1
-Build-Ids: b9f6c00f4510d9340f53093bbc71bd2df117572c
+Build-Ids: a8e1643dfe9d4f7a7c9880952e74492454f733e0
 
 Package: libinsighttoolkit4-dev
 Source: insighttoolkit4
@@ -359,11 +359,11 @@ Build-Ids: 027085b3ef93569f7d5b5d982cabc970fda9e392 05f0f7a9594e0309cc8d685e86dc
 
 Package: libodil-dev
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 715
-Depends: libodil0 (= 0.11.0-1~stretch), libboost-atomic1.62-dev, libboost-chrono1.62-dev, libboost-date-time1.62-dev, libboost-filesystem1.62-dev, libboost-log-dev, libboost-system1.62-dev, libboost-thread1.62-dev, libdcmtk-dev, libicu-dev, libjpeg-dev, libjsoncpp-dev, libpng-dev, libssl-dev, libtiff5-dev, libwrap0-dev, libxml2-dev, zlib1g-dev
+Installed-Size: 716
+Depends: libodil0 (= 0.12.0-1~stretch), libboost-atomic1.62-dev, libboost-chrono1.62-dev, libboost-date-time1.62-dev, libboost-filesystem1.62-dev, libboost-log-dev, libboost-system1.62-dev, libboost-thread1.62-dev, libdcmtk-dev, libicu-dev, libjpeg-dev, libjsoncpp-dev, libpng-dev, libssl-dev, libtiff5-dev, libwrap0-dev, libxml2-dev, zlib1g-dev
 Conflicts: libdcmtkpp-dev, libodil0-dev
 Replaces: libdcmtkpp-dev, libodil0-dev
 Provides: libdcmtkpp-dev, libodil0-dev
@@ -371,11 +371,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libdevel
-Filename: pool/main/o/odil/libodil-dev_0.11.0-1~stretch_amd64.deb
-Size: 93862
-SHA256: 91c0451b047a96b7dee97efe69e8d40a737f211163d1d90f80a1294b806a120b
-SHA1: 464e9ab1d8e7e113adac33a74cea2769e2644bbd
-MD5sum: 3830ffde9fb13337981cbe3a409da6d4
+Filename: pool/main/o/odil/libodil-dev_0.12.0-1~stretch_amd64.deb
+Size: 93988
+SHA256: b21a01f886eb095b867668293f03ad496c1d0a8153fcefd3397126674682349f
+SHA1: f62dfdb55aa22166a4aa5881377bf4488ed69356
+MD5sum: b513d63efd91ff3daba549411c67e416
 Description: C++11 library for the DICOM standard (development files)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -387,10 +387,10 @@ Description: C++11 library for the DICOM standard (development files)
 
 Package: libodil-doc
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 92118
+Installed-Size: 92120
 Depends: libjs-jquery
 Conflicts: libdcmtkpp0-doc, libodil0-doc
 Replaces: libdcmtkpp0-doc, libodil0-doc
@@ -399,11 +399,11 @@ Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: doc
-Filename: pool/main/o/odil/libodil-doc_0.11.0-1~stretch_all.deb
-Size: 52325994
-SHA256: f9b446fce576b7a5e98b08267be6c5303d0b36f2e9a704e707f3c382be62d2be
-SHA1: 2590d606abfd9af68fb51e60a4645cf29cc944fd
-MD5sum: 50378184356eeb780ef7a41a7dbc1718
+Filename: pool/main/o/odil/libodil-doc_0.12.0-1~stretch_all.deb
+Size: 52327436
+SHA256: fd969e8b3e4bd507dc877783a00dd486ec02db669c02bf4fbbf420c162cac3c5
+SHA1: 2dbec7ed00cf75c43b22e3e0c476529ac99fa1d5
+MD5sum: 6bfdf2370a2827cfea1b7517309f0782
 Description: C++11 library for the DICOM standard (documentation)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -415,10 +415,10 @@ Description: C++11 library for the DICOM standard (documentation)
 
 Package: libodil0
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 11283
+Installed-Size: 11284
 Depends: libboost-atomic1.62.0, libboost-chrono1.62.0, libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-log1.62.0, libboost-system1.62.0, libboost-thread1.62.0, libc6 (>= 2.14), libcharls1 (>= 1.0), libdcmtk8, libgcc1 (>= 1:3.0), libicu57 (>= 57.1-1~), libjpeg62-turbo (>= 1.3.1), libjsoncpp1 (>= 1.7.4), libpng16-16 (>= 1.6.2-1), libssl1.0.2 (>= 1.0.2d), libstdc++6 (>= 5.2), libtiff5 (>= 4.0.3), libwrap0 (>= 7.6-4~), libxml2 (>= 2.6.27), zlib1g (>= 1:1.1.4)
 Conflicts: libdcmtkpp0
 Replaces: libdcmtkpp0
@@ -427,11 +427,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: libs
-Filename: pool/main/o/odil/libodil0_0.11.0-1~stretch_amd64.deb
-Size: 1788602
-SHA256: bcb53d0b6d9cc644d6ad15e319ec8b5b4b15daa5462ce127d207dcdbc5d0630f
-SHA1: dd994f5e1d2a8623f4c6d8b3e34400c601f91d02
-MD5sum: c65f0134aa51acf24e2b5db2e391ef7f
+Filename: pool/main/o/odil/libodil0_0.12.0-1~stretch_amd64.deb
+Size: 1795728
+SHA256: ba6e14912d2b38489a38e5d3d3fb0d67e056b17b11feee5a283574f5d4bf599b
+SHA1: 855df154b1f995a929aec70c7245a31d5beca38a
+MD5sum: 8a95e67b7f9654cfe2f6f412078c7cde
 Description: C++11 library for the DICOM standard
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -445,38 +445,38 @@ Description: C++11 library for the DICOM standard
 
 Package: libodil0-dbgsym
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Auto-Built-Package: debug-symbols
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 33468
-Depends: libodil0 (= 0.11.0-1~stretch)
+Installed-Size: 33469
+Depends: libodil0 (= 0.12.0-1~stretch)
 Multi-Arch: same
 Homepage: https://github.com/lamyj/odil
 Priority: extra
 Section: debug
-Filename: pool/main/o/odil/libodil0-dbgsym_0.11.0-1~stretch_amd64.deb
-Size: 25806206
-SHA256: 89a8043311d311c1d0cd3e912175bffbd8fd1bb651862076697b050c0a5ef4cb
-SHA1: 2bd2a7296972c668e6f046e23eb48e0f5e2e9264
-MD5sum: cccb46ae2171939bc50e9d2dfc79f6d4
+Filename: pool/main/o/odil/libodil0-dbgsym_0.12.0-1~stretch_amd64.deb
+Size: 25816924
+SHA256: 0ea6768db1312b26bf1adb7a10b50f26241ffdb63ef6c3a6c0a12c8e71fa4410
+SHA1: 2e405fdfd6bce514699b57bf26f7fb3fd25c9ca0
+MD5sum: 85f3abe7dc50d296e704d2954c9ea9b5
 Description: Debug symbols for libodil0
-Build-Ids: b077d9a4cba02d64cc0aaa1c085b18747da49d88
+Build-Ids: f36ab1dc1c1729ad7a7b33e5d2ece3ff3af75e1f
 
 Package: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 75
+Installed-Size: 76
 Depends: python3-odil, python3.5:any, python3:any (>= 3.3.2-2~)
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.11.0-1~stretch_all.deb
-Size: 18612
-SHA256: ec79fa493c07a02f7457416386bf63d879879bdfa79d88994a3c33b19bbaf183
-SHA1: 89fc3283a9bd5d4b9759a7a396c4aba52f595ab1
-MD5sum: 5278e1ea8a323241294d177e1a00c1a3
+Filename: pool/main/o/odil/odil_0.12.0-1~stretch_all.deb
+Size: 18728
+SHA256: db6f709283d1fc87f605b4a26637fb18231d107f5808d6865908269247c29b7c
+SHA1: c8691b8da6156b04975530c15f463c5447dd494b
+MD5sum: bae4ae216fd56861ce1b7c17b6cc8497
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -655,20 +655,20 @@ Description: pybind11 helper module for Python 2
 
 Package: python3-dicomifier
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 625
-Depends: libdicomifier1 (= 1.3.0-2~stretch), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.10.0), libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-python1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.14), libgcc1 (>= 1:3.0), libjsoncpp1 (>= 1.7.4), liblog4cpp5v5, libpython3.5 (>= 3.5.0~b1), libstdc++6 (>= 5.2), python3 (<< 3.6), python3 (>= 3.5~), python3:any (>= 3.3.2-2~)
+Installed-Size: 436
+Depends: libdicomifier1 (= 1.4.0-1~stretch), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.11.0), libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-regex1.62.0, libboost-system1.62.0, libc6 (>= 2.14), libgcc1 (>= 1:3.3.1), libpython3.5 (>= 3.5.0~b1), libstdc++6 (>= 5.2), python3 (<< 3.6), python3 (>= 3.5~), python3:any (>= 3.3.2-2~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: python
-Filename: pool/main/d/dicomifier/python3-dicomifier_1.3.0-2~stretch_amd64.deb
-Size: 112348
-SHA256: e089e427a25d9ff5d25691463334b7ac41dfae9b62a96259df396bad906d1a57
-SHA1: d50b9dc4dc0f94fb8b6853f5a6f2770a4586ff67
-MD5sum: 4dda0d175024aaa01bce65c7488ef4dd
+Filename: pool/main/d/dicomifier/python3-dicomifier_1.4.0-1~stretch_amd64.deb
+Size: 114512
+SHA256: 34a3f3ab08b19ddb242a1f931278d1dc45c9836ab3e8ea8787199b1b5084b2e5
+SHA1: 125d5300612621b012c405335f48b63c4c895f10
+MD5sum: 112fe9e247513c5556635147f9e36ab6
 Description: Convert data to and from DICOM (Python 3 modules)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -697,20 +697,20 @@ Build-Ids: 473ab7fe094f7c8a1689184986479a58c54d5b2d 7cebf97fc6f0a777c89cd9e6c19d
 
 Package: python3-odil
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: amd64
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 6200
-Depends: libodil0 (= 0.11.0-1~stretch), libboost-atomic1.62.0, libboost-chrono1.62.0, libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-log1.62.0, libboost-system1.62.0, libboost-thread1.62.0, libc6 (>= 2.14), libcharls1 (>= 1.0), libdcmtk8, libgcc1 (>= 1:3.3.1), libicu57 (>= 57.1-1~), libjpeg62-turbo (>= 1.3.1), libjsoncpp1 (>= 1.7.4), libpng16-16 (>= 1.6.2-1), libssl1.0.2 (>= 1.0.2d), libstdc++6 (>= 5.2), libtiff5 (>= 4.0.3), libwrap0 (>= 7.6-4~), libxml2 (>= 2.6.27), zlib1g (>= 1:1.1.4), python3 (<< 3.6), python3 (>= 3.5~), python3:any (>= 3.3.2-2~)
+Installed-Size: 6337
+Depends: libodil0 (= 0.12.0-1~stretch), libboost-atomic1.62.0, libboost-chrono1.62.0, libboost-date-time1.62.0, libboost-filesystem1.62.0, libboost-log1.62.0, libboost-system1.62.0, libboost-thread1.62.0, libc6 (>= 2.14), libcharls1 (>= 1.0), libdcmtk8, libgcc1 (>= 1:3.3.1), libicu57 (>= 57.1-1~), libjpeg62-turbo (>= 1.3.1), libjsoncpp1 (>= 1.7.4), libpng16-16 (>= 1.6.2-1), libssl1.0.2 (>= 1.0.2d), libstdc++6 (>= 5.2), libtiff5 (>= 4.0.3), libwrap0 (>= 7.6-4~), libxml2 (>= 2.6.27), zlib1g (>= 1:1.1.4), python3 (<< 3.6), python3 (>= 3.5~), python3:any (>= 3.3.2-2~)
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: python
-Filename: pool/main/o/odil/python3-odil_0.11.0-1~stretch_amd64.deb
-Size: 935470
-SHA256: 25964069017a4ce496d56f52e630ce83396eea0485d3a959faf9a75a5d6b2d22
-SHA1: e6f0ba275359309a04e93c86533115bc334ee0e4
-MD5sum: 4b220f72d7c37fc1627308eb2a5d10b6
+Filename: pool/main/o/odil/python3-odil_0.12.0-1~stretch_amd64.deb
+Size: 966452
+SHA256: b4c2178b851b9956b43498c25798900171319571f95549ca7ab014e3312cc622
+SHA1: 2e0adafe092497cb88717bcfdaf8335f40936ae9
+MD5sum: 46384b90978b9ed9cf54d73ce7341283
 Description: C++11 library for the DICOM standard (Python 3 wrappers)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based

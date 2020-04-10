@@ -1,3 +1,28 @@
+Package: dicomifier-cli
+Source: dicomifier
+Version: 1.4.0-1~buster
+Architecture: all
+Maintainer: Julien Lamy <lamy@unistra.fr>
+Installed-Size: 54
+Depends: python3-dicomifier (>= 1.4.0-1~buster), python3.7:any
+Conflicts: dicomifier
+Replaces: dicomifier
+Provides: dicomifier
+Homepage: https://github.com/lamyj/dicomifier
+Priority: optional
+Section: science
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.4.0-1~buster_all.deb
+Size: 16320
+SHA256: 8ebf6123be6dfdd54c3fbea8bba00bc1401d17047fb45846df714982a377517b
+SHA1: 2223c25746e7f963422b83e7eeacbc8ea06d733d
+MD5sum: 3f0d91e4c580a7e16c502f60c7f9b5f2
+Description: Convert data to and from DICOM (command line tools)
+ Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
+ set of mapping rules is provided, allowing the conservation of meta-data upon
+ conversion.
+ .
+ This package contains the command-line tools.
+
 Package: libodil-doc
 Source: odil
 Version: 0.11.0-1~buster

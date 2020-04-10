@@ -1,21 +1,21 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 1.3.0-2~stretch
+Version: 1.4.0-1~stretch
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 55
-Depends: python3-dicomifier (>= 1.3.0-2~stretch), python3.5:any
+Installed-Size: 54
+Depends: python3-dicomifier (>= 1.4.0-1~stretch), python3.5:any
 Conflicts: dicomifier
 Replaces: dicomifier
 Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_1.3.0-2~stretch_all.deb
-Size: 16348
-SHA256: d4d89e5131ee61fe26dccb2970c5ca3b64ef1c524e01368d69280d89232f5023
-SHA1: d1c1dbb4732f7dd68a2d78b52fea60ca47695347
-MD5sum: 97c26361e85e324fe8967f00f2eeac5d
+Filename: pool/main/d/dicomifier/dicomifier-cli_1.4.0-1~stretch_all.deb
+Size: 16238
+SHA256: 4a6d58dbc16301c128609bd7f53962d81c097148a79c1b7c0778aac4d2e776fd
+SHA1: 73881de3b5a6254cbfbb94da9ed4014939ad1faf
+MD5sum: d93c4d55f9490ae5f4bf5cfe714711cf
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -163,10 +163,10 @@ Build-Ids: 1708b48a6b6c2d7aa799609be85f40f841f0e4f9
 
 Package: libodil-doc
 Source: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 92118
+Installed-Size: 92120
 Depends: libjs-jquery
 Conflicts: libdcmtkpp0-doc, libodil0-doc
 Replaces: libdcmtkpp0-doc, libodil0-doc
@@ -175,11 +175,11 @@ Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: doc
-Filename: pool/main/o/odil/libodil-doc_0.11.0-1~stretch_all.deb
-Size: 52325994
-SHA256: f9b446fce576b7a5e98b08267be6c5303d0b36f2e9a704e707f3c382be62d2be
-SHA1: 2590d606abfd9af68fb51e60a4645cf29cc944fd
-MD5sum: 50378184356eeb780ef7a41a7dbc1718
+Filename: pool/main/o/odil/libodil-doc_0.12.0-1~stretch_all.deb
+Size: 52327436
+SHA256: fd969e8b3e4bd507dc877783a00dd486ec02db669c02bf4fbbf420c162cac3c5
+SHA1: 2dbec7ed00cf75c43b22e3e0c476529ac99fa1d5
+MD5sum: 6bfdf2370a2827cfea1b7517309f0782
 Description: C++11 library for the DICOM standard (documentation)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -190,19 +190,19 @@ Description: C++11 library for the DICOM standard (documentation)
  This package contains the documentation files.
 
 Package: odil
-Version: 0.11.0-1~stretch
+Version: 0.12.0-1~stretch
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 75
+Installed-Size: 76
 Depends: python3-odil, python3.5:any, python3:any (>= 3.3.2-2~)
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.11.0-1~stretch_all.deb
-Size: 18612
-SHA256: ec79fa493c07a02f7457416386bf63d879879bdfa79d88994a3c33b19bbaf183
-SHA1: 89fc3283a9bd5d4b9759a7a396c4aba52f595ab1
-MD5sum: 5278e1ea8a323241294d177e1a00c1a3
+Filename: pool/main/o/odil/odil_0.12.0-1~stretch_all.deb
+Size: 18728
+SHA256: db6f709283d1fc87f605b4a26637fb18231d107f5808d6865908269247c29b7c
+SHA1: c8691b8da6156b04975530c15f463c5447dd494b
+MD5sum: bae4ae216fd56861ce1b7c17b6cc8497
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
