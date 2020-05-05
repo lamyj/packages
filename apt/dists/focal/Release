@@ -1,0 +1,34 @@
+Codename: focal
+Date: Fri, 21 Dec 2018 15:47:03 UTC
+Architectures: i386 amd64
+Components: main
+MD5Sum:
+ 1fe24214584fc32cd02c2e86ae146504 2099 main/binary-i386/Packages
+ 6660bc9bcbd98b88e0b95d47367dc955 871 main/binary-i386/Packages.gz
+ 5e77d15a7c8b516e15488780beb4ad24 35 main/binary-i386/Release
+ 272a996f619ab4ade5bc930a221b7bb6 5734 main/binary-amd64/Packages
+ ebb9719fb943b1a4813ca5ba4033cf06 1530 main/binary-amd64/Packages.gz
+ 063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 92f9b0ec8b2656847b612632542f1735 37 main/source/Release
+SHA1:
+ d82234c94202682f7b9f2dd9843a77d87b91a1ee 2099 main/binary-i386/Packages
+ 833e14102e6f2a3d5e36536169ea292fcf70a11e 871 main/binary-i386/Packages.gz
+ ea0e5aa4a1859481eb8929e40af14736bd50387b 35 main/binary-i386/Release
+ b93055f70746f400b83b1149319b8b813d3256b7 5734 main/binary-amd64/Packages
+ 922e7a02b847de2e72cc13a238e1ecd94caded62 1530 main/binary-amd64/Packages.gz
+ f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
+SHA256:
+ 1bcf33da0db77ce1ad2c85f65e642727995aaf1318a6ff2296e9896c019d6182 2099 main/binary-i386/Packages
+ 092b61cbc46666e5a49f616c9a78c9a633e945b85f46addadafab875de6444bf 871 main/binary-i386/Packages.gz
+ 2ca4451c438b7f4614813919cded632edc7d0318dd7b120d5aa77ec03f055dd6 35 main/binary-i386/Release
+ 37d5d6c7235331169dbd42d8cb5a8baf77645e0e9ae75f1c43e35a153be4115d 5734 main/binary-amd64/Packages
+ cdf3113ad97f4352476e7c0c2ed88bf071db18777454b5b0d5d50557bb70da59 1530 main/binary-amd64/Packages.gz
+ f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 4e2108e8de58972a48b94535ab5f7e553edddf6b18462bf8ba44584b1161a0d9 37 main/source/Release

@@ -1,0 +1,51 @@
+Package: libodil-doc
+Source: odil
+Version: 0.12.0-2~focal
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 97179
+Depends: libjs-jquery
+Conflicts: libdcmtkpp0-doc, libodil0-doc
+Replaces: libdcmtkpp0-doc, libodil0-doc
+Provides: libdcmtkpp0-doc, libodil0-doc
+Multi-Arch: foreign
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: doc
+Filename: pool/main/o/odil/libodil-doc_0.12.0-2~focal_all.deb
+Size: 56592936
+SHA256: 856a8a63a711e5bc0396f57ae69b16f25ecc9650e9721e62943f5819f6ab24f4
+SHA1: 8656c110485e52087599819444430bbe5ce88582
+MD5sum: b88441da322f002b9259a7c5a9a56f5d
+Description: C++11 library for the DICOM standard (documentation)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the documentation files.
+
+Package: odil
+Version: 0.12.0-2~focal
+Architecture: all
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Installed-Size: 76
+Depends: python3-odil, python3.8:any, python3:any
+Homepage: https://github.com/lamyj/odil
+Priority: optional
+Section: science
+Filename: pool/main/o/odil/odil_0.12.0-2~focal_all.deb
+Size: 18840
+SHA256: 482fd013b5b0e953e9d42312ff77552d16b13a70a576dcfa8c6f71b0b58d73ef
+SHA1: 5f36e01aa875353bdc3850b8422c73aba6a01e44
+MD5sum: 4229081105a686c94d75a2040c48874f
+Description: C++11 library for the DICOM standard (application)
+ Odil leverages C++ constructs to provide a user-friendly API of the
+ different parts of the DICOM standard. Included in Odil are exception-based
+ error handling, generic access to datasets elements, standard JSON and XML
+ representation of datasets, and generic implementation of messages, clients
+ and servers for the various DICOM protocols.
+ .
+ This package contains the command-line application.
+
