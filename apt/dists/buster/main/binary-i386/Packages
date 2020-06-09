@@ -1,21 +1,21 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 2.0.0-1~buster
+Version: 2.0.0-2~buster
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 40
-Depends: python3-dicomifier (>= 2.0.0-1~buster), python3.7:any
+Depends: python3-dicomifier (>= 2.0.0-2~buster), python3.7:any
 Conflicts: dicomifier
 Replaces: dicomifier
 Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_2.0.0-1~buster_all.deb
-Size: 12836
-SHA256: b735051139cd27ef844a83b2b9714f95dce526fcf8f448b27c9d0b484c64a0a9
-SHA1: 36fedc30bce672e2a7d6a3fddf023470745bad5e
-MD5sum: 2fe9c0edc2b66eb400126ac25d164fa3
+Filename: pool/main/d/dicomifier/dicomifier-cli_2.0.0-2~buster_all.deb
+Size: 12868
+SHA256: 94950a9d2ea19d75309eac971ac4e357451fab25d5f71a67396ba100bbb9d6a9
+SHA1: c90f71082a6f20b51c97f740cd278d54c9d5e3d6
+MD5sum: de255f0f9ee3c69dd39d4148ac93c15c
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon

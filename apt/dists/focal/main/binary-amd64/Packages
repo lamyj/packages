@@ -1,21 +1,21 @@
 Package: dicomifier-cli
 Source: dicomifier
-Version: 2.0.0-1~focal
+Version: 2.0.0-2~focal
 Architecture: all
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 40
-Depends: python3-dicomifier (>= 2.0.0-1~focal), python3.8:any
+Depends: python3-dicomifier (>= 2.0.0-2~focal), python3.8:any
 Conflicts: dicomifier
 Replaces: dicomifier
 Provides: dicomifier
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: science
-Filename: pool/main/d/dicomifier/dicomifier-cli_2.0.0-1~focal_all.deb
-Size: 12840
-SHA256: 1c33cba34089578f77d759a74b56911d94643d4dfe8f7e1d983b7eceb0b4c83f
-SHA1: efe0ff52c3c9372e28ea3d3c1cb3285e484b80dd
-MD5sum: 0656e17d4007e642654a48c360a04483
+Filename: pool/main/d/dicomifier/dicomifier-cli_2.0.0-2~focal_all.deb
+Size: 12860
+SHA256: 46a44da692daa8e36a58c8867974e95bba5f5cd928393999002b4c3516c48731
+SHA1: a553c8aeeafbd443e21e3a5568ec18ef49a8c378
+MD5sum: 7ff8033d7edd97ad4132103012eb1c83
 Description: Convert data to and from DICOM (command line tools)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -25,20 +25,20 @@ Description: Convert data to and from DICOM (command line tools)
 
 Package: libdicomifier-dev
 Source: dicomifier
-Version: 2.0.0-1~focal
+Version: 2.0.0-2~focal
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 48
-Depends: libdicomifier2 (= 2.0.0-1~focal), libboost-regex1.71-dev
+Depends: libdicomifier2 (= 2.0.0-2~focal), libboost-regex1.71-dev
 Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libdevel
-Filename: pool/main/d/dicomifier/libdicomifier-dev_2.0.0-1~focal_amd64.deb
-Size: 13508
-SHA256: c2469b09a4c2148bd9531a5f5d8f5bf67f7fdd97137028964772b4779bcbf8d2
-SHA1: 6c8c992b1fa86bce6c59549edc22ae4bf08b4f4b
-MD5sum: 118d76c53542cd3246566bb0a6817e9a
+Filename: pool/main/d/dicomifier/libdicomifier-dev_2.0.0-2~focal_amd64.deb
+Size: 13536
+SHA256: 530e0293eb01c7e21f3f88bb3598f82ea43a8ea569004f46a9fa83c2c614a3e4
+SHA1: 7ae71b9e0d0cfe6ce6ba3d7881cacc2a5fe21265
+MD5sum: 13742f2ba27939d32c2210842f91deec
 Description: Convert data to and from DICOM (development files)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -48,7 +48,7 @@ Description: Convert data to and from DICOM (development files)
 
 Package: libdicomifier2
 Source: dicomifier
-Version: 2.0.0-1~focal
+Version: 2.0.0-2~focal
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
 Installed-Size: 333
@@ -57,11 +57,11 @@ Multi-Arch: same
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: libs
-Filename: pool/main/d/dicomifier/libdicomifier2_2.0.0-1~focal_amd64.deb
-Size: 86040
-SHA256: cd9ad3a1bce69bd7b0eb76f3f7ecfd0bc4d2902aa1be09eb1890d6313812ac94
-SHA1: 2e95f65f2c84c438d662ec22b2039b766416072d
-MD5sum: d33322ff132cdcb5ab5c90009cc1766c
+Filename: pool/main/d/dicomifier/libdicomifier2_2.0.0-2~focal_amd64.deb
+Size: 85980
+SHA256: 27f6348da764db7a5c2c5e1d89f07eb679d7cedf0fcf337f101747d18262e668
+SHA1: e2ca22fc0e0ec77019b6ecf5e85a4559c390f286
+MD5sum: cc9679b43afe75867e9bdec6277411f8
 Description: Convert data to and from DICOM (shared libraries)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
@@ -180,20 +180,20 @@ Description: C++11 library for the DICOM standard (application)
 
 Package: python3-dicomifier
 Source: dicomifier
-Version: 2.0.0-1~focal
+Version: 2.0.0-2~focal
 Architecture: amd64
 Maintainer: Julien Lamy <lamy@unistra.fr>
-Installed-Size: 432
-Depends: libdicomifier2 (= 2.0.0-1~focal), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.11.0), libc6 (>= 2.14), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 5.2), python3 (<< 3.9), python3 (>= 3.8~), python3:any
+Installed-Size: 497
+Depends: libdicomifier2 (= 2.0.0-2~focal), python3-dateutil, python3-nibabel, python3-numpy, python3-odil (>= 0.11.0), libc6 (>= 2.14), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 5.2), python3 (<< 3.9), python3 (>= 3.8~), python3:any
 Multi-Arch: foreign
 Homepage: https://github.com/lamyj/dicomifier
 Priority: optional
 Section: python
-Filename: pool/main/d/dicomifier/python3-dicomifier_2.0.0-1~focal_amd64.deb
-Size: 117150
-SHA256: 1eddc457353a5483c1c4241092acbb7bc8a326edb181dad9e0e49a7e106aebbe
-SHA1: 6b4bee5665c66e10d5994177e28dd6d3a8b9cea9
-MD5sum: 8174fbfcc54cf724c83d3def6f60c0bf
+Filename: pool/main/d/dicomifier/python3-dicomifier_2.0.0-2~focal_amd64.deb
+Size: 126058
+SHA256: 7ac8aeae943a04d8f73c08dbfa1b289327abde8dae0ccdb89f2b1da54bf7d3d1
+SHA1: 6c42f6a0690cfe485febd1117e30bb4624be2d45
+MD5sum: ce10ce57d76263ade7a5508d0e60932b
 Description: Convert data to and from DICOM (Python 3 modules)
  Dicomifier is a set of tools to convert Bruker to DICOM and DICOM to NIfTI. A
  set of mapping rules is provided, allowing the conservation of meta-data upon
