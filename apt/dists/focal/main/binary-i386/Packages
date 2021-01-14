@@ -25,10 +25,10 @@ Description: Convert data to and from DICOM (command line tools)
 
 Package: libodil-doc
 Source: odil
-Version: 0.12.0-2~focal
+Version: 0.12.1-1~focal
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 97179
+Installed-Size: 98108
 Depends: libjs-jquery
 Conflicts: libdcmtkpp0-doc, libodil0-doc
 Replaces: libdcmtkpp0-doc, libodil0-doc
@@ -37,11 +37,11 @@ Multi-Arch: foreign
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: doc
-Filename: pool/main/o/odil/libodil-doc_0.12.0-2~focal_all.deb
-Size: 56592936
-SHA256: 856a8a63a711e5bc0396f57ae69b16f25ecc9650e9721e62943f5819f6ab24f4
-SHA1: 8656c110485e52087599819444430bbe5ce88582
-MD5sum: b88441da322f002b9259a7c5a9a56f5d
+Filename: pool/main/o/odil/libodil-doc_0.12.1-1~focal_all.deb
+Size: 56711496
+SHA256: 7103b6861c1839d653be04ec5d82c7cd51f5a37994db2fa64daa8db22110f431
+SHA1: 41a5ddf68bcbe243fdf557399376a0e45628c22f
+MD5sum: 75776b6c9b4d0c2cd9bae9c9ffd10aa8
 Description: C++11 library for the DICOM standard (documentation)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
@@ -52,19 +52,19 @@ Description: C++11 library for the DICOM standard (documentation)
  This package contains the documentation files.
 
 Package: odil
-Version: 0.12.0-2~focal
+Version: 0.12.1-1~focal
 Architecture: all
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Installed-Size: 76
-Depends: python3-odil, python3.8:any, python3:any
+Installed-Size: 77
+Depends: python3-odil, python3:any
 Homepage: https://github.com/lamyj/odil
 Priority: optional
 Section: science
-Filename: pool/main/o/odil/odil_0.12.0-2~focal_all.deb
-Size: 18840
-SHA256: 482fd013b5b0e953e9d42312ff77552d16b13a70a576dcfa8c6f71b0b58d73ef
-SHA1: 5f36e01aa875353bdc3850b8422c73aba6a01e44
-MD5sum: 4229081105a686c94d75a2040c48874f
+Filename: pool/main/o/odil/odil_0.12.1-1~focal_all.deb
+Size: 19048
+SHA256: 4737f2b08a1bc847e08bc5ea5688368980f27bab274ea0ad076494326a5769cd
+SHA1: e8c925780601b2ecbb8ebeff57fad02b39d96088
+MD5sum: 7bcf2b9b224c8530f9c584d295acd854
 Description: C++11 library for the DICOM standard (application)
  Odil leverages C++ constructs to provide a user-friendly API of the
  different parts of the DICOM standard. Included in Odil are exception-based
